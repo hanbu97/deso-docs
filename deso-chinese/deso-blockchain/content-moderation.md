@@ -1,41 +1,41 @@
 ---
-description: Creating a new open-economy of scale for moderation via global participation
+description: 创建全球参与共建的新型开放经济审查模式
 ---
 
-# 3⃣ Content Moderation
+# 3⃣ 内容审查
 
-### Centralized Moderation[​](https://deso-docs.vercel.app/docs/blockchain/content-moderation#centralized-moderation) <a href="#centralized-moderation" id="centralized-moderation"></a>
+### 中心化审查[​](https://deso-docs.vercel.app/docs/blockchain/content-moderation#centralized-moderation) <a href="#centralized-moderation" id="centralized-moderation"></a>
 
-Moderation of content is an absolutely critical topic when it comes to building a decentralized social network, and it is probably the topic we have spent the most time on besides engineering design.
+在构建去中心化社交网络时，内容审查绝对是一个关键议题，也可能是我们在工程设计之外花费最多时间关注的主题。
 
-First, because all of the data on DeSo is open, an ecosystem around moderation can develop that is more robust than what can be achieved with a traditional company.
+首先，由于DeSo上的所有数据都是开放的，围绕审查的生态系统可以比传统公司实现更强大的发展。
 
-For example, because the data is open, the best machine learning researchers at the best academic institutions in the world can build APIs that label all of the content on the blockchain in a way they can't today, which can then be consumed by all node operators that want to remain compliant.
+例如，因为数据是开放的，世界上最好的学术机构的最好的机器学习研究人员可以构建API，以一种他们现在无法做到的方式标记区块链上的所有内容，然后被所有希望保持合规的节点运营商所使用。
 
-This would create an economy of scale around moderation that we believe can be more robust than what's possible within the confines of a single corporate entity.
+这将创建一个关于审查的规模经济，我们相信这比在单一公司实体的限制内所可能实现的更强大。
 
-All of the data being open also allows the Federal government to better analyze the spread of misinformation, and be more involved in preventing it, than they can be when all of the content people are seeing is locked up in a corporate walled garden.
+所有数据的开放性还允许联邦政府更好地分析错误信息的传播，并更积极地阻止它，而当所有人们看到的内容都被锁在公司围起来的花园中时，他们无法做到这一点。
 
-Moreover, at a high level, we start by considering a spectrum of how decentralized the internet can be.
+此外，在更高层次上，我们首先考虑互联网可以实现的去中心化程度的范围。
 
-Right now we are on the very “centralized” side of the spectrum, where small moderation teams at a few companies control the vast majority of public discourse.
+现在我们处于该范围的非常“中心化”的一端，几家公司的小型审查团队控制着绝大多数公共话语。
 
-We think this is too far on one end of the spectrum, but we also think that the opposite end, where there is total anarchy with regard to content, is even worse.
+我们认为这在范围的一端走得太远，但我们也认为相反的一端，即关于内容完全无政府状态，甚至更糟。
 
-### Decentralized Moderation[​](https://deso-docs.vercel.app/docs/blockchain/content-moderation#decentralized-moderation) <a href="#decentralized-moderation" id="decentralized-moderation"></a>
+### 去中心化审查 <a href="#decentralized-moderation" id="decentralized-moderation"></a>
 
-DeSo sits in the middle of the above spectrum. It leverages the same moderation scheme that governed the pre-Facebook internet, which we think deters harmful content without stifling innovation and competition.
+DeSo处于上述范围的中间。它利用与脸书等互联网巨头出现之前相似的审查机制，我们认为这可以阻止有害内容的传播，而不会扼杀创新和竞争。
 
-Any website that displays harmful content is subject to both federal and civil litigation, whether its content comes from a blockchain or from a USB drive.
+无论其内容来自区块链还是USB驱动器，任何展示有害内容的网站都将受到联邦和民事诉讼的制约。
 
-This is what prevents harmful content from seeing the light of day on the internet today, even though there are many people who could theoretically serve it.
+这就是今天阻止有害内容在互联网上曝光的原因，尽管理论上有很多人可以提供这些内容。
 
-It's also largely how the pre-Facebook internet was kept in check, and it's the same mechanism that prevents nodes on the DeSo network from serving harmful content.
+这也在很大程度上使得在脸书之前的互联网免于这些有害信息。阻止在DeSo网络上的节点提供有害内容将采取同样的机制。
 
-For example, one of the main applications built on DeSo, [Diamond](https://diamondapp.com/) is exposing a subset of all the posts on the blockchain.
+例如，构建在DeSo之上的主要应用之一 [Diamond](https://diamondapp.com/)时，向公众展示了区块链上所有帖子的一个子集。
 
-Diamond filters the blockchain content to prevent showing content that is harmful or illegal. Every node that runs on top of the DeSo blockchain, including apps like Diamond, Pearl, or Desofy, can expose whatever subset of the posts that they want.
+运行在DeSo区块链之上的每个节点，包括像Diamond、Pearl或Desofy这样的应用，都可以展示他们想要的帖子的子集。&#x20;
 
-This being said, showing illegal or harmful content would not only subject them to copious amounts of litigation, but it would also likely make it such that nobody would want to use them.
+也就是说，展示非法或有害内容不仅会让他们面临大量诉讼，而且可能会导致没有人愿意使用它们。
 
-That content will still technically be on the blockchain but it won't be practically accessible.
+尽管这些内容在技术上仍然存在于区块链上，但实际上却无法轻易获得。

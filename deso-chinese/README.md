@@ -1,146 +1,142 @@
 ---
-description: >-
-  Decentralized Social is empowering an internet that’s creator-led, user owned,
-  and open to millions of developers around the world to build off one another.
+description: Decentralized Social(DeSo)项目，创造了一个以创作者为主导、用户具有主权、并向全球数百万开发者开放的互联网。
 ---
 
-# 🚀 DeSo Vision
+# 🚀 DeSo 愿景
 
 {% embed url="https://www.youtube.com/watch?v=kPPb_S5Ry5E" %}
-Learn about DeSo in 90-seconds — https://deso.com
+通过 90 秒来了解一下 DeSo.  — https://deso.com
 {% endembed %}
 
-## Moving from DeFi to DeSo <a href="#moving-from-defi-to-deso" id="moving-from-defi-to-deso"></a>
+## 从去中心化金融到去中心化社交 <a href="#moving-from-defi-to-deso" id="moving-from-defi-to-deso"></a>
 
-In this paper, we introduce DeSo, short for "**decentralized social**" the first and only blockchain custom-built from the ground up to power and scale a new category of decentralized social applications to one billion users.
+在本文中，我们介绍了DeSo（本项目的简称），这是第一个也是唯一一个从头开始为支持和扩展新型的去中心化社交应用（支持十亿用户）而定制构建的区块链。
 
-While much research has been dedicated to scaling "_decentralized finance_" or "_DeFi_" applications, relatively little has been invested in building blockchains that can scale social media applications, even though the latter category is arguably just as large, if not larger, and holds just as much promise for value creation.
+虽然已经有很多研究致力于去扩展"去中心化金融"或"DeFi"应用，但相对而言，很少有人把注意力放在构建可以扩展社交媒体应用的区块链，尽管后者的规模可能更大，创造价值的前景也更加广阔。
 
-Moreover, while several **general-purpose blockchains (Ethereum, Solana, Polygon, etc.)** tout their ability to scale to tens of thousands of "_transactions per second_", scaling up "_posts per second"_ is a very different problem.\
+此外，尽管一些**通用区块链（如以太坊、Solana、Polygon等）**宣称能够扩展到处理每秒数万笔"交易"，但扩展到每秒数万篇"帖子"是一个完全不同的问题。
+
+现有的区块链尚无法应对大规模社交媒体应用的存储和索引需求。
+
+如果用一个中心化的世界来打比方，**纽约证券交易所的基础设施与Facebook、Instagram或Twitter的基础设施截然不同** — 为了支持大规模的应用，它们采取了完全不同的架构。
+
+同样，DeSo的理念是，一个可以将去中心化社交应用扩展到十亿用户的区块链，可能看起来与一个可以将DeFi应用扩展到同一规模的区块链截然不同。
+
+因此，我们认为，加密货币的未来不是由一个统治一切的通用区块链构成，而是由一系列优势明显、专门针对特定应用类别的区块链构成。
+
+## 社交媒体的中心化
+
+DeSo代表了一个超过两年的努力，旨在创建一个能够使社交媒体领域去中心化的区块链，我们相信它为解决当今困扰社交媒体的现有问题提供了第一个明确的路径。
+
+如今，社交媒体的中心化程度甚至比比特币诞生前的金融行业还要高。一小部分私人公司实际上控制着公共话语权，并从甚至不是他们创造的内容中获得垄断性的利润。
+
+与此同时，实际创作这些内容的创作者，在当前这种过时的由广告驱动的商业模式下，获得的报酬偏低，投入产出不成正比，变现能力弱。
+
+除此之外，广告驱动的商业模式还迫使社交媒体公司为在其平台上创建的内容周围设置一个封闭的花园，阻止外部开发者在其基础上进行创新或构建应用，使用户和创作者别无选择，只能继续使用他们所控制的应用。
+
+这些问题源于用户今天创造的数据和内容是由少数公司私有的，而不是对全社会开发的，任何人都可以访问这些数据。&#x20;
+
+因为只有少数公司可以访问这些内容，所以只有这些公司可以策划有竞争力的信息流，只有这些公司可以开发具有竞争力的新功能和应用，以及只有这些公司可以变现这些内容——而这些内容甚至并非由这些公司创造。
+
+**我们陷入了一个循环：**
+
+1. 用户必须使用这些公司的应用，因为它们垄断了内容。
+2. 这迫使创作者继续向他们提供内容以获得曝光度。
+
+这导致了一个恶性循环，不断加强这些公司的地位，损害了创作者和整个社会。
+
+这些公司已经成功地围绕他们完全垄断的私人内容库创造了一个全球网络效应。
+
+此外，这种内容中心化似乎是无法避免的：将所有内容整合到一个池中是有价值的，因为这样可以实现全球范围内的策划，但无论我们委托谁来维护池子，最终都会像今天的中心化门户一样。
+
+如果我们找到一种方法，将网络效应转移到一个无人控制的公共内容池，那将是一个解决方案，_但这能做到吗？_
+
+我们相信，通过将社交媒体去中心化，与比特币和以太坊正在去中心化金融系统的方式相同，可以解决所有这些问题。
+
+特别是，比特币创建了一种将交易存储在没有单个实体可以垄断的分布式账本上的方法，这已经导致了金融行业的颠覆，我们相信这种技术现在可以扩展到首次运行社交网络而不需要依赖于中心化门户。
+
+比特币和以太坊已经证明，通过开放代码和开放数据的方式，可以把一个金融平台建立起来，而不一定是垄断数据并以牺牲其他人利益为代价造福股东的私人公司。
+
+比特币和以太坊没有给数据设置壁垒。
+
+事实上，它们越开放，越多人在其基础上构建，比特币和以太坊持有者获得的价值就越大。
+
+这种开放的软件模式已经在全球范围内，让金融机构，从银行到交易所做出了改变。我们认为，并且首次提出，将这种模式扩展到社交媒体领域，会改变现在社交媒体巨头及其过时的广告驱动的商业模式。
+
+如果我们可以开始将社交媒体内容放入公共区块链，而不是将其提供给少数私人公司来垄断，我们相信可以围绕该区块链创建足够强大的规模经济，足以与传统社交媒体巨头抗衡，甚至最终超越它们。
+
+这样，在某种程度上，我们可以解决独立创作者必须通过公司进行抱团的问题，让他们直接将内容贡献到一个新的全球共享资源池中，并且他们享有作品的归属权。这样一来，他们永远不会被中间人剥削，实现创作者不受单一公司控制的创举。
+
+## 最终愿景
+
+今天提交给Instagram、TikTok或Twitter的帖子属于这些公司，而不是发布它的创作者。这导致了资金向这些巨头集中而非个人。
+
+而作为对比，DeSo将所有数据存储在公共区块链上，这意味着世界上的任何人都可以运行一个节点，展示他们自己策划的信息流。
+
+如今，已有[超过100个项目](http://bithunt.com/explore)在DeSo上运行节点并构建应用。
+
+### 未来的“策展人”经济
+
+此外，没有理由其他“垂直化”的参与者不能进入市场，创建他们擅长策划的内容订阅。
+
+例如，想象一下，如果ESPN运营一个节点，策划最佳体育内容的订阅；或者Politico运营一个节点，策划最佳政治内容的订阅。
+
+此外，由于DeSo是完全开源的，这些参与者甚至可以定制他们的界面，构建自定义算法，以满足特定目标客户的需求。
+
+我们认为，这将迅速将我们从一个由少数巨头控制主导订阅的世界，转变为消费者可以选择的成千上万个具有特定关注点的订阅的世界。
+
+此外，将所有数据存储在公共区块链上，使得任何人，只需在一名工程师的帮助下就可以构建与现有市场主导者竞争的社交媒体体验。这在很大程度上降低了创建新社交媒体产品的门槛。
+
+现有的出版商可以轻松开发社交应用程序和体验，作为他们核心业务的直接补充，同时允许新兴企业在相对平等的基础上进行创新。而现在，构建一个有竞争力的社交应用程序通常需要首先构建一个拥有数十亿用户的数据壁垒。\
 \
-Today's blockchains are not currently equipped to handle the storage and indexing requirements of social media applications at scale.
+最好的部分是，运行节点策划自己订阅的任何人也会将数据回馈到公共区块链上的公共资料池。
 
-To use an analogy from the centralized world, **the infrastructure that powers the New York Stock Exchange today is vastly different from that which powers Facebook, Instagram, or Twitter** — they have completely different architectures tailored to support their respective applications at a massive scale.
+在ESPN的节点上发布或点赞的内容可以在Politico的订阅中显示。在中国发表的帖子可以在美国节点上的订阅中显示，反之亦然。
 
-Similarly, our thesis with DeSo is that a blockchain that can scale decentralized social applications to one billion users will likely look vastly different than a blockchain that can scale DeFi apps to the same level.
+随着每个节点的运行，更多的内容被贡献回区块链上的全球数据池，这使得网络上的其他节点变得更加强大，对用户更具吸引力。
 
-Thus, we believe the future of crypto does not consist of a single general-purpose blockchain that rules them all, but rather a series of dominant, specialized blockchains, each tailored to a particular category of applications.
+从某种意义上说，DeSo可以解决独立出版商之间的集体行动问题：他们不再被迫为一家大型公司私有的、与他们利益不一致的数据池做贡献，而是可以为无人控制且永远不会被剥离的公共数据池做贡献。
 
-## Centralization of Social Media
+这样一来，我们可以从一个数据被严密守护、私有化的世界，转变为一个数据更像是全球可访问公用设施的世界，任何人都可以在其基础上构建。
 
-DeSo represents a more than two-year effort to create a blockchain capable of decentralizing the social media category, and we believe it presents the first clear path to solving the existing problems that plague social media today.
+值得注意的是，出版商将数据回馈到区块链上有很强的激励机制，因为如果不这样做，顶级创作者可能不愿在这些平台上发布内容。
 
-Today, social media is even more centralized than the financial industry was, prior to the creation of Bitcoin. A handful of private companies effectively control public discourse and earn monopoly profits off of content that they don't even create.
+毕竟，当你可以将内容发布到区块链上，并让你的帖子立即在互联网上运行的每个节点/订阅中可用时，为什么要仅在一个封闭的平台上发布，让它独家拥有你的数据呢？
 
-Meanwhile, the creators who actually produce this content are underpaid, under-engaged, and under-monetized thanks to an outdated ads-driven business model.
+我们认为，以上所有这些都可以为创作者提供前所未有的广泛曝光范围，以及比现有平台更直接的与粉丝互动关系。但曝光范围只是硬币的一面，另一面是盈利能力。
 
-In addition to all of this, the ads-driven business model also forces social media companies to keep a walled garden around content created on their platforms, preventing external developers from innovating or building apps on top of it and giving users and creators no choice but to continue using apps that solely they control.
+### 未来的“创作者”经济
 
-These problems stem from the fact that the data and content created by users today are privately owned by a handful of companies, rather than publicly accessible as an open utility.
+社交代币、社交NFT和社交打赏等三类由DeSo引领的产品，已经在改变互联网创作者的盈利方式，但这仅仅是个开始。
 
-Because only a handful of companies have access to the content, only these companies can curate competitive feeds, only these companies can build competitive new features and apps, and only these companies can monetize this content — content that isn't even created by these companies in the first place.
+因为DeSo是基于货币的开源平台，全球任何人都可以通过在DeSo之上构建应用程序来尝试为创作者提供新的盈利方式。
 
-**We're stuck in a loop:**
+例如，设想一位大型创作者希望开始以月度订阅的形式提供高级内容。
 
-1. Users have to use these companies' apps because they have a monopoly on the content.
-2. This forces creators into continuing to give their content up to them in order to get reach.
+只要他在DeSo上构建这个功能，整个DeSo应用程序生态系统就可以立即获得相同的订阅功能。
 
-This results in a vicious cycle that continues to empower these companies at the expense of creators and society as a whole.
+同样的情况也适用于其他功能，例如创作者可以被付费转发内容或付费回答粉丝的消息的收件箱。
 
-These companies have managed to create a global network effect around a private pool of content that they solely monopolize.
+这同样适用于其他方面，如检测有害内容或清除垃圾邮件等，全球最优秀的机器学习研究者可以自由地构建他们的解决方案，无需征求数据许可，无论他们身在何处，都可以访问到DeSo的全部数据。
 
-Moreover, this centralization of content seems unavoidable: There's value in combining all of the content into a single pool, since it allows for curation at a global scale, but whoever we put in charge of maintaining the pool is ultimately going to become a centralized gatekeeper like what we have today.
+### 开放标准的未来
 
-A solution would arise if we had a way to shift the network effect to a public pool of content that no individual entity controls — _but can it be done?_
+DeSo区块链本质上是一个开放协议，全世界可以共同构建，我们相信这将最终创造出更多释放创作者潜能的方式，为社交媒体带来竞争和创新。
 
-We believe all of these problems can be solved by decentralizing social media in the same way Bitcoin and Ethereum are decentralizing the financial system.
+此外，由于DeSo具有货币属性，新的参数可以用于更有效地对内容进行排名。例如，bitclout.com应用程序启动的第一个实验是根据评论者的社交代币价格对评论进行排名。
 
-In particular, Bitcoin created a way to store transactions on a public ledger that no individual entity can monopolize, which has led to the disruption of the financial industry, and we believe this technology can now be extended, for the first time, to run a social network without needing to rely on a centralized gatekeeper.
+令人惊讶的是，这个极简的排名机制已经产生了与中心化平台相抗衡的效果。根据代币价格对消息进行排名也显著减少了对创作者的垃圾邮件，这是DeSo应用程序独有的特点，而这仅仅是个开始。
 
-Bitcoin and Ethereum have shown that dominant platforms can be built around open code and open data, rather than around private companies that monopolize their data and benefit shareholders at the expense of everyone else.
+想象一下，一旦全球开始在DeSo上构建和贡献，基于“$DESO信号”的其他功能将会被创造出来。
 
-Bitcoin and Ethereum don't have data moats to protect.
+最后，值得一提的是，我们从头设计了DeSo，使得系统的激励机制能够保持去中心化，即使在长期运行中也是如此。创作者有强烈的动力将内容直接发布到区块链上，而不是发布到一个将内容从区块链上扣押的中心化应用上。
 
-In fact, the more open they are and the more people that build on top of them, the more value accrues to Bitcoin and Ethereum holders.
+而且，开发者几乎不可能失去对数据或API的访问权限，因为所有数据都是公开的，存储在区块链上，而且当他们运行节点时，他们已经拥有了所有数据。
 
-This open model for software is already disrupting financial institutions all over the world, from banks to exchanges, and we think, for the first time, this model can be extended to disrupt the social media giants and their outdated ads-driven business models.
+将这与传统社交媒体公司相比，传统社交媒体公司一开始开放以建立网络效应，然后在建立了赢家数据壁垒之后关闭访问权限。
 
-If we can start putting social media content into a public blockchain, rather than giving it to a handful of private companies to monopolize, we believe we can create an economy of scale around that blockchain that is powerful enough to rival, and ultimately surpass, what the traditional social media giants have created.
+有了您的帮助，我们希望将DeSo区块链建设成一个能够为人类带来持久正面影响的力量，重新为互联网带来竞争和创新。互联网最初是一个基本去中心化的生态系统，但我们现在处在一个历史节点，资源高度集中，创新比过去更为困难。
 
-In some sense, we can solve a collective action problem among independent publishers by making it individually rational for them to contribute their content to a new globally-shared pool that they can never be di-intermediated from and that, for the first time, isn't controlled by a single company.
+经过过去几年的深思熟虑，我们确信，历史的钟摆将重新回到去中心化的方向，也许是永久性的，而我们都有机会成为其中的一部分。
 
-## The Ultimate Vision
-
-Today, a post submitted to Instagram, TikTok, or Twitter belongs to these corporations, rather than the creator who posted it. And the monetization goes predominantly to these corporations as a result.
-
-In contrast, DeSo stores all of its data on a public blockchain, which means that anyone in the world can run a node that exposes their own curated feed.
-
-Today, there are [over 100 other projects](http://bithunt.com/explore) running nodes and building apps on DeSo as well.&#x20;
-
-### The Future "Curator" Economy
-
-Moreover, there is no reason why other "verticalized" players can't enter the market to create feeds that they're uniquely suited for curating.
-
-For example, imagine if ESPN ran a node that curated a feed of the best sports content. Or if Politico ran a node that curated a feed of the best political content.
-
-Additionally, since DeSo is fully open-source, these players could even customize their UI and build custom algorithms to rank the influencers and posts in a way that serves their specific target customers.
-
-We think this will quickly move us from a world in which a handful of juggernauts control the dominant feeds to one in which consumers will have thousands of feeds to choose from, each with its own specific focus.
-
-On top of that, storing all of the data on a public blockchain makes it so that, with one engineer, anyone can build a social media experience that's competitive with the existing incumbents. It cannot be overstated the extent to which this lowers the barrier to entry for creating new social media products.
-
-It becomes possible for existing publishers to trivially spin up social apps and experiences as direct adjacencies to their core business, and allows upstarts to innovate on a relatively even footing with megacorps for the first time.\
-\
-Compare this to today where building a competitive social app generally requires building a billion-user data moat first.
-
-The best part is that anyone who runs a node to curate their own feed also contributes data back to the public pool of profiles, posts, follows, etc... that's stored on the public blockchain.
-
-A post or a like on ESPN's node can be surfaced on Politico's feed. A post made in China can be surfaced on a feed running on a node in America and vice versa.
-
-And with every node that runs, more content gets contributed back to the global data pool stored on the blockchain, making every other node on the network more powerful and more engaging to users.
-
-In some sense, DeSo can solve a collective action problem among independent publishers: Instead of being forced to contribute to a privately-owned data pool controlled by a megacorp who's not aligned with them, publishers can now contribute to a public data pool that nobody controls and that they'll never be dis-intermediated from.
-
-Thus we can move from a world in which data is a heavily guarded, privately-owned resource to one in which it is more like a globally accessible utility that anyone can build on.
-
-Importantly, there is a strong incentive for publishers to contribute data back to the blockchain because not doing so would deter the top creators from wanting to publish on them.
-
-After all, why would you publish solely on a closed platform that exclusively owns your data when you could additionally publish to the blockchain and have your post instantly available to every node/feed that's running on the internet?
-
-We think all of the above can give the creators unprecedented reach, and a more direct relationship with their followers than has been afforded to them with existing platforms. But reach is only one side of the coin — the other side is monetization.
-
-### The Future "Creator" Economy
-
-Social tokens, social NFTs, and social tipping, three categories of products pioneered by DeSo, are already changing the game in terms of how creators monetize on the internet, but they're only the beginning.
-
-Because DeSo is money-native and open-source, anyone in the world can start to experiment with new ways for creators to monetize by building an app on top of DeSo.
-
-For example, imagine a major creator who wants to start offering premium content in exchange for a monthly subscription.
-
-All it takes is for one person on the internet to build this feature, and the entire ecosystem of DeSo applications gets access to it instantly.
-
-The same goes for other features like an inbox where creators can be paid to repost content, or paid to answer messages from their followers.
-
-And this goes for other things like detecting harmful content or weeding out spam, where the best machine learning researchers in the world can build solutions, with access to the full firehose of data, without asking for permission, no matter where they are.
-
-### The Future of Open Standards
-
-The DeSo blockchain is fundamentally an open protocol that the entire world can build on collaboratively, which we believe will ultimately create even more ways to unlock creators' true potential, and which will bring competition and innovation back to social media.
-
-Moreover, because DeSo is money-native, new signals emerge that can be used to rank content more effectively. For example, the first experiment that was launched by the bitclout.com app was ranking comments by the social token price of the commenter.
-
-Amazingly, this extremely simple ranking mechanism has already produced results that are competitive with centralized platforms. Ranking messages by coin price has also significantly reduced spam for influencers in a way that's truly unique to DeSo apps, and this is still just the beginning.
-
-Imagine what else will be built off of the "$DESO Signal" once the entire world starts building on and contributing to DeSo.
-
-Finally, it's important to mention that we designed DeSo from the ground up so that the incentives of the system keep it decentralized, even in the long run. Creators have a strong incentive to post directly to the blockchain, rather than to a centralized app that withholds their content from the blockchain.
-
-And there's virtually no possibility for developers to lose access to data or APIs because all the data is publicly available on the blockchain, and they already have all the data when they run a node.
-
-Compare this to traditional social media companies, which start open to build a network effect and then shut off access after they've built a winning data moat.
-
-With your help, we hope to build the DeSo blockchain into an enduring positive force for humanity that can bring competition and innovation back to the internet. The internet started as a fundamentally decentralized ecosystem, but we’re at a point in history where things have concentrated and where innovating is harder than it used to be.
-
-After much thought over the past several years, we are convinced that the pendulum will swing back toward decentralization, perhaps permanently, and we all have an opportunity to be a part of that.
-
-A new generation of applications that the entire world can build collaboratively, unlocking the full potential of human ingenuity.
+这将开启应用的新时代，使得全世界可以共同构建，解锁人类智慧的全部潜能。

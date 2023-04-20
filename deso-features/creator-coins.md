@@ -32,7 +32,7 @@ You can find someone’s profile either by searching for it or by visiting the c
 
 Creator coins are a new type of asset class that is tied to the reputation of an individual, rather than to a company or commodity.
 
-They are truly the first tool we have as a society to trade “social clout” as an asset. If people understand this, then the value of someone’s coin should be correlated to that person’s popularity.&#x20;
+They are truly the first tool we have as a society to trade “social clout” as an asset. If people understand this, then the value of someone’s coin should be correlated to that person’s popularity.
 
 For example, if Elon Musk succeeds in landing the first person on Mars, his coin price should theoretically go up.
 
@@ -96,17 +96,17 @@ Such a feature could serve as a stronger signal on what content is high quality 
 
 What can happen when you give people the ability to speculate on a person’s reputation?
 
-We can’t know for sure, but one feature that has emerged is what we call “buy and retweet.”&#x20;
+We can’t know for sure, but one feature that has emerged is what we call “buy and retweet.”
 
 Ordinarily, retweeting someone gives you nothing.
 
 If that person becomes a superstar because you boosted them, you’ll be lucky if they even remember your name in a few years.
 
-In contrast, with DeSo you can buy someone’s coin and then retweet them, which makes it so that you’re not only along for the ride financially if they blow up, but you also get bragging rights.&#x20;
+In contrast, with DeSo you can buy someone’s coin and then retweet them, which makes it so that you’re not only along for the ride financially if they blow up, but you also get bragging rights.
 
 Imagine the difference between being able to say “I retweeted her early on” vs being able to say “I bought her coin when it was $5 and now it’s $5000 — and by the way, I’ve done this hundreds of times, and I can prove it because my track record is on the blockchain.”
 
-The interesting thing about this mechanic is that it wasn’t even something consciously designed into the product. It exists as an “emergent” phenomenon off of the core creator coin mechanic.&#x20;
+The interesting thing about this mechanic is that it wasn’t even something consciously designed into the product. It exists as an “emergent” phenomenon off of the core creator coin mechanic.
 
 What other dynamics could exist that we haven’t yet thought of?
 
@@ -152,7 +152,7 @@ If you’d like to play with the numbers yourself, you can do so using [this she
 | 640                              | $19,660.80                   | $4,194,304                |
 | 1280                             | $78,643.20                   | $33,554,432               |
 
-![](<../.gitbook/assets/image (7) (3) (3) (3) (1).png>)
+![](<../.gitbook/assets/image (6) (1) (1).png>)
 
 ### Founder Rewards
 

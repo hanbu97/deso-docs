@@ -125,12 +125,12 @@
 * [📅 DeSo 路线图](deso-chinese/deso-roadmap.md)
 * [🛠 DeSo 技术栈](deso-chinese/deso-tech-stack.md)
 * [🌐 DeSo 应用](deso-chinese/deso-applications.md)
-* [💸 DeSo 钱包](<https://wallet.deso.com>)
-* [💬 DeSo 聊天](<https://chat.deso.com>)
+* [💸 DeSo 钱包](https://wallet.deso.com)
+* [💬 DeSo 聊天](https://chat.deso.com)
 
-### DeSo 区块链
+## DeSo 区块链
 
-* [1⃣ 裸金属](deso-chinese/deso-blockchain/bare-metal.md)
+* [1⃣ 裸机](deso-chinese/deso-blockchain/bare-metal.md)
 * [2⃣ 共识 (PoW & PoS)](deso-chinese/deso-blockchain/consensus-pow-and-pos.md)
 * [3⃣ 内容审查](deso-chinese/deso-blockchain/content-moderation.md)
 * [4⃣ 无限状态](deso-chinese/deso-blockchain/infinite-state.md)
@@ -138,7 +138,7 @@
 * [6⃣ 智能服务](deso-chinese/deso-blockchain/smart-services.md)
 * [7⃣ 用户安全](deso-chinese/deso-blockchain/privacy-and-security.md)
 
-### DeSo 特性
+## DeSo 特性
 
 * [1⃣ 关联](deso-chinese/deso-features/associations.md)
 * [2⃣ 创作者币](deso-chinese/deso-features/creator-coins.md)
@@ -146,13 +146,13 @@
 * [4⃣ 社交 NFT](deso-chinese/deso-features/social-nfts.md)
 * [5⃣ 社交打赏](deso-chinese/deso-features/social-tipping.md)
 
-### DeSo 代码
+## DeSo 代码
 
 * [1⃣ 架构概述](deso-chinese/deso-repos/architecture-overview/README.md)
   * [在本地设置节点和前端](deso-chinese/deso-repos/architecture-overview/dev-setup.md)
   * [进行首次更改](deso-chinese/deso-repos/architecture-overview/making-your-first-changes.md)
 
-### DeSo 身份
+## DeSo 身份
 
 * [1⃣ 身份：概述](deso-chinese/deso-identity/identity/README.md)
   * [核心概念](deso-chinese/deso-identity/identity/concepts.md)
@@ -164,12 +164,12 @@
   * [概述](deso-chinese/deso-identity/window-api/basics.md)
   * [终端](deso-chinese/deso-identity/window-api/endpoints.md)
 
-### DESO 前端
+## DESO 前端
 
 * [1⃣ 前端：开始](deso-chinese/deso-frontend/exchange-listing-api.md)
 * [2⃣ 前端：React 示例](deso-chinese/deso-frontend/exchange-listing-api-1.md)
 
-### DESO 后端
+## DESO 后端
 
 * [1⃣ 后端：配置](deso-chinese/deso-backend/configuration/README.md)
   * [入门](deso-chinese/deso-backend/configuration/onboarding.md)
@@ -215,20 +215,20 @@
   * [访问组终端](deso-chinese/deso-backend/api/access-group-endpoints.md)
 * [4⃣ 交易：API](deso-chinese/deso-backend/transaction-utilities.md)
 
-### DeSo 交易所上市
+## DeSo 交易所上市
 
 * [1⃣ 交易所上市：API](deso-chinese/deso-exchange-listings/exchange-listing-api.md)
 
-### DeSo 节点
+## DeSo 节点
 
 * [1⃣ 节点：需求](deso-chinese/deso-nodes/requirements.md)
 * [2⃣ 节点：设置](deso-chinese/deso-nodes/setup.md)
 * [3⃣ 节点：保持最新](deso-chinese/deso-nodes/node-staying-up-to-date.md)
 * [4⃣ 节点：常见问题](deso-chinese/deso-nodes/running-a-node.md)
 
-### 联系方式和社交媒体
+## 联系方式和社交媒体
 
 * [☀ DeSo 官网](https://deso.com)
 * [📑 DeSo 博客](https://diamondapp.com/u/deso?feedTab=Hot\&tab=blog)
-* [📬 联系我们](contact-and-media/contact-us.md)
-* [⚠ 举报账户或帖子](contact-and-media/reporting-an-account-or-post.md)
+*
+*

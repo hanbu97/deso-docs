@@ -8,13 +8,13 @@ Running a node gives you full access to the DeSo firehose. Access to every profi
 
 When you run a node, it starts with a blank global feed and an "Admin" panel that you can use to start adding posts to it.\
 \
-All of the same tools that the [Diamond](../diamondapp.com) team uses to manage their global feed are now available to you to manage a feed of your own. Essentially, running a DeSo node allows you to expose your own "view" of the firehose of content. \
+All of the same tools that the [Diamond](../diamondapp.com) team uses to manage their global feed are now available to you to manage a feed of your own. Essentially, running a DeSo node allows you to expose your own "view" of the firehose of content.\
 \
 [Diamond](https://diamondapp.com) exposes all of the crypto-related content, but when you run your own node you have full control to surface whatever content speaks to you.\
 \
 What will you do with your feed? Here are some ideas for feeds that we think would be popular:
 
-* **A feed for every country and every language.** Isn't it weird that people all over the world consume information curated predominantly by the US? \
+* **A feed for every country and every language.** Isn't it weird that people all over the world consume information curated predominantly by the US?\
   \
   How much does an engineer working in Silicon Valley really know about what people in other countries want to see, or what features they want?\
   \
@@ -24,16 +24,13 @@ What will you do with your feed? Here are some ideas for feeds that we think wou
   \
   For the first time, people who actually live in a country can curate a feed for their people, no matter how large or small their country is.\
   \
-  And this applies to every country that succumbed too quickly to the network effects of the Silicon Valley tech companies. By lowering the barrier to entry to creating a feed, and opening up the data firehose to anyone, we think DeSo has the potential to bring international social media products to a whole new level.\
-
+  And this applies to every country that succumbed too quickly to the network effects of the Silicon Valley tech companies. By lowering the barrier to entry to creating a feed, and opening up the data firehose to anyone, we think DeSo has the potential to bring international social media products to a whole new level.\\
 * **The politics-focused feed.** It is entirely possible to create a node that prioritizes political content. Imagine a feed where all the posts from the top political figures are highlighted.\
   \
-  You could even imagine segmenting the firehose into two feeds: a "red" feed and a "blue" feed that's dedicated to each political party.\
-
+  You could even imagine segmenting the firehose into two feeds: a "red" feed and a "blue" feed that's dedicated to each political party.\\
 * **The sports-focused feed.** Wouldn't it make sense for someone to operate a feed that just highlights all of the best sports content from the best sports influencers?\
   \
-  So many people are interested in this content, and we think it deserves its own feed.\
-
+  So many people are interested in this content, and we think it deserves its own feed.\\
 * **The NSFW feed.** Not all platforms will show NSFW content in their feed, for example because their user-base is too mainstream. This bias against NSFW content is even stronger with incumbent social media companies.\
   \
   Yet there are so many talented adult influencers on the DeSo blockchain, with thousands of followers, who are posting every day. It's about time they had their own feed dedicated to them.
@@ -88,10 +85,8 @@ The above being said, there are several ways that DeSo node operators can earn a
 
 * **Promoted content.** Because running a node comes with the ability to have a social media product with minimal marginal effort, every node operator has an opportunity to amass and monetize the reach that comes from curating a popular feed.\
   \
-  This can be as simple as showing promoted posts that partners pay the node operator to pin to their feed.\
-
-* **Trading fees.** Anyone who runs a node can modify their frontend to add trading fees on every creator coin trade, which go to the node operator's wallet. By doing this, any node operator basically doubles as a crypto exchange.\
-
+  This can be as simple as showing promoted posts that partners pay the node operator to pin to their feed.\\
+* **Trading fees.** Anyone who runs a node can modify their frontend to add trading fees on every creator coin trade, which go to the node operator's wallet. By doing this, any node operator basically doubles as a crypto exchange.\\
 * **Other transaction fees.** Any transaction users complete on one's node can be augmented to contain a small fee that goes to the node operator. Thus there should eventually arise an efficient market for node operator fees that are high enough to justify operating a node.
 
 The above mechanisms don't even factor in profits that could be derived from augmenting the DeSo feature set.\
@@ -108,7 +103,7 @@ Once a node is running, it syncs all of the blocks from its peers, as well as th
 \
 Every node comes with an Admin panel with a Network tab that allows you to monitor the node's sync state.
 
-![](<../.gitbook/assets/image-deso-7-1-2-2-2-2- (2) (1).png>)
+![](<../.gitbook/assets/image-deso-7-1-2-2-2-2- (2) (1) (1).png>)
 
 Once your node is synced, you have access to the full firehose of DeSo data in real-time!\
 \
@@ -131,11 +126,11 @@ Below are some tips on how to take full advantage of your node.
 
 To manage your feed, start by navigating to the Admin tab as shown below.\
 \
-The Admin tab shows the full firehose of posts in real-time, with a button next to each one that allows you to add it to the global feed. \
+The Admin tab shows the full firehose of posts in real-time, with a button next to each one that allows you to add it to the global feed.\
 \
 These are all the same tools that the [Diamond](https://diamondapp.com) mods have, now at your fingertips through the power of decentralization.
 
-![](<../.gitbook/assets/image-deso-2-8-1-2-2-2-2- (2) (1).png>)
+![](<../.gitbook/assets/image-deso-2-8-1-2-2-2-2- (2).png>)
 
 You can also add any post from anyone's profile to the global feed simply by hitting the dropdown at the top-right of the post.\
 \
@@ -145,12 +140,9 @@ You can also pin posts to your feed, which is a good way of communicating announ
 
 When you run a node, you act as a moderator and have a variety of superpowers that help you manage spam and harmful content.
 
-* **Blacklisting** a profile removes it everywhere except peoples' wallet pages. This makes it so that anyone who was holding the blacklisted profile can sell out of their holdings.\
-
-* **Graylisting** a profile removes it from the leaderboard, removes it from search, removes its comments from threads, and removes its posts from the Admin panel.\
-
-* **Whitelisting** a profile makes that user's posts show up on the global feed automatically with some frequency (currently it allows five posts per day).\
-
+* **Blacklisting** a profile removes it everywhere except peoples' wallet pages. This makes it so that anyone who was holding the blacklisted profile can sell out of their holdings.\\
+* **Graylisting** a profile removes it from the leaderboard, removes it from search, removes its comments from threads, and removes its posts from the Admin panel.\\
+* **Whitelisting** a profile makes that user's posts show up on the global feed automatically with some frequency (currently it allows five posts per day).\\
 * Finally, a mod can allow a phone number to be re-used to claim starter $DESO. This is useful for various testing situations.
 
 ![](<../.gitbook/assets/image-deso-4- (1).png>)
@@ -181,15 +173,13 @@ Super Admins can set two values in the `Super` tab to manage the price at which 
 
 This is the minimum price at which you are willing to sell $DESO on your node. If the price retrieved from exchange APIs is lower than this amount, your node will sell $DESO at this reserve price instead of the API price.\
 \
-Additionally, the price in the right sidebar will appear as reserve price in the event that the price from the API dips below the reserve price.\
-
+Additionally, the price in the right sidebar will appear as reserve price in the event that the price from the API dips below the reserve price.\\
 
 **Buy DeSo Fee Rate**
 
 This is a percentage-based fee applied to all $DESO purchased on your node. If the current price of $DESO in USD is $100 and the `Buy DeSo Fee Rate` is 5%, the buyer will pay $105 per $DESO and the node operator has earned $5 net.\
 \
-For more details on configuring your node to sell $DESO, please read the section titled `Sell $DESO on your node`.\
-
+For more details on configuring your node to sell $DESO, please read the section titled `Sell $DESO on your node`.\\
 
 ### Sell $DESO on your node
 

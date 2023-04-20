@@ -6,19 +6,19 @@ description: >-
 
 # Miner Endpoints
 
-{% swagger method="post" path="" baseUrl="/api/v0/get-block-template" summary="Get Block Template" expanded="false" %}
+{% swagger method="post" path="" baseUrl="/api/v0/get-block-template" summary="Get Block Template" %}
 {% swagger-description %}
 Get the template for the next block
 
 Endpoint implementation in [backend](https://github.com/deso-protocol/backend/blob/709cbfbc62cf3a0e6d56c393e555fc277c93fb76/routes/miner.go#L56).
 
 Example usages in frontend:\
-&#x20; \- Make request to [Get Block Template](https://github.com/deso-protocol/frontend/blob/e006beb72867f6d48a78adb1d126c66144a4298c/src/app/backend-api.service.ts#L584)\
-&#x20; \- Use GetBlockTemplate to [show stats on the next block in the admin panel](https://github.com/deso-protocol/frontend/blob/e006beb72867f6d48a78adb1d126c66144a4298c/src/app/admin/admin.component.ts#L405)
+\- Make request to [Get Block Template](https://github.com/deso-protocol/frontend/blob/e006beb72867f6d48a78adb1d126c66144a4298c/src/app/backend-api.service.ts#L584)\
+\- Use GetBlockTemplate to [show stats on the next block in the admin panel](https://github.com/deso-protocol/frontend/blob/e006beb72867f6d48a78adb1d126c66144a4298c/src/app/admin/admin.component.ts#L405)
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="PublicKeyBase58Check" type="String" required="true" %}
-Public key to swap in for the block reward 
+Public key to swap in for the block reward
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" required="true" type="int64" name="NumHeaders" %}
@@ -72,7 +72,7 @@ Endpoint implementation in [backend](https://github.com/deso-protocol/backend/bl
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="PublicKeyBase58Check" required="true" type="String" %}
-Public key to swap in for the block reward 
+Public key to swap in for the block reward
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="Header" type="Byte[]" required="true" %}

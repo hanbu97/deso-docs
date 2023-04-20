@@ -75,7 +75,7 @@ Let's take a look at what each of these fields mean:
 
 You should index requests by `id` so that you can match them with responses.
 
-We recommend looking at the [DeSo Protocol sourcecode](https://github.com/deso-protocol/frontend) to see how this could be implemented.&#x20;
+We recommend looking at the [DeSo Protocol sourcecode](https://github.com/deso-protocol/frontend) to see how this could be implemented.
 
 In particular, you could trace through the `send()` method on [line #257 in `src/app/identity.service.ts`](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L257).
 
@@ -97,7 +97,7 @@ When a user visits a DeSo application in Safari they will see a "Tap anywhere to
 
 Here's how it looks for the user:
 
-![iframe UI for granting storage access](<../../.gitbook/assets/Screenshot from 2021-11-28 15-45-23.png>)
+![iframe UI for granting storage access](<../../.gitbook/assets/Screenshot from 2021-11-28 15-45-23 (1).png>)
 
 To simplify this process, there's a special API call that you should perform, called `info`, that will indicate if you should display the iframe window to the user.
 
@@ -155,7 +155,7 @@ Third party cookies are required for Identity to securely sign transactions.
 
 If neither localStorage nor cookies are available, the `info` returns `browserSupported: false` and your application should inform the user they will not be able to use Identity to sign or decrypt anything.
 
-When a user clicks "Tap anywhere to unlock your wallet," the iframe will indicate it by sending a `storageGranted` message.&#x20;
+When a user clicks "Tap anywhere to unlock your wallet," the iframe will indicate it by sending a `storageGranted` message.
 
 This request does not expect a response. When your application receives the `storageGranted` message it can hide the `iframe` window from the user and the iframe is now ready to receive `sign` and `decrypt`, etc. messages.
 

@@ -6,7 +6,7 @@ description: Description of steps required to download and start your node
 
 Setting up a Deso Node is a simple process, but first verify that you have both [#docker](requirements.md#docker "mention") and [#git](requirements.md#git "mention") installed.
 
-### Cloning The Repository&#x20;
+### Cloning The Repository
 
 Create a folder where you want your node to be held then open your terminal of choice in that location.
 
@@ -16,9 +16,9 @@ Execute the command `git clone` [`https://github.com/deso-protocol/run.git`](htt
 
 ### Download The Containers
 
-Once the installation is complete navigate to the run folder with `cd run` and execute the command `./run.sh`&#x20;
+Once the installation is complete navigate to the run folder with `cd run` and execute the command `./run.sh`
 
-![](../.gitbook/assets/run-sh-1.PNG)
+![](<../.gitbook/assets/run-sh-1 (1).PNG>)
 
 A small terminal will appear and automatically download the containers for the node's frontend, backend, and nginx. This may take a few minutes.
 
@@ -26,4 +26,4 @@ Note in order to turn your node on or off open the Docker GUI navigate to the co
 
 ![](../.gitbook/assets/docker-toggle-container.PNG)
 
-Congratulations, your Deso node is now running locally! Navigate to [http://deso.run](http://deso.run/) or `locahost:8080` in your browser to see your local instance.&#x20;
+Congratulations, your Deso node is now running locally! Navigate to [http://deso.run](http://deso.run/) or `locahost:8080` in your browser to see your local instance.

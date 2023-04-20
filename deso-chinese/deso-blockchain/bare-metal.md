@@ -1,53 +1,63 @@
 ---
-description: Social features on highly-scalable bare-metal architecture
+description: 高度可扩展裸机架构上的社交特性
 ---
 
-# 1⃣ Bare Metal
+# 1⃣ 裸机
 
-In terms of architecture, a good way to understand DeSo is to imagine a Bitcoin node, only evolved to be able to handle a much wider array of transaction types than just sending/receiving money, with a vast amount of custom storage and indexing logic tailor-made to support social features at scale.
+从架构角度来看，理解DeSo的一个好方法是将其想象成一个比特币节点，只是演化为能够处理比仅发送/接收货币更广泛的交易类型，具有大量定制的存储和索引逻辑，以支持大规模的社交特性。
 
-### Code Walkthrough
+### 代码解析
 
-For developers who are interested in diving into the lower-level specifics, [this developer guide](../deso-repos/architecture-overview/dev-setup.md) is a good starting point, and this [code walkthrough](../deso-repos/architecture-overview/) is the best way to fully internalize how everything fits together. It may look dense, but it is written in plain English, and shouldn't take more than an hour or two to fully internalize.\
-\
-For non-developers, the best way to understand DeSo's architecture and its advantages is to continue to the next section, which explains things in high-level terms.
+对于对底层细节感兴趣的开发人员，[在本地设置节点和前端](../deso-repos/architecture-overview/dev-setup.md) 这是一个很好的起点，而[代码漫步](../deso-repos/architecture-overview/)是充分理解所有内容如何组合在一起的最佳方式。它看起来可能很紧凑，但是用简单的语言书写，完全理解它不应该花费超过一两个小时。
 
-### Storage & Indexing at Scale
+对于非开发人员而言，要了解DeSo的架构及其优势，最好的方法是继续阅读下一部分，其中用高层次的术语来解释相关概念。
 
-While traditional blockchains like Ethereum are extraordinary for creating open financial ecosystems, they are not designed to scale to handle the storage and indexing requirements of running competitive social media applications.
+### 大规模存储与索引
 
-For example, DeFi applications typically require the updating of balance entries in-place, without creating a new "state," whereas every post on a social platform creates a new state that needs to be stored and indexed in a certain way.
+尽管传统的区块链（如以太坊）在创建开放金融生态系统方面表现出色，但它们并未设计成能够扩展，以处理竞争性社交媒体应用的存储和索引需求。
 
-Many issues like this make social media a special use case that we believe needs to be unbundled, and given its own dedicated architecture, in order to be properly served.
+例如，DeFi应用通常需要在原值处更新余额，而不是创建一个新的“状态”。而在社交平台上，每篇帖子都会创建一个需要以特定方式存储和索引的新状态。
 
-DeSo's biggest advantage lies in the fact that it is _**not**_ a general-purpose blockchain.
+诸如此类的许多问题使得社交媒体成为一个特殊的用例，我们认为需要将其拆分，并为其提供专用的架构，以便提供妥善的服务。
 
-Instead, it supports a narrow set of social-oriented features that it implements on bare metal, using custom indexes that every node builds during consensus when it syncs from its peers.
+DeSo的最大优势在于它并非通用区块链。
 
-In contrast, general-purpose blockchains must run all functions through a virtual machine, which is typically orders of magnitude slower than running on bare metal, and even then they cannot build custom indexes for querying as they sync.
+相反，它支持一系列狭义的社交导向特性，并在裸机上实现，使用自定义索引，每个节点在与同伴同步时达成共识。
 
-As a very simple example, consider a social transaction that updates one's username.
+相比之下，通用区块链必须通过虚拟机运行所有功能，而这通常比在裸机上运行慢几个数量级。即使如此，它们在同步时也无法构建用于查询的自定义索引。
 
-A node needs to check that the username is not currently held by another user before it allows this transaction to go through.
+举一个非常简单的例子，考虑一个更新用户名的社交交易。
 
-_Simple, right_? Except that when you have just a million users, this lookup becomes prohibitively expensive on even the most advanced general-purpose blockchains today.
+节点需要在允许此交易进行之前检查用户名是否已被其他用户占用。
 
-In contrast, because DeSo can support this lookup with access to bare metal, it can cheaply and efficiently create a simple key-value index that is as fast as it would be for a centralized social application, and that can even be sharded across multiple disks or nodes as the user-base grows.&#x20;
+_简单吧？_然而，当你拥有一百万用户时，即使在今天最先进的通用区块链上，这种查找也变得极为昂贵。
 
-### Advantages of Bare Metal
+相比之下，由于DeSo可以通过裸机访问来支持这种查找，因此它可以以与中心化社交应用一样快的速度，廉价且高效地创建一个简单的键值索引，而且随着用户基数的增长，甚至可以在多个磁盘或节点上进行分片。
 
-The advantages of bare metal only increase as usage increases and as more use-cases are considered.
+### 裸机的优势
 
-For example, checking that a parent post exists before allowing someone to reply, or even checking that an NFT is for sale before allowing someone to place a bid (noting that Ethereum's lack of support for on-chain bidding has caused significant centralization and concentration to occur around NFT marketplaces).
+随着使用的增加和更多用例的考虑，裸机运行的优势只会增加。
 
-As another simple example, consider displaying a simple list of a user's most recent posts.
 
-Because general-purpose blockchains do not generally support ordered lists, this is not even possible without building an off-chain index.
 
-In contrast, DeSo natively supports indexes such as posts ordered by timestamp, profiles ordered by the value of their coin, NFT bids organized by which NFT they're associated with, and much more, and all of these indexes can scale as the user-base grows.
+例如，在允许某人回复之前检查父帖子是否存在，或者在允许某人出价之前检查NFT是否出售（请注意，以太坊对链上竞拍的支持不足导致了NFT市场集中于同步平台和中心化现象）。
 
-This significantly reduces the complexity of running a node, which in turn can significantly increase the decentralization of the ecosystem, and the number of apps that can be built on top of DeSo.
+再举一个简单的例子，考虑展示用户最近帖子的简单列表。
 
-As one final example, even the mempool of DeSo nodes was written from scratch to support queries for social data, without requiring users to have to wait for blocks to mine.
+因为通用区块链通常不支持有序列表，所以如果不构建离链索引，这甚至是不可能实现的。
 
-This seemingly minor optimization is critical in order for DeSo apps to feel "**instant**," and we believe DeSo would not be competitive with traditional centralized social apps without it.
+相比之下，DeSo天然支持诸如按时间戳排序的帖子、按代币价值排序的个人资料、按关联NFT组织的NFT竞拍等索引，而且这些索引随着用户基数的增长可以扩展。
+
+这大大降低了运行节点的复杂性，从而可以显著提高生态系统的去中心化程度，以及可以在DeSo之上构建的应用数量。
+
+增加。例如，在允许某人回复之前检查父帖子是否存在，或者在允许某人出价之前检查NFT是否出售（请注意，以太坊对链上竞拍的支持不足导致了NFT市场的显著集中化和中心化现象）。
+
+再举一个简单的例子，考虑展示用户最近帖子的简单列表。因为通用区块链通常不支持有序列表，所以如果不构建离链索引，这甚至是不可能实现的。
+
+相比之下，DeSo天然支持诸如按时间戳排序的帖子、按代币价值排序的个人资料、按关联NFT组织的NFT竞拍等索引，而且这些索引随着用户基数的增长可以扩展。
+
+这大大降低了运行节点的复杂性，从而可以显著提高生态系统的去中心化程度，以及可以在DeSo之上构建的应用数量。
+
+最后一个例子，DeSo节点的内存池甚至是从零开始编写的，以支持社交数据查询，而无需让用户等待区块确认。
+
+这个看似微不足道的优化对于DeSo应用具备“即时”感至关重要，我们相信，如果没有它，DeSo将无法与传统的中心化社交应用竞争。

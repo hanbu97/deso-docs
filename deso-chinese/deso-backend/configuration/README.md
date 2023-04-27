@@ -2,29 +2,26 @@
 description: Overview of the configuration flags for running your own backend
 ---
 
-# 1⃣ Backend: Config
+# 1⃣ 后端：配置
 
-**Core Protocol:**Trying to build the next great social app on top of the DeSo blockchain or running a node and want to know the ins-and-outs of all the endpoints?
+\*\*核心协议:\*\*想在 DeSo 区块链上构建下一个伟大的社交应用，还是想运行一个节点并了解所有接口的细节？
 
-This section is for you.
+这一部分就是为你准备的。
 
-Compared to private, monopolized Web2 social media, all of the data on the DeSo blockchain is public and lives on-chain.
+相较于私有的、垄断的 Web2 社交媒体，DeSo 区块链上的所有数据都是公开的，且存储在链上。
 
-This means that **anybody can access this information and build their own application** using that data.&#x20;
+这意味着**任何人都可以访问这些信息，并使用这些数据构建自己的应用**。
 
-However, blockchains require transactions and cryptography to validate information.&#x20;
+然而，区块链需要交易和密码学来验证信息。
 
-We know this can be a hassle, so we've built this API along with the [Broken link](broken-reference "mention") service to make it easy for you, the developer, to focus on what matters: building your application.&#x20;
+我们知道这可能会带来麻烦，因此我们为你（开发者）提供了[身份：概述](../../deso-identity/identity/)这个 API 和服务，让你专注于最重要的事情：构建应用程序。
 
-There is no need to define and maintain your own database schema and write logic to extract data from the chain to get started building and writing and reading new data on-chain.&#x20;
+在开始构建并在链上读写新数据时，无需定义和维护自己的数据库，也无需编写从链中提取数据的逻辑。
 
-To write data to the blockchain, all you need is the Backend API, which you can use to construct transactions with the[construct-transactions](../construct-transactions/ "mention") and then submit them with [#submit-a-transaction](../transaction-utilities.md#submit-a-transaction "mention") endpoint, and Identity, which you can use to [#sign](../../deso-identity/iframe-api/endpoints.md#sign "mention") transactions.
+要将数据写入区块链，你只需要后端 API，用[construct-transactions](../construct-transactions/ "mention")来构建交易，然后使用[#submit-a-transaction](../transaction-utilities.md#submit-a-transaction "mention") 接口提交它们，还需要 Identity，用[#sign](../../deso-identity/iframe-api/endpoints.md#sign "mention")来对交易进行签名。
 
-To read data, you can use our [api](../api/ "mention") endpoints to retrieve everything you need.
+要读取数据，你可以使用我们的[api](../api/ "mention") 接口来检索所需的一切信息。
 
-As a developer, all you need to do is implement the frontend (or modify the reference implementation) and any custom logic around the data you receive from the backend endpoints.
+作为开发者，你需要做的就是实现前端（或修改参考实现）以及围绕从后端接口接收的数据的实现任何自定义逻辑。 如果你正在运行自己的节点并使用参考后端实现，那么有许多可用的标志供你管理节点上的行为和功能。
 
-If you're running your own node and using the reference backend implementation, there are a wide variety of flags that are available to you to manage behavior and functionality on your node.
-
-Each section below describes a set of flags related to certain functionality.
-
+以下的每个张杰都描述了与某些功能相关的一组参数配置。

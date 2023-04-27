@@ -1,101 +1,77 @@
 ---
-description: Scaling decentralized social networks with an innovative PoS roadmap
+description: 将去中心化社交网络通过创新的 PoS 路线进行扩展
 ---
 
-# 2⃣ Consensus (PoW & PoS)
+# 2⃣ 共识 (PoW & PoS)
 
-## Revolution PoS announced on March 2023
+## 2023年3月宣布的革命性PoS
 
-DeSo [recently announced](https://diamondapp.com/u/nader/blog/the-next-phase-of-deso-revolution-proof-of-stake-bitclout-20?feedTab=Hot) a switch to Proof of Stake in 2023 with a first look at a detailed proposal.
+DeSo[最近宣布](https://diamondapp.com/u/nader/blog/the-next-phase-of-deso-revolution-proof-of-stake-bitclout-20?feedTab=Hot)将于2023年转向权益证明机制，并首次公开了详细提案。
 
-Read the breakthrough **Revolution Proof of Stake** whitepaper here:\
+在此处阅读突破性的**Revolution Proof of Stake**白皮书：\
 \
-[https://revolution.deso.com/](https://revolution.deso.com/) (pw = _decentralization_)
+[https://revolution.deso.com/](https://revolution.deso.com/) (密码 = _decentralization_)
 
-## From PoW to PoS
+## 从 PoW 到 PoS
 
-Today, DeSo runs a hybrid Proof of Work consensus mechanism that allows it to use far less energy than Bitcoin or Ethereum while remaining secure against 51% attacks.
+如今，DeSo运行在混合的工作量证明共识机制之上，使其能够比比特币或以太坊使用更少的能源，同时仍然保持安全免受51%攻击。
 
-Its current power consumption can be estimated via websites such as bitpool.me, and we believe it to be significantly less than 500 Kilowatts.
+可以通过bitpool.me等网站估算DeSo网络当前的功耗，并且我们认为它显著低于500千瓦。
 
-This being said, the core development team behind DeSo has invested significant resources into developing a groundbreaking proof of stake proposal that we expect to reveal in the coming weeks, and that we expect to launch before the end of the year 2023.
+尽管如此，DeSo背后的核心开发团队仍然在探索更合适的共识机制，已经投入了大量资源来开发一项具有突破性意义的权益证明提案，预计在未来几周内我们将揭示该提案，并在2023年底之前推出。
 
-Importantly, this proposal, like everything else with DeSo, will be especially well-suited to supporting the unique constraints of social applications.
+重要的是，与DeSo其他所有内容一样，这个提议将特别适合社交应用，解决社交应用程序所面临的独特问题。
 
-## A Simplified Scaling Roadmap
+## 一个简化的扩容路线
 
-There are currently many different, and suitable, ways that the DeSo architecture can be scaled to support one billion users.
+目前有许多不同且适合的方式可以对DeSo架构进行扩展，以支持10亿用户。
 
-Fundamentally, as long as the feature set is kept sufficiently narrow, with an intense focus on keeping everything as close to bare metal as possible, then most of the tools and lessons of scaling centralized social platforms like Instagram can be directly applied to scaling DeSo.
+从根本上说，只要功能集保持足够狭窄，并专注于尽可能地在裸机运行一切，那么大多数像Instagram这样的中心化社交平台所使用的扩容方案和经验教训都可以直接应用于DeSo的扩容。
 
-The above being said, we think it's valuable to provide a scaling roadmap with calculations so that blockchain enthusiasts can take comfort in the existence of a concrete path to one billion users.
+鉴于上述情况，我们认为提供一个经过计算的扩容路线图是有价值的，以便区块链爱好者可以对实现十亿用户的具体目标感到安心。
 
-Below, we detail a concrete scaling roadmap with four relatively straightforward phases:
+以下是一个具体的扩展路线图，包括四个相对简单的阶段：
 
-* **Phase 1:** Proof of Stake
-* **Phase 2:** Bigger Blocks
-* **Phase 3:** Warp Sync
-* **Phase 4:** Sharding
+* **阶段1**：权益证明（Proof of Stake）
+* **阶段2**：更大的区块
+* **阶段3**：Warp同步
+* **阶段4**：分片
 
-The math below walks through DeSo scalability at each stage:
+以下是DeSo在每个阶段的扩容量的数学计算：
 
-1. **Proof of Stake**
-   * While PoS is not strictly required in order to scale DeSo, it is a top priority regardless, and so it will either precede or happen in parallel with the other scaling steps.\
-
-2. **Bigger blocks**
-   * The average DeSo blockchain post size is **218 bytes**.\
-
-   *   There are 10 other [transaction types](https://github.com/deso-protocol/core/blob/135c03a/lib/network.go#L239) besides `POST`, such as `LIKE` and `FOLLOW`. In a recent block, posts were about **1/3** of the total block size.\
-
+1. **权益证明（Proof of Stake）**
+   * 虽然PoS并不是DeSo扩容的必要条件，但它仍然是一个头等大事，因此，它将在其他扩展步骤之前或与之同时进行。\\
+2. **更大的区块**
+   * DeSo区块链的平均帖子大小为**218字节**。\\
+   *   除了POST之外，还有10种其他[交易类型](https://github.com/deso-protocol/core/blob/135c03a/lib/network.go#L239)，例如LIKE和FOLLOW。在最近的一个区块中，帖子大约占区块总大小的**1/3**。\\
 
        <img src="https://lh4.googleusercontent.com/YSLyEVtV0Ynx--mta7IP3QS5aVrZiq7MBVmIc9h9bZwbCrLXXTIIDzO2Gm9RYOjaqQONhOju-F7RvaTIVO6vWJ5AMASXIYHMI4z9sjK3acpoXOmhRHX99-35qS4I54KBl2C3zjnH" alt="" data-size="original">
-   * The DeSo blockchain currently produces up to 2MB blocks every 5 minutes.\
-
-   * So it can scale to \~30 transactions per second, **which is \~10 posts per second** (= 2e6 bytes/block / (218 bytes/post \* 60 seconds/minute \* 5 minutes/block) \* 1 post / 3 transactions).\
-
-   * If we increase the block size to 16MB blocks every five minutes, we can roughly extrapolate that it scales to \~240 transactions per second = **\~80 posts per second**.\
-
-   * For comparison, Twitter has approximately [6000 posts/second](https://www.dsayce.com/social-media/tweets-day/) on average with 300M users.\
-
-   * So, at 80 posts per second, we should be able to roughly accommodate about 80/6000 = 1.33% of 300M users, or **4M users**.\
-
-   * That’s where we can get with a basic block size increase alone. But we have a few other cards to play.\
-
-3. **Warp sync**
-   * With an Ethereum-like [warp or snap sync](https://blog.ethereum.org/2021/03/03/geth-v1-10-0/), we loosen a key constraint, which is the need for all nodes to always validate the entire history of transactions. (You can still run an archival node, but this won’t be necessary for normal operations.)
-     * As a concrete example, if all you're downloading is the current creator coin balances for each user, then all that user's trades are effectively compressed into a few integers because you don't care about the history (only the end state).\
-
-   * Instead, we move to a model where nodes by default first sync and validate a snapshot of the current blockchain state and then sync only a few week's worth of blocks on top of that.\
-
-   * Generally, the bottleneck to blockchain performance is validation speed. With DeSo, we've run tests that indicate a node running on an Intel Xeon E-2276M can validate transactions at the rate of **\~12MB/s = 1.04TB/day = \~55,000 txns per second**.\
-
-   * So, if we start by just downloading the state with minimal validation, how big can it be? To download 10TB at 10gbps = 10e12/10e9\*8/60/60 takes about \~2.2h. To download 100TB at 10gbps = 10e12/10e9\*8/60/60 is about **\~22.2h to download the state**.\
-
-   * With warp sync, the block size can be increased beyond 16MB because the number of blocks required to get a node up-to-date can be reduced to only one week's worth of blocks rather than the entire history of blocks from the beginning of time.\
-
-   * Let’s suppose then that using warp sync we increase the block size further to 120MB blocks. How many transactions per second (TPS) would 120MB blocks every 5 minutes facilitate? If we assume 218 bytes per transaction (which is what the value is per post), then (120e6 bytes / (5 minutes \* 60 seconds/min)) / (218 bytes/txn) = **\~1,800 transactions per second**.\
-
-   * How much bandwidth would it take to synchronize one week of 120MB blocks appearing every 5 minutes, and how long would it take in wall clock time?\
-
-     * Bandwidth would be roughly (120e6 bytes/block \* 1 block/5 minutes \* 60 minutes/hour \* 24 hours/day \* 7 days/week) / 1e9 bytes/GB = 238GB/ week\
-
-     * At the aforementioned validation speed of 12MB/s on an Intel Xeon E-2276M, it would take approximately 238e9 bytes/week / (12e6 validated bytes / second \* 60 seconds/minute \* 60 minutes/hour) = **5.5-6 hours to download and validate one week of 120MB blocks** at a validation speed of 12MB/s on good hardware.\
-
-   * Under these assumptions, This means that the warp upgrade can allow us to sync a node in \~5.5h while maintaining 1,800 transactions per second (TPS) long-term.\
-
-     * 1,811 tps vs Twitter with 6,000 posts per second and 300M users (assume only posts, no likes)\
-
-     * Users = 300M \* 1,811 / 6000 / 3 txns per post = **\~30M users.**\
-
-4. **Sharding**
-   * All transactions can then be write-sharded to make syncing a node parallelizable, thus providing multiple orders of magnitude in speedup.\
+   * DeSo区块链目前每5分钟产生高达2MB的区块。\\
+   * 因此，它可以实现每秒约30笔交易，即**每秒约10篇帖子**（= 2e6字节/区块 /（218字节/帖子 \* 60秒/分钟 \* 5分钟/区块）\* 1帖子 / 3笔交易）\\
+   * 如果我们将区块大小增加到每五分钟16MB，我们可以粗略地推算出它可以扩展到每秒约240笔交易=**每秒约80篇帖子**。
+   * 作为对比，Twitter平均每秒约有 [6000 篇](https://www.dsayce.com/social-media/tweets-day/)帖子，拥有3亿用户\\
+   * 因此，在每秒80篇帖子的情况下，我们应该能够大致容纳80/6000 = 1.33%的3亿用户，即**400万用户**。\\
+   * 这就是我们仅通过增加基本区块大小就可以达到的地方。但我们还有其他一些牌可以打。\\
+3. **Warp 同步**
+   * 通过类似以太坊的[warp 或 snap sync](https://blog.ethereum.org/2021/03/03/geth-v1-10-0/)同步，我们放宽了一个关键约束，即所有节点始终需要验证交易的完整历史记录。（您仍然可以运行归档节点，但对于正常操作来说这不是必需的。）
+     * &#x20;举一个具体的例子，如果您只下载每个用户当前的创建者代币余额，那么所有该用户的交易实际上都压缩成了几个整数，因为您不关心历史（只关心最终状态）。
+   * 与现在相比，我们转向一个模型，节点默认先同步并验证当前区块链状态的快照，然后在此基础上仅同步几周的区块。\\
+   * 通常，区块链性能的瓶颈是验证速度。对于DeSo，我们已经进行了测试，表明在英特尔至强E-2276M上运行的节点可以以**每秒约12MB = 每天1.04TB = 每秒约55,000笔交易**的速度验证交易。\\
+   * 那么，如果我们只是从最小验证的状态开始下载，它有多大？以10gbps下载10TB = 10e12/10e9_8/60/60大约需要**2.2小时**。以10gbps下载100TB = 10e12/10e9_8/60/60需要**大约22.2小时**来下载状态。\\
+   * 借助 warp 同步，区块大小可以超过16MB，因为将节点更新所需的区块数量可以减少到仅一周的区块，而不是从一开始的所有区块历史。\\
+   * 假设使用 warp 同步，我们将区块大小进一步增加到每5分钟120MB的区块。每5分钟120MB的区块能够实现多少交易/秒（TPS）？如果我们假设每笔交易218字节（这是每篇帖子的值），那么（120e6字节/（5分钟\* 60秒/分钟））/（218字节/交易）=**约1800笔交易/秒**。\\
+   * 同步一周每5分钟出现一个120MB区块的情况下，所需的带宽是多少，需要多长时间？\\
+     * 带宽大致为（120e6字节/区块\* 1区块/5分钟\* 60分钟/小时\* 24小时/天\* 7天/周）/ 1e9字节/GB = 每周238GB \\
+     * 在之前提到的英特尔至强E-2276M上12MB/s的验证速度下，需要大约238e9字节/周/（12e6已验证字节/秒\* 60秒/分钟\* 60分钟/小时）= 5.5-6小时。因此在良好硬件上以12MB/s的验证速度**下载并验证一周120MB的区块需要5.5-6小时**。\\
+   * 在这些假设下，这意味着 warp 升级可以使我们在保持长期每秒1,800笔交易（TPS）的同时，将节点同步时间缩短至约5.5小时。.\\
+     * 1,811 TPS vs Twitter 的每秒6,000帖子和3亿用户（假设仅限帖子，不包括点赞）\\
+     * 用户 = 300M \* 1,811 / 6,000 / 每帖3笔交易 = **约3,000万用户**。\\
+4. **分片**
+   * 此外，所有交易都可以进行写分片，使节点同步并行化，从而提供多个数量级的速度提升。\
      \
-     For example, we could do a very simple optimization, which is to shard all posts into their own sub-chain, and then shard other transactions across two of their own sub-chains.\
-
-   * This would result in a node being capable of syncing 3x faster, meaning that we could support **\~90M users without an increase in sync time**.\
-
-   * Ultimately, all transactions can be sharded into sub-chains by user ID, which would allow for virtually unlimited parallelization.\
+     例如，我们可以进行一个非常简单的优化，将所有帖子分片到帖子子链中，然后将其他交易分片到其他两个子链中。\\
+   * 这将使节点能够以3倍速度同步，这意味着我们可以在不增加同步时间的情况下支持**约9,000万用户**。\\
+   * 最终，所有交易都可以根据用户ID分片到子链中，从而实现几乎无限的并行化。\
      \
-     For example, with thirty shards, we achieve another \~10x multiplier on the TPS without an increase in sync time, thus achieving **\~1 billion users**.\
-
-   * This number can be scaled further by increasing the number of shards.
+     例如，通过使用30个分片，我们在不增加同步时间的情况下实现了TPS的另一个约10倍的乘数，从而实现**约10亿用户**。.\\
+   * 通过增加分片数量，这个数字可以进一步扩大。

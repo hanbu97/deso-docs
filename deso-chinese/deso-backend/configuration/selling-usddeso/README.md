@@ -1,10 +1,10 @@
 ---
-description: Description of flags related to selling DESO on your Node
+description: 阐述了如何配置节点出售DESO
 ---
 
-# Selling $DESO
+# 出售 $DESO
 
-Note: [#buy-deso-seed](./#buy-deso-seed "mention") is required for purchasing via all three methods:
+注意: 以下三种方式购买DESO均需要 [#buy-deso-seed](./#buy-deso-seed "mention")：
 
 * [wyre-buy-with-usd.md](wyre-buy-with-usd.md "mention")
 * [buy-with-btc.md](buy-with-btc.md "mention")
@@ -18,4 +18,4 @@ Type: String
 
 Default: None
 
-Seed phrase from which DESO will be sent for orders placed through Wyre and 'Buy With BTC'  and 'Buy with ETH' purchases
+通过 Wyre 下单购买 DESO 和使用 BTC 以及 ETH 购买 DESO所需的种子短语(Seed Phrase)。

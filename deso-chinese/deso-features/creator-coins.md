@@ -1,167 +1,167 @@
-# 2⃣ Creator Coins
+# 2⃣ 创作者币
 
-## Blockchain-Native Social Features
+## 区块链原生社交功能
 
-At launch, the DeSo blockchain supports not only traditional social features like creating profiles and posts, but also novel blockchain-native features like social tokens, tipping, and NFTs.
+在发布之初，DeSo 区块链就不仅支持创建个人资料和帖子等传统社交功能，还支持社交代币、打赏和 NFT 等创新的区块链原生功能。
 
-These features alone enable vast new categories of money-enabled products, from social NFT experiences to influencer stock markets.
+这些功能本身就能开启许多全新的、与金钱相关的产品类别，从社交 NFT 体验到网红证券市场。
 
-These products in turn can allow creators to earn orders of magnitude more money on DeSo-enabled apps than on traditional social networks, while maintaining a more direct relationship with their followers.
+借助 DeSo 支持的应用程序，这些产品可以让创作者在与粉丝保持更直接关系，同时相比于传统社交网络，可以赚取更多的收入。
 
-Moreover, creators aren't locked-in to a handful of centralized apps with DeSo because the business model of DeSo revolves around transactions flowing through a decentralized network of potentially thousands of third-party apps, similar to how Ethereum works today for DeFi applications.
+此外，与 DeSo 的商业模式相比，创作者不再被局限于几个中心化的应用，因为 DeSo 的商业模式是围绕着通过成千上万的第三方应用的去中心化网络进行交易，类似于今天以太坊为去中心化金融（DeFi）应用提供支持的方式。
 
-We believe this more decentralized business model can come to replace the traditional ads-driven business model for social media, which inherently requires concentrating users into a few highly centralized apps in order to maximize profit.
+我们相信，这种更去中心化的商业模式可以取代传统的、以广告为驱动的社交媒体商业模式，后者本质上需要将用户集中到少数高度中心化的应用中，以便实现利润最大化。
 
-### What are Social Tokens? (aka Creator Coins)
+### 什么是社交代币？（又称创作者代币）
 
-#### Everyone Has a Coin
+#### 每个人都有一个代币
 
-Every profile on the DeSo gets its own coin that anybody can buy and sell.
+在 DeSo 上，每个账号都对应一个任何人都可以买卖的代币。
 
-We call these coins “**creator coins**,” and you can have your own coin too simply by creating a profile. The price of each coin goes up when people buy and goes down when people sell.
+我们称这些代币为“**创作者代币**”，只要创建个人资料，你也可以拥有自己的代币。当人们购买时，代币价格上涨；当人们出售时，价格下跌。
 
-#### You Can Buy Your Favorite Person’s Coin
+**你可以购买你最喜欢的人的代币**
 
-To buy someone’s coin, you simply navigate to their profile on any DeSo app, such as diamondapp.com, and hit “Buy.”
+要购买某人的代币，只需在任何 DeSo 应用（如 diamondapp.com）上找到他们的个人资料，然后点击“购买”。
 
-You can find someone’s profile either by searching for it or by visiting the creator coin leaderboard (shown below).
+你可以通过搜索找到某人的个人资料，或者查看创作者代币排行榜（如下）。
 
-![](../.gitbook/assets/screenshot-from-2021-09-20-14-46-05.png)
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-### What Are Creator Coins Useful For?
+### 创作者代币有什么用？
 
-Creator coins are a new type of asset class that is tied to the reputation of an individual, rather than to a company or commodity.
+创作者代币是一种新型资产类别，与公司或商品不同，它与个人的声誉挂钩。
 
-They are truly the first tool we have as a society to trade “social clout” as an asset. If people understand this, then the value of someone’s coin should be correlated to that person’s popularity.&#x20;
+它们是我们为交易“社交影响力”创造的第一个工具。在这样的社会中，如果人们了解这一点，那么一个人的代币价值就应该与这个人的知名度相关。
 
-For example, if Elon Musk succeeds in landing the first person on Mars, his coin price should theoretically go up.
+例如，如果埃隆·马斯克成功让第一个人登陆火星，他的代币价格理论上应该暴涨。
 
-And if, in contrast, he makes a racial slur during a press conference, his coin price should theoretically go down.
+相反，如果他在新闻发布会上发表种族歧视言论，他的代币价格理论上应该下跌。
 
-Thus, people who believe in someone’s potential can buy their coin and succeed with them financially when that person realizes their potential. And traders can make money buying and selling the ups and downs.
+因此，相信某人潜力的人可以购买他们的代币，并在该人实现自身潜能时在财务上获得成功。交易者也可以通过买卖涨跌来赚钱。
 
-The above being said, there are many other exciting opportunities for creator coins that we hope will be integrated in the very near future:
+除此之外，我们希望在不久的将来整合更多令人兴奋的创作者代币机会：
 
-#### **The Stakeholder Meeting**
+#### 利益相关者会议
 
-A creator can make it so that only people who own a certain amount of their coin can participate in the comments section of their posts.
+创作者可以设置只有拥有一定数量他们代币的人才能参与他们帖子的评论区。
 
-This forces anyone who wants to have a voice in that creator’s content to first align themselves with the creator by buying their coin.
+这迫使任何想在创作者内容中发言的人首先通过购买他们的代币与创作者成为利益共同体。
 
-The alignment not only reduces spam significantly, but it could bias conversations to be significantly more positive than on existing platforms.
+这种一致性不仅大大减少了垃圾信息，而且可能使现有平台上的对话更加积极。
 
-It would also create a lot of demand for one’s coin — can you imagine if Elon Musk or Vitalik Buterin did an AMA with a minimum threshold for buying their coin in order to participate? Or if they answered questions in order of coin holdings?
+这也会大大增加某人代币的需求——你能想象马斯克或V神进行AMA时，参与者需要购买一定数量的他们的代币作为门槛吗？或者，按照代币持有量的顺序回答问题？
 
-#### Premium Messages
+#### 高级消息
 
-Most creators get a torrent of spam in their social media message inboxes.
+大多数创作者在社交媒体消息收件箱里收到大量垃圾邮件。
 
-With DeSo they could make it so that only people who own a certain amount of their coin can message them, or they could simply rank and prioritize messages from the largest holders of their coin.
+使用DeSo，他们可以设置只有拥有一定数量他们代币的人才能给他们发消息，或者只关注和回应代币持有量较大的人发来的消息。
 
-Alternatively, they can make it so that a certain amount of their coin must be paid to them directly in order for the message to actually enter their inbox.
+或者，他们可以要求必须支付一定数量的他们的代币才能让消息进入收件箱。
 
-All of this would increase demand for their coin while helping to minimize spam for the creator.
+所有这些都将增加他们代币的需求，同时帮助创作者最大限度地减少垃圾邮件。
 
-#### Sponsored Posts
+#### 赞助帖子
 
-Creators can have an “inbox” where anyone can “bid” to have them repost (aka “retweet”) a particular post.
+创作者可以设置一个“收件箱”，任何人都可以在其中“竞标”让他们转发（即“转推”）某个帖子。
 
-If you want Kim Kardashian to retweet your fashion brand, you can submit an entry into her inbox, and if she retweets it then she keeps your money.
+如果你想让金·卡戴珊转发你的时尚品牌，你可以在她的收件箱里提交一个申请，如果她转发了，她就可以获得你的钱。
 
-The bids can all be made using the creator’s own coin, thus significantly increasing the demand for the coin.
+竞标可以全部使用创作者自己的代币进行，从而大大增加代币的需求。
 
-#### Premium Content
+#### 高级内容
 
-People who own a certain amount of a creator’s coin get access to special content. Or, alternatively, people must pay a monthly subscription in the form of the creator’s coin in order to get premium content.
+拥有一定数量创作者代币的人可以获得特殊内容。或者另一种方式，人们必须以创作者代币的形式支付月费才能获得高级内容。
 
-#### Distributions and Engagement
+#### 分发和参与
 
-Creators can also use their coins to distribute scarce resources to the largest holders of their coins.
+创作者还可以使用他们的代币向代币持有量最大的粉丝分发稀缺资源。
 
-For example, imagine if a famous celebrity offered to have lunch with whoever held most of their coin on a particular date.
+例如，想象一下，如果一位著名的名人承诺与在特定日期持有他们大部分代币的人共进午餐。
 
-Or imagine if they were going to offer 1,000 signed posters to their 1,000 largest holders.
+或者，想象一下，如果他们前1000名持有者提供1000张签名海报。
 
-This is just the beginning of how creators can engage with their fans using their coins, and all such ideas could increase demand for their creator coin significantly.
+这仅仅是创作者如何利用他们的代币与粉丝互动的开始，所有这些想法都可能大大增加创作者代币的需求。
 
-#### Money Likes
+#### 金钱点赞
 
-Likes can be re-imagined as purchases of the creator’s coin.
+点赞可以重新构思为购买创作者的代币。
 
-So it costs money to like something, but you get that person’s coin when you do so (effectively as a shortcut to buying their coin that’s associated directly with their content).
+所以点赞是要花钱的，但你在点赞时会获得那个人的代币（实际上是购买与他们内容直接关联的代币的快捷方式）。
 
-Such a feature could serve as a stronger signal on what content is high quality as well.
+这样的功能也可以更好地反映出哪些内容是高质量的。
 
-#### Emergent Phenomena
+#### 新兴现象
 
-What can happen when you give people the ability to speculate on a person’s reputation?
+当你给人们炒作个人声誉的能力时会发生什么？
 
-We can’t know for sure, but one feature that has emerged is what we call “buy and retweet.”&#x20;
+我们无法确切知道，但出现的一个特点是我们所说的“买入并转发”。
 
-Ordinarily, retweeting someone gives you nothing.
+通常情况下，转发别人的内容对你来说没有任何收益。
 
-If that person becomes a superstar because you boosted them, you’ll be lucky if they even remember your name in a few years.
+如果那个人因为你的推动而成为超级明星，他们几年后甚至还记得你的名字就谢天谢地了。
 
-In contrast, with DeSo you can buy someone’s coin and then retweet them, which makes it so that you’re not only along for the ride financially if they blow up, but you also get bragging rights.&#x20;
+相反，在DeSo上，你可以购买某人的代币，然后转发他们的内容，这使得你在他们迅速走红时不仅能在财务上共同分享，而且还能炫耀。
 
-Imagine the difference between being able to say “I retweeted her early on” vs being able to say “I bought her coin when it was $5 and now it’s $5000 — and by the way, I’ve done this hundreds of times, and I can prove it because my track record is on the blockchain.”
+想象一下，说“我早期转发了她的内容”，跟另一种说法“我在她的代币价格还是5美元时购买了她的代币，现在已经涨到5000美元了——顺便说一下，我已经做了很多次了，而且我可以证明，因为我的购买记录都记在了区块链上”，两者相比高下立判。
 
-The interesting thing about this mechanic is that it wasn’t even something consciously designed into the product. It exists as an “emergent” phenomenon off of the core creator coin mechanic.&#x20;
+关于这个机制有趣的是，它甚至不是有意设计到产品中的。它作为核心创作者代币机制的“新兴”现象而存在。
 
-What other dynamics could exist that we haven’t yet thought of?
+还有哪些我们尚未想到的可能性呢？
 
-### The Creator Coin Supply Curve
+### 创作者代币供应曲线
 
-Creator coins are naturally scarce, with generally fewer than 100 to 1,500 coins in existence for each profile.
+创作者代币具有天然稀缺性，通常每个账号对应的代币数量在100到1,500之间。
 
-This is because as more people buy a profile’s creator coin, the price of the coin goes up automatically at a faster and faster rate. This means that, eventually, it would take billions of dollars to mint even one more coin.
+这是因为随着越来越多的人购买该用户的创作者代币，代币价格会自动上涨，并且上涨速度越来越快。这意味着，最终，即使是铸造多一个代币也需要数十亿美元。
 
-The formula or “curve” for determining the price of a creator’s coin is as follows. Note that creator coins are normally bought and sold with the DeSo cryptocurrency, but we provide a dollar version of the formula for easy calculation:
+确定创作者代币价格的公式或“曲线”如下所示。请注意，创作者代币通常用DeSo加密货币购买和出售，但我们提供一个美元版本的公式以便于计算：
 
 $$
-price\_in\_deso = .003 \times creator\_coins\_in\_circulation^2 \\ price\_in\_usd = .003 \times creator\_coins\_in\_circulation^2 \times deso\_price\_in\_usd
+以DeSo定价 = .003 \times 创作者代币流通量^2 \\ 以美元定价= .003 \times 创作者代币流通量^2 \times DeSo美元价格
 $$
 
-When you create a profile, there are initially zero coins in existence and thus the price is zero.
+当你创建一个账号时，最初不存在代币，因此价格为零。
 
-If you want to buy coins from the profile, it will happily mint them on-chain and sell them to you according to the price curve above, making it more and more expensive as more coins are purchased.
+如果你想从个人资料中购买代币，它会根据上面的价格曲线在链上为你铸造并出售，随着购买的代币越来越多，价格越来越高。
 
-The money you use to buy the coins gets “locked” in the profile in exchange for the coins. On the flipside, if you want to sell coins, the profile will happily buy them from you according to the curve using the money locked from previous buys.
+你用来购买代币的钱会被“锁定”在个人账户中，以换取代币。反过来，如果你想卖出代币，个人账户会根据曲线用之前购买时锁定的钱从你那里购买。
 
-And so buying **creates** coins while pushing the price **up** and **locking** money into the profile, while selling **destroys** coins while pushing the price **down** and **unlocking** money from the profile.
+因此，购买会**创造**代币，**推高**价格并将资金**锁定**在个人账户中，而出售会**销毁**代币，**拉低**价格并从个人账户中**解锁**资金。
 
-This is often referred to as an “automated market-maker,” or AMM, and it’s the same concept that powers protocols like Uniswap and Bancor.
+这通常被称为“自动做市商”（AMM），跟Uniswap和Bancor等协议具有的相同概念。
 
-Below is a graph of what the creator coin price curve looks like as a function of how many creator coins are in circulation for a given profile.
+下面是一个图表，显示了根据给定个人账户流通的创作者代币数量对应的创作者代币价格函数曲线。
 
-We also include a table that shows some of these values. Both of these assume a DeSo price of $16.
+我们还提供一个表格，显示了其中的一些值。这两者都假设DeSo的价格为16美元。
 
-Note also that “integrating” the price curve yields the amount of money “locked” in a profile, which is equal to the “net” amount of money that has flowed into that particular creator coin (included as the third column of the table).
+去注意，对价格曲线进行数学上的“积分运算”，会得出“锁定”在个人账户中的资金总额，这等于已流入该特定创作者代币的“净”资金数量（包括在表格的第三列中）。
 
-If you’d like to play with the numbers yourself, you can do so using [this sheet](https://docs.google.com/spreadsheets/d/1ecMscQTY4rhmfrAn-5SRspiZqhhttVo1Pj880A4EDuo/edit?usp=sharing) (make a copy to edit it). You can also learn more about bonding curves [here](https://yos.io/2018/11/10/bonding-curves).
+如果你想自己计算一下，可以使用[这个表格](https://docs.google.com/spreadsheets/d/1ecMscQTY4rhmfrAn-5SRspiZqhhttVo1Pj880A4EDuo/edit?usp=sharing)（复制以编辑）。你还可以在[这里](https://yos.io/2018/11/10/bonding-curves)了解更多关于债券曲线的信息。
 
-| **Creator Coins in Circulation** | **Creator Coin Price (USD)** | **USD Locked in Profile** |
-| -------------------------------- | ---------------------------- | ------------------------- |
-| 5                                | $1.20                        | $2                        |
-| 10                               | $4.80                        | $16                       |
-| 20                               | $19.20                       | $128                      |
-| 40                               | $76.80                       | $1,024                    |
-| 80                               | $307.20                      | $8,192                    |
-| 160                              | $1,228.80                    | $65,536                   |
-| 320                              | $4,915.20                    | $524,288                  |
-| 640                              | $19,660.80                   | $4,194,304                |
-| 1280                             | $78,643.20                   | $33,554,432               |
+| **创作者代币流通量** | 创作者代币价格 **(USD)** | **USD锁仓量**  |
+| ------------ | ----------------- | ----------- |
+| 5            | $1.20             | $2          |
+| 10           | $4.80             | $16         |
+| 20           | $19.20            | $128        |
+| 40           | $76.80            | $1,024      |
+| 80           | $307.20           | $8,192      |
+| 160          | $1,228.80         | $65,536     |
+| 320          | $4,915.20         | $524,288    |
+| 640          | $19,660.80        | $4,194,304  |
+| 1280         | $78,643.20        | $33,554,432 |
 
-![](<../.gitbook/assets/image (7) (3) (3) (3) (1).png>)
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-### Founder Rewards
+### 创始人奖励
 
-Every profile allows the creator to keep a certain percentage of the coins that are created as a “founder reward.”
+每个账户都允许创作者保留一定百分比的代币作为“创始人奖励”。
 
-For example, if someone sets their founder reward percentage to 10% and then someone buys 100 DeSo of their coin, then 10 DeSo would go to the creator’s wallet rather than the purchaser’s.
+例如，如果有人将其创始人奖励百分比设置为10%，然后有人购买了100个DeSo的代币，那么10个DeSo将进入创作者的钱包，而不是购买者的钱包。
 
-The above being said, we think the better way for creators to own a piece of the upside of their coin is simply to buy their coin up-front when they create their profile, and then set their founder reward percentage to zero.
+尽管如此，我们认为让创作者分享代币上涨的更好方法是在创建个人资料时立即购买他们的代币，然后将创始人奖励百分比设置为零。
 
-This works because the coins are cheapest at the beginning of the curve, and it has the upshot of reducing friction on subsequent purchases of their coin.
+这是有效的，因为代币在曲线开始时最便宜，而且它还有降低后续购买他们代币的滑点的优势。
 
-Nevertheless, the founder reward percentage being 10% is a “sane default” that guarantees creators will maintain a certain percentage of their coin even if they do nothing.
+尽管如此，创始人奖励百分比为10%是一个“合理的默认值”，即使创作者什么都不做，也能确保他们保持一定比例的代币。

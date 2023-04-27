@@ -1,28 +1,28 @@
-# 4⃣ Social NFT
+# 4⃣ 社交 NFT
 
-## What are Social NFTs?
+## 什么是社交NFT？
 
-Non-Fungible Tokens (NFTs) are digital assets that can be bought and sold, typically representing a piece of digital content.
+非同质化代币（NFT）是可买卖的数字资产，通常代表一份数字内容。
 
-For example, an artist can publish a digital image as an NFT, and put it up for sale to the highest bidder.
+例如，艺术家可以将数字图像发布为NFT，并将其出售给出价最高的买家。
 
-When they do this, the history of who owns the image can be tracked on the blockchain as a way of showing the art piece's provenance. And even though anyone in the world can typically see the image, there is only one person who provably owns it, just as if the piece were a painting hanging in a museum.
+当他们这样做时，可以通过区块链追踪数字图像所有权的历史记录，以展示艺术品的出处。尽管通常全世界的人都可以看到这个图像，但只有一个人可以证明拥有它，就像这件作品是挂在博物馆里的一幅画一样。
 
-The easiest way to really understand NFTs, though, is to actually look at some examples.
+然而，要真正了解NFT，最简单的方法是看一些实际的例子。
 
-Below we list examples of popular NFT concepts, as well as popular NFT platforms, all of which served as the inspiration for the DeSo NFTs product.
+下面我们列出了一些流行的NFT概念示例，以及流行的NFT平台，这些都为DeSo NFT产品提供了灵感。
 
-Importantly, because DeSo is an inherently social platform, we anticipate the use cases for NFTs will extend far beyond just digital content, and we discuss this in detail in the next section.
+重要的是，因为DeSo本质上是一个社交平台，我们预计NFT的用途将远远超出仅仅是数字内容，我们将在下一节详细讨论这个问题。
 
-**Examples of popular NFT concepts:**
+#### 流行的NFT概念示例：
 
-* [Beeple's collage](https://www.theverge.com/2021/3/11/22325054/beeple-christies-nft-sale-cost-everydays-69-million)
+* [Beeple's collage(Beeple的拼贴画)](https://www.theverge.com/2021/3/11/22325054/beeple-christies-nft-sale-cost-everydays-69-million)
 * [CryptoPunks](https://www.larvalabs.com/cryptopunks)
 * [Bored Apes](https://boredapeyachtclub.com)
 * [CryptoKitties](https://www.cryptokitties.co)
 * [NBA Topshots](https://nbatopshot.com)
 
-**Popular NFT marketplaces:**
+#### 热门NFT市场
 
 * [OpenSea](https://opensea.io)
 * [Nifty Gateway](https://niftygateway.com)
@@ -32,191 +32,207 @@ Importantly, because DeSo is an inherently social platform, we anticipate the us
 * [Foundation](https://foundation.app)
 * [Valuables by Cent](https://v.cent.co)
 
-### The DeSo Advantage: Mixing NFTs and Social Media
+### DeSo优势：将NFT与社交媒体结合
 
-When someone buys a piece of art or a collectible item, they do so in part because it brings them personal joy, but in part because they want to show it off.
+当某人购买一件艺术品或收藏品时，他们这样做的部分原因是因为它给他们带来了个人的喜悦，但另一部分原因是因为他们想炫耀它。
 
-A major superpower DeSo has is that every feature that's added to it has an inherent social component built-in, and NFTs are no exception.
+DeSo的一个主要优势是，添加到其平台的每个功能都内置了一种固有的社交组件，NFT也不例外。
 
-In the case of DeSo NFTs, we have an opportunity to show off a user's NFT collection on their profile, and to allow users to engage around their NFTs via comments, likes, diamonds, and more.&#x20;
+因此，对于在DeSo上面的NFT，我们有机会在用户的个人资料上展示他们的NFT收藏，并允许用户通过评论、点赞、钻石等方式围绕他们的NFT进行互动。
 
-Suddenly, the act of buying an NFT shifts from a purely personal and/or economic motive to an inherently social one.
+突然之间，购买NFT的行为从纯粹的个人和/或经济动机转变为一种固有的社交行为。
 
-In addition, because DeSo has a native concept of identity in the form of a user's profile, the reputation of the issuer is tied into the NFT in a much more meaningful way, especially for celebrities and superstars with pre-existing brands.
+此外，因为DeSo具有用户个人资料形式的本地身份概念，发行者的声誉与NFT以更有意义的方式紧密相关，尤其是对于拥有现有品牌的名人和巨星。
 
-This not only increases the value of DeSo NFTs, but we think it will also lead to all kinds of interesting dynamics that mix collecting, flexing, and social.\
+这不仅增加了DeSo NFT的价值，我们认为它还将产生各种有趣的收藏、炫耀和社交混合的互动模式。
+
+以下是DeSo NFT支持的链上功能列表：
+
+| NFT 功能         | 是否在链上? | 交易类型                  |
+| -------------- | ------ | --------------------- |
+| 铸造 NFT         | ✅ Yes  | CREATE\_NFT           |
+| 更新 NFT         | ✅ Yes  | UPDATE\_NFT           |
+| 销毁 NFT         | ✅ Yes  | BURN\_NFT             |
+|  竞价 NFT (拍卖)   | ✅ Yes  | NFT\_BID              |
+| 接受 NFT 报价 (拍卖) | ✅ Yes  | ACCEPT\_NFT\_BID      |
+| 转移 NFT         | ✅ Yes  | NFT\_TRANSFER         |
+| 接收 NFT         | ✅ Yes  | ACCEPT\_NFT\_TRANSFER |
+| 专属 NFT 内容      | ✅ Yes  | CREATE\_NFT           |
+| NFT 创作者版税      | ✅ Yes  | CREATE\_NFT           |
+| NFT 持币者版税      | ✅ Yes  | CREATE\_NFT           |
+| NFT 版税分割       | ✅ Yes  | CREATE\_NFT           |
+
 \
-Here's a list of features supported on-chain by DeSo NFTs:
+以下仅仅是一些关于如何使用DeSo社交NFT的可能性示例：
 
-| NFT Feature              | On-Chain? | Transaction Type      |
-| ------------------------ | --------- | --------------------- |
-| Mint an NFT              | ✅ Yes     | CREATE\_NFT           |
-| Update an NFT            | ✅ Yes     | UPDATE\_NFT           |
-| Burn an NFT              | ✅ Yes     | BURN\_NFT             |
-| Bid on NFT (Auction)     | ✅ Yes     | NFT\_BID              |
-| Accept NFT Bid (Auction) | ✅ Yes     | ACCEPT\_NFT\_BID      |
-| Transfer an NFT          | ✅ Yes     | NFT\_TRANSFER         |
-| Accept NFT Transfer      | ✅ Yes     | ACCEPT\_NFT\_TRANSFER |
-| Exclusive NFT Content    | ✅ Yes     | CREATE\_NFT           |
-| NFT Creator Royalties    | ✅ Yes     | CREATE\_NFT           |
-| NFT Coinholder Royalties | ✅ Yes     | CREATE\_NFT           |
-| NFT Royalty Splits       | ✅ Yes     | CREATE\_NFT           |
+#### 新的NFT使用案例
 
-\
-Below are just some examples of the possibilities on how to use DeSo Social NFTs...
+*   **可收藏的门票**。如果您以DeSo NFT的形式出售音乐会门票，那么每位参加者都会在他们的个人资料上自动获得一个纪念活动的虚拟票根，他们的朋友们会看到（除此之外，你将从你的币持有者那里获得额外的宣传！）。
 
-#### **New NFT Use Cases**
 
-* **Collectible ticket stubs.** If you were to sell tickets to a concert in the form of DeSo NFTs, then every attendee would automatically get a virtual ticket stub on their profile commemorating the event that their friends would get to see (not to mention the extra promo you'll get from your coin-holders!).\
+
+    你能想象如果[@3LAU](https://diamondapp.com/u/3LAU)将他的门票作为DeSo NFT出售吗？这种机制也可以用于出售像电影首映式或独家晚会等独家活动的门票。\\
+*   **实体纪念品：数字收藏室**。想象一下出售一个实体纪念品，比如电影道具，附带一个由原始卖家发行的NFT，买家可以在他们的个人资料上展示。
+
+
+
+    这使用户的个人资料变成了他们的收藏室，您可以看到他们在数字和实体世界中拥有的所有酷炫物品，并且这种所有权是通过NFT原始卖家直接签发的，确保了真实性。
+
+
+
+    你能想象例如像星际迷航的[@GeorgeTakei](https://diamondapp.com/u/georgetakei) 有一天用卖光他的衣柜中的纪念品每一件伴随着他们独有的DeSo NFT进行出售吗？\\
+*   **独家体验**。将体验作为NFT在DeSo上销售具有独特意义。
+
+
+
+    例如，拥有大量粉丝的创作者可以通过铸造和出售“10个之一”的NFT，提供与他们最大的粉丝共进晚餐或举办问答活动。在DeSo上，因为NFT本质上具有社交性，创作者可以让粉丝在出价前发表评论解释为什么他们想参加。
+
+
+
+    创作者可以完全控制并且决定获胜者，那些获胜者不仅可以见到创作者，而且还可以在他们的个人资料上永久展示这一事实。
+
+
+
+    也许[@wolfofwallst](https://diamondapp.com/u/wolfofwallst)可以给沃伦·巴菲特的慈善午餐增加一些竞争力！\\
+*   **独家可解锁的数字内容**。DeSo NFT有一个“可解锁”的部分，只有NFT的获胜者才能看到。
+
+
+
+    这为出售极具独家性的数字商品创造了有趣的用例。例如，一位艺术家可以在一周前发布一张专辑作为可解锁的1/10,000 NFT，这样只有赢得NFT的真正粉丝才能提前收听。
+
+
+
+    这将为艺术家带来额外的现金流，同时仍然允许他们在一周后获得相同的流媒体收入。你能想象提前收听[@thechainsmokers](https://diamondapp.com/u/thechainsmokers)的下一张专辑，并获得一个附带的NFT吗？\\
+*   **独家聊天群组**。创作者可以使用DeSo NFT提供独家聊天群组。
+
+
+
+    例如，创作者可以出售1/100的NFT，这样任何当前拥有NFT的人都能参加独家的Telegram群组、每周的Zoom通话等。
+
+
+
+    我们已经看到像@craig这样的创作者这样做了，但这对于像@adamschefter这样的体育内幕人士也是有意义的。\\
+*   **互动内容**。对于内容创作者，DeSo NFT可以用作征求粉丝反馈或指导内容方向的方式。例如，播客的创作者可以出售一个NFT，获胜者可以决定他们的下一集将讲述什么。
+
+
+
+    创作者可以在用户出价前征求评论，他们对选择的获胜者有最终的控制权。
+
+
+
+    或者，音乐艺术家可以提议将NFT获胜者的名字放在歌曲中，或者将他们包含在音乐视频中，获胜者会在他们的个人资料上拥有NFT以纪念这次经历。
+
+
+
+    电影或短片的创作者可以将制片人的一个承诺作为NFT进行出售。你能想象一个DeSo NFT的获胜者可以决定[@shaanvp](https://diamondapp.com/u/shaanvp)的下一次演出的主题，或者在 [@jakepaul](https://diamondapp.com/u/jakepaul) 或 [@loganpaul](https://diamondapp.com/u/loganpaul) 的比赛结束时喊出获胜者提供的口号吗？\\
+
+
+
+    怎么样，与[@alexisohanian](https://diamondapp.com/u/alexisohanian)进行Clubhouse问答，其中“10个之一”的NFT获胜者可以优先上台？或者我们终于可以让[@BennyBlanco](https://diamondapp.com/u/BennyBlanco)为我们带来那个大家都在等待的DeSo Boys单曲，作为一个备受追捧的NFT。\\
+*   **防伪劳力士、香奈儿手袋等...** 主要品牌在防伪方面存在很大问题：真正的劳力士价值远大于仿品，但仿品通常制作得如此逼真，以至于很难区分。
+
+
+
+    现在，想象一下基于DeSo NFT的解决方案，奢侈品牌可以创建官方DeSo个人资料，并为其产品的每一次销售提供关联的NFT。
+
+
+
+    如此一来，用户不仅可以获得数字化、无法伪造的真品证明，还可以在他们的个人资料上炫耀他们的购买记录，让所有的朋友都能看到。
+
+
+
+    然后，如果他们将劳力士转售，他们可以随之转让NFT，使其成为品牌直接签发和数字签名的真品证书，并在整个寿命周期内追踪物品的出处。\\
+*   **数字交易卡**。任何知名度足够高的创作者都可以通过发行“1/N”的NFT为自己制作数字交易卡。
+
+
+
+    他们需要做的就是创作一幅独特的艺术作品，比如他们自己的 [cryptopunk](https://www.larvalabs.com/cryptopunks) 风格的画像，他们最忠实的粉丝就可以在个人资料上展示他们。
+
+
+
+    值得注意的是，每个DeSo NFT都有一个序列号，因此即使在同一批次内，每个NFT也将是独一无二的。[@ab](https://diamondapp.com/u/ab)，你会成为第一个DeSo NFT交易卡吗？\\
+*   **艺术品**。主要艺术家已经表明，NFT将成为艺术品未来的重要组成部分。他们不仅允许任何人欣赏艺术家的作品，而且在追踪作品所有权方面做得更好，这意味着作品出处无法伪造。
+
+
+
+    我们希望，DeSo将艺术家的身份（通过其个人资料）纳入NFT铸造过程，这将进一步提高艺术家发行的NFT的价值和实用性。
+
+
+
+    DeSo上的艺术家已经创新得非常快，我们非常兴奋地将DeSo NFT带到一个新的水平。也许我们甚至可以让 [@beeple](https://diamondapp.com/u/beeple) 最终认领他的个人资料！\\
+*   **慈善的未来**。慈善机构可以在DeSo上创建个人资料，就像普通人一样。当他们这样做时，任何人都可以选择将DeSo作为他们NFT销售的一部分用于慈善用途。
+
+
+
+    例如，有人可以拍卖与自己共进晚餐的机会，但要求所有收益都将捐给红十字会。
+
+
+
+    然后，他们可以通过数字方式证明资金确实流向了慈善机构。或者，慈善机构也可以直接发行属于他们自己的NFT来参与其中。
+
+
+
+    例如，一个慈善机构可以发行代表特定树木种植面积的NFT。这使得拥有者可以展示他们对某个深感关注的事业所做出的贡献，这可能会显著提高人们愿意给予的金额。
+
+
+
+    令人惊讶的是，当今社交媒体和慈善事业并没有更紧密地联系在一起——但我们相信DeSo终将改变这一点，使得捐赠变得更加轻松有趣。\\
+* **拥有历史的一部分**。在DeSo上，用户发布的任何帖子也可以作为NFT铸造并出售。拥有生成的NFT的用户可以被视为拥有历史的一部分。\
   \
-  Could you imagine if [@3LAU](https://diamondapp.com/u/3LAU) sold his tickets as DeSo NFTs? This mechanic could also be used to sell tickets to exclusive events like the premiere of a movie or an exclusive gala.\
+  例如，如果未来美国现任总统加入DeSo，并用它发表重大声明，例如宣布美国COVID封锁结束，某个人可以拥有这个非常特殊的帖子，所有收益都可以捐给总统选择的慈善机构。\\
 
-* **Physical memorabilia: The digital collector's room**. Imagine selling a physical piece of memorabilia, like a prop from a movie set, with an NFT attached, issued by the original seller, that the buyer gets to flex on their profile.\
-  \
-  This turns a user's profile into an inventory of their collector's room, where you can see all of the cool things they own, both in the digital and physical world, with NFTs serving as certificates of authenticity issued and signed directly by the original seller.\
-  \
-  Could you imagine if someone like [@GeorgeTakei](https://diamondapp.com/u/georgetakei) from Star Trek cleaned out his closet one day using DeSo NFTs?\
+以上仅仅是开始，只是我们到目前为止想出的一部分想法。我们迫不及待地想看到社区能用DeSo NFT创造出什么样的新东西。
 
-*   **Exclusive experiences.** Selling experiences as NFTs makes unique sense on DeSo.\
-    \
-    For example, creators with large followings can offer to have dinner or to host a Q\&A with a handful of their biggest fans by minting and selling a "one of 10" NFT. With DeSo, because NFTs are inherently social, the creator can engage their followers by asking them to comment explaining why they want to join before they place a bid.\
-    \
-    The creator then has full control over determining the winners, and those winners not only get to meet the creator, but they also get to sport the fact that they did on their
+过去，NFT和社交媒体是分开的：你在某个平台上铸造NFT，然后在社交媒体上发布关于它的帖子。现在，它们如同命中注定一样结合在一起，为创作者提高了参与度、覆盖范围、价值和变现能力。
 
-    profiles forever.\
-    \
-    Maybe [@wolfofwallst](https://diamondapp.com/u/wolfofwallst) could give Warren Buffet's charity lunch some competition!\
+### NFT现金流向持币人
 
-* **Exclusive unlockable digital content.** DeSo NFTs have an "unlockable" portion that only the winner of the NFT gets to see.\
-  \
-  This creates interesting use-cases around selling hyper-exclusive digital goods. For example, an artist can drop an album a week early as an unlockable 1/10,000 NFT such that only her true fans who win the NFT are able to listen to it ahead of time.\
-  \
-  This would result in extra cash flow for the artist while still allowing them to capture the same streaming revenues a week later. Could you imagine getting early access to [@thechainsmokers](https://diamondapp.com/u/thechainsmokers)' next album, and getting an NFT along with it?\
+创作者代币是DeSo的一大特色，我们将通过NFT将其发挥到极致。
 
-*   **Exclusive chat groups.** Creators can offer exclusive chat groups using DeSo NFTs to gate
+在DeSo上，每个NFT销售的一定比例可以作为现金流返回给创作者代币的持币人（包括二手市场销售）。
 
-    access. For example, a creator can sell a 1/100 NFT such that any current owner of the NFT is able to participate in an exclusive Telegram group, weekly Zoom call, etc...\
-    \
-    We already saw this happening with creators like [@craig](https://diamondapp.com/u/craig), but it also makes sense for sports insiders like [@adamschefter](https://diamondapp.com/u/adamschefter).\
+通过这一关键功能，DeSo NFT将创作者在DeSo上的活动与他们的币价值紧密联系起来。
 
-* **Interactive content.** For content creators, DeSo NFTs can be used as a way to solicit feedback from fans, or to guide the direction of content. For example, the creator of a podcast can sell an NFT where the winner gets to decide what their next episode is going to be about.\
-  \
-  The creator can solicit comments from users before they place their bids, and they have ultimate control over whom they choose as the winner.\
-  \
-  Alternatively, music artists can offer to put an NFT winner's name in a song or include them in a music video, and the winner would have the NFT on their profile to commemorate the experience.\
-  \
-  The creator of a movie or short film could sell producer credits in the final cut as NFTs. Could you imagine if the winner of a DeSo NFT could decide the topic for [@shaanvp](https://diamondapp.com/u/shaanvp)'s next show, or win a shoutout at the end of a [@jakepaul](https://diamondapp.com/u/jakepaul) or [@loganpaul](https://diamondapp.com/u/loganpaul) fight?\
-  \
-  How about a Clubhouse AMA with [@alexisohanian](https://diamondapp.com/u/alexisohanian), where the winners of a "one of 10" NFT get to come on-stage first? Or maybe we can finally get [@BennyBlanco](https://diamondapp.com/u/BennyBlanco) to bring us that DeSo Boys single we've all been waiting for, as a gloriously sought-after NFT.\
+突然间，创作者币不再是纯粹的投机对象；相反，它们与创作者在平台上的活动直接相关。
 
-*   **Counterfeit-proof Rolexes, Chanel handbags, etc...** Major brands have a big problem with
+这意味着，粉丝们首次可以参与创作者的成长，而不是在一旁观看他们走向成功。
 
-    counterfeiting: A real Rolex is worth much more than a knockoff, but knockoffs can often be
+以前这是不可能的，它改变了创作者与粉丝之间的关系，从粉丝为他们的作品付费，变成了投资于创作者，并共同成长。
 
-    so good that it's difficult to tell them apart.\
-    \
-    Now, imagine a solution based on DeSo NFTs whereby a luxury brand creates an official DeSo profile and offers an NFT associated with every single sale of their products.\
-    \
-    Now, a user not only gets digital, unforgeable proof that they own a real item, but they also simultaneously get to show off their purchase on their profile that all of their friends can see. \
-    \
-    Then, if they ever resell their Rolex, they can transfer the NFT along with it, allowing it to serve as a certificate of authenticity issued and digitally-signed directly by the brand, and that tracks the provenance of the item for its entire lifetime.\
+此外，将现金流与创作者币关联，使得任何想要推广新内容的创作者都有一大批投资于他们的持币人，帮助他们传播。分发不再仅仅是创作者的工作，他们也不需要将自己的生活交给公司来获得它。你的粉丝同时是你的投资者和分销商，因为他们以一种在DeSo出现之前不可能的方式与你在经济成功上保持一致。
 
-* **Digital trading cards.** Any sufficiently well-known creator can create digital trading cards of themselves simply by issuing a "one of N" NFT.\
-  \
-  All they need to do is create a unique piece of artwork, like a [cryptopunk](https://www.larvalabs.com/cryptopunks) drawing of themselves, and their biggest fans can sport it on their profiles.\
-  \
-  Notably, each DeSo NFT has a serial number, so each one will be special, even within the same issue. [@ab](https://diamondapp.com/u/ab), could you be the first DeSo NFT trading card!\
+最后，也许最有趣的是，这些现金流最终并不属于创作者本人；相反，正如毕加索的画作在原始初次销售后继续保持高价一样，创作者在DeSo上的NFT可以在创作者离世后继续交易并为创作者币产生现金流。
 
-* **Fine art.** Major artists have shown that NFTs are going to be a big part of the future of fine art. They not only allow anyone to enjoy the artist's work, but they also do a much better job of tracking the ownership of a piece, which means the provenance can't be forged.\
-  \
-  The fact that DeSo also incorporates the artist's identity, via their profile, into the minting of an NFT should, we hope, further increase the value and utility of NFTs issued by artists.\
-  \
-  Artists on DeSo have already been innovating extremely fast, and we're so excited to take things to the next level with DeSo NFTs. Maybe we can even get [@beeple](https://diamondapp.com/u/beeple) to finally claim his profile!\
+因此，在某种意义上，将现金流与创作者币关联使得拥有它们类似于拥有创作者在DeSo上创作的每一件作品的每一次销售的一定百分比。
 
-* **The future of Charity.** Charities can create profiles on DeSo, just like ordinary people. When they do this, anyone can elect to send them DeSo as part of the sale of their NFT.\
-  \
-  For example, someone could auction off a dinner with themselves, but specify that all the proceeds will go to The Red Cross.\
-  \
-  They would then be able to digitally prove that the funds went to that charity. Alternatively, a charity can participate in the fun directly by issuing NFTs of their own.\
-  \
-  For example, a charity could issue NFTs where each one represents a particular acre of trees that will be planted. This allows the owner to show off their contribution to any cause they care deeply about, which could significantly increase the amount people are willing to give.\
-  \
-  It's a bit surprising that social media and charity aren't more closely linked today — but we believe DeSo can finally change that, and make giving easier and more fun than ever before.\
+你能想象如果毕加索的所有作品都与一个创作者代币关联吗？
 
-*   **Owning a piece of history.** On DeSo, any post that a user makes can also be minted
+### DeSo NFT是如何运作的
 
-    as an NFT and sold. The user who "owns" the resulting NFT can be seen as owning a piece of
+要了解DeSo NFT是如何运作的，最简单的方法就是尝试在像[Diamond](https://diamondapp.com)这样的DeSo应用上创建一个。
 
-    history.\
-    \
-    For example, if a sitting US president theoretically joined DeSo in the future and
+非常简单，铸造和出售DeSo NFT的步骤如下：
 
-    used it to make a monumental announcement, like the end of US COVID lockdowns, someone could own that very special post, and all proceeds could be donated to a charity of the president's choice.&#x20;
-
-The above list is just the beginning; it's just what we've come up with so far. We can't wait to see what else the community can produce with DeSo NFTs.
-
-In the past, NFTs and social media have been separate: You mint an NFT on some platform and then post about it on social media. Now they come together, as they were always meant to be, increasing engagement, reach, value, and monetization for creators.
-
-### NFT Cashflows to Coin-Holders
-
-Creator Coins are a major DeSo superpower that we are taking to the next level with NFTs.
-
-On DeSo, a percentage of the sale of each NFT can be sent back to a creator's coin-holders as cashflow (including on secondary sales).
-
-With this key feature, DeSo NFTs "close the loop" between a creator's activities on DeSo and the value of their coin.
-
-Suddenly, creator coins are no longer objects of pure speculation; rather, they are directly linked to a creator's activity on the platform.
-
-This means that, for the first time, followers can participate in a creator's growth rather than watching from the sidelines as they rise to stardom.
-
-This has never been possible before, and it changes the relationship between a creator and their fans, from one in which fans pay for their work, to one in which they invest in the creator, and grow together.
-
-Moreover, tying cashflows to creator coins makes it so that any creator who wants to market a new piece of content has a whole army of coin-holders that are invested in their success, and will help them spread the word.
-
-Distribution is no longer solely the creator's job, and they don't need to sign their life away to a corporation in order to get it. Your fans are your investors and your distributors at the same time because they're economically aligned with you in a way that wasn't possible before DeSo.
-
-Finally, and perhaps most interestingly, these cashflows do not ultimately inhere to the creator themselves; rather, in the same way a Picasso painting continues to fetch a high price after its original primary sale, a creator's NFTs on DeSo can continue to trade and produce cashflows for creator coins long after the creator is gone.
-
-Thus, in some sense, tying cashflows to creator coins makes owning them analogous to owning a percentage of every sale of every piece of work the creator has or will ever produce on DeSo.&#x20;
-
-Could you imagine if Picasso had a creator coin linked to all of his works?
-
-### How DeSo NFTs Work
-
-The easiest way to see how DeSo NFTs work is to try and create one on a DeSo app like [Diamond](https://diamondapp.com).
-
-Very simply, the steps to minting and selling a DeSo NFT are as follows:
-
+* 创建一篇帖子，包括一段文字和嵌入的图片或视频。DeSo上的NFT都以帖子的形式开始，您可以将任何现有帖子变成NFT。
 *   Create a post, which consists of a snippet of text and an embedded image or video. All
 
-    NFTs on DeSo start as posts, and you can turn any pre-existing post into an NFT.\
+    NFTs on DeSo start as posts, and you can turn any pre-existing post into an NFT.\\
+* 点击“**Mint NFT**铸造NFT”，然后从选项中选择：\\
+  * 您可以铸造“独一无二”或“一种N个”的NFT。在后者的情况下，将有多个购买者拥有同一内容。\\
+  * 创作者可以设置创作者版税和持币人版税。这是销售的一部分，将作为现金流支付给创作者和创作者的持币人。在NFT的每次**二次销售**中，这种现金流也会产生。DeSo平台不收费。\\
+  * 创作者可以可选设置一个只有NFT获胜者才能访问的解锁内容。这个功能使DeSo NFT能够构建超独家体验，如只有购买者才能收听的独一无二的歌曲。\\
+* 一旦NFT铸造完成，用户可以对NFT进行竞拍。他们的钱包中必须有足够的资金来支付竞拍，但在创作者关闭拍卖之前，钱包里的资金不会被扣除。这使得用户可以随意竞拍。
+* 当创作者准备好时，他们可以通过选择获胜者来关闭拍卖，或者在“一种N个”NFT的情况下选择多个竞拍者。重要的是，创作者对谁拥有他们的作品有完全的控制权；他们不必把它交给出价最高的人\\
+* 拍卖结束后，获胜者可以在他们的个人资料上展示NFT。它会出现在他们的NFT标签页中，并且可以在他们的主页上显示。
 
-* Hit "**Mint NFT**" and select from the options:\
+我们不想让事情变得过于复杂，我们相信这一简单的功能集可以实现之前描述的所有有趣用例。\\
 
-  * You can mint either a "one of a kind" or "one of N" NFT. In the latter case, there will be multiple winners of the same piece of content.\
+最后，作为增强NFT流动性的手段，我们设计了一个允许节点运营商安排“展示”的系统。展示的工作原理如下：
 
-  * The creator can set a creator royalty and a coin-holder royalty. This is a percentage of the sale that will go to the creator and to the creator's coin-holders as cashflow. This cashflow hits on every **secondary sale** of the NFT as well. The DeSo platform does not take a fee.\
+* 节点运营商选择一组他们想要展示的NFT。
+* 节点运营商安排这些NFT在某个时间“发布”。
+* 在预定时间，新的NFT将在首页的专门标签页中展示。
 
-  * Optionally, the creator can set a piece of unlockable content that only the winner of the NFT will get access to. This feature enables hyper-exclusive experiences to be built on DeSo NFTs, like one-of-a-kind songs that only the winner can listen to.\
+利用这个系统，节点运营商可以每周甚至更频繁地策划一些列NFT作品，并围绕它们吸引社区参与该NFT的生态。\\
 
-* Once an NFT is minted, users can bid on the NFT. They must have enough in their wallet to cover the bid, but nothing is withdrawn from their wallet until the auction is closed by the creator. This allows users to bid on as many things as they like.\
-
-* Whenever the creator is ready, they can close the auction by selecting a winner, or winners in the case of a "one of N" NFT. Importantly, the creator has full control over who gets to own their work; they don't have to give it to the highest bidder.\
-
-* Once the auction is over, the winner(s) get to show off the NFT on their profile. It shows up in their NFTs tab, and it can be pinned to their main page.\
-
-
-We didn't want to over-complicate things, and we believe this simple set of features enables all of the interesting use-cases described previously.\
-
-
-Finally, as a means of concentrating liquidity around certain NFTs, we have designed a system that allows node operators to schedule "showcases." Showcases work as follows:
-
-* A node operator selects a collection of NFTs that they want to showcase.
-* The node operator schedules these NFTs to "drop" at a certain time.
-* At the scheduled time, the new NFTs are showcased on the Home page in their own tab.\
-
-
-Using this system, a node operator can curate a collection of NFTs every week, or even more frequently, and engage the community around them.\
-
-
-This, in some sense, allows node operators to serve as the curators of their own digital galleries, with each drop introducing a new exhibition.
+从某种意义上说，这使得节点运营商能够充当他们自己数字画廊的策展人，每次发布都会推出一个新的展览。

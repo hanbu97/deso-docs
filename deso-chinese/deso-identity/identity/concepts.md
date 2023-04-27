@@ -2,50 +2,50 @@
 description: Fundamentals of working with the DeSo Identity Service
 ---
 
-# Core Concepts
+# 核心概念
 
-## Basics
+## 基础知识
 
-In this section, we will look into a web-based integration of the DeSo Identity Service. If you're an iOS or Android developer, this guide is still useful.
+在本节中，我们将探讨 DeSo 身份服务在基于 Web 的集成中的应用。如果您是 iOS 或 Android 开发人员，本指南仍然有用。
 
-In addition, we recommend reading our [mobile-integration.md](mobile-integration.md "mention") guide afterwards.
+I此外，我们建议在之后阅读我们的 [mobile-integration.md](mobile-integration.md "mention")指南。
 
-Web-based applications interact with Identity in two ways:
+基于 Web 的应用程序与身份服务有两种交互方式：
 
-* Embedding Identity in an [`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
-* Opening Identity as a [`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
+* 在[`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) 中嵌入身份服务
+* 将身份服务作为[`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)窗口打开
 
-In most cases, a web application will use both contexts concurrently.
+在大多数情况下，Web 应用程序将同时使用这两种上下文。
 
-A general rule of thumb when it comes to Identity APIs is that the `iframe` is used for all background requests such as transaction signing and message decryption — whereas the `window` context serves requests that require user interaction such as log in, sign up, and account management.
+关于身份服务 API 的一个一般性经验法则是，iframe 用于所有后台请求，如交易签名和消息解密 —— 而窗口上下文用于需要用户交互的请求，如登录、注册和帐户管理。
 
-### Events
+### 事件
 
-Both `iframe` and `window` contexts communicate with your application by emitting `message` events through [`Window.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+`iframe` 和窗口上下文都通过 [`Window.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)向您的应用程序发出消息事件以进行通信。
 
-To start listening to these messages, we need to add a listener to the parent window, such as on [line #38](https://github.com/deso-protocol/frontend/blob/main/src/app/identity.service.ts#L38) in the implementation.
+要开始监听这些消息，我们需要向父窗口添加一个监听器，例如实现中的[#38](https://github.com/deso-protocol/frontend/blob/main/src/app/identity.service.ts#L38) 行。
 
 ```javascript
 window.addEventListener("message", (event) => this.handleMessage(event));
 ```
 
-Here, `this.handleMessage(event)` is a function defined by the developer to handle the logic around incoming messages.
+这里，`this.handleMessage(event)`是由开发人员定义的用于处理传入消息逻辑的函数。
 
-This handler function is likely the most important piece of code that you'll have to write when interacting with Identity.
+这个处理器函数可能是您在与身份服务交互时必须编写的最重要的代码片段。
 
-When working with Identity for the first time, we recommend a simple `console.log(event)` to get a sense of how it works.
+当第一次使用身份服务时，我们建议使用简单的`console.log(event)`来了解它的工作原理。
 
-The `event.data` field will contain the payload of messages sent by the DeSo Identity Service.
+`event.data` 字段将包含 DeSo 身份服务发送的消息的有效载荷。&#x20;
 
-### Initialize
+### 初始化
 
-The first message that Identity sends when it is opened is `initialize`. This message is sent in both `iframe` and `window` contexts and will require a response.
+当打开身份服务时，它发送的第一条消息是`initialize 初始化`。这条消息会在 `iframe` 和`window`窗口上下文中发送，并且需要响应。
 
-In this section, we will be assuming that we've already opened either an `iframe` or `window` context, but don't worry about it for now.
+在本节中，我们假设我们已经打开了 iframe 或窗口上下文中的一个，但现在不用担心。
 
-Each context has a dedicated guide explaining its inner workings in more detail, and we'll get to that later. Below is an example of the `event.data` that your event handler will receive on `initialize`.
+每个上下文都有一个专门的指南，详细解释其内部运作，稍后我们将讨论这个问题。以下是您的事件处理器在`initialize`初始化时接收到的`event.data` 示例。
 
-And here's a corresponding handler logic on line [#226](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L226) in the implementation.
+以及在实现中第 [#226](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L226) 行的相应处理逻辑。
 
 ```javascript
 {
@@ -56,19 +56,16 @@ And here's a corresponding handler logic on line [#226](https://github.com/deso-
 }
 ```
 
-The above four fields are present in the majority of Identity messages. Let's take a closer look at each of them:
+以上四个字段在大多数身份服务消息中都存在。让我们更仔细地看一下它们各自的作用：
 
-* The `id` is in [UUID v4](https://en.wikipedia.org/wiki/Universally\_unique\_identifier#Version\_4\_\(random\)) format and is used to identify requests/responses by Identity.\
+* `id` 采用 [UUID v4](https://en.wikipedia.org/wiki/Universally\_unique\_identifier#Version\_4\_\(random\)) 格式，用于标识身份服务的请求/响应。\\
+* service 字段在每条消息中都设置为 '`identity`'，并应在事件处理器中检查（像[这样](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L214)），以确保消息来自 DeSo 身份服务。\\
+* payload 字段将包含身份服务发送的数据，如用户信息、已签名的交易等。在`initialize`初始化消息中，它被留空。\\
+* `method` 字段描述发送的消息，在我们的示例中为 `'initialize'`。\\
 
-* The `service` field is set to `'identity'` in every message, and should be checked in the event handler (like[ this](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L214)) to make sure the message originated from the DeSo Identity Service.\
+DeSo 身份服务**要求**基于 Web 的应用程序对`initialize`初始化消息进行响应。
 
-* The `payload` field will contain the data sent by Identity, such as user information, signed transactions, etc. In the case of `initialize` message, it's left as an empty JSON.\
-
-* The `method` field describes the message sent, which is `'initialize'` in our example.
-
-The DeSo Identity Service **requires** a response to the `initialize` message on web-based applications.
-
-Whether we're using an `iframe` or a `window`, the response can simply be sent by directly responding to the message event such as in lines [#187](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L187) and [#282](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L282):
+无论我们使用 `iframe` 还是`window`，响应都可以通过直接响应消息事件来发送，例如在 [#187](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L187) 行和 [#282](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L282) 行所示：
 
 ```javascript
 event.source.postMessage({ 
@@ -78,167 +75,167 @@ event.source.postMessage({
 }, "https://identity.deso.org");
 ```
 
-The `id` field should be set to match the `id` value present in the `initialize` message.
+id`id`字段应设置为与`initialize`初始化消息中存在的 `id` 值相匹配。
 
-We set the `id` field as a string in the above code snippet, but you should set `id: event.data.id` in your code.
+在上面的代码片段中，我们将 `id` 字段设置为字符串，但您应在代码中设置 `id: event.data.id`。
 
-You may have noticed that in the example above we've added the string `"https://identity.deso.org"` at the end of the `postMessage()` call.
+您可能已经注意到，在上面的示例中，我们在`postMessage()`调用的末尾添加了字符串 `"https://identity.deso.org".`
 
-This specifies the target origin, or the accepted URL for the destination of the `postMessage`.&#x20;
+这指定了目标源，或 `postMessage` 的目标 URL。
 
-We can alternatively pass the wildcard `"*"` to accept any URL, which is less safe, but we will use it throughout this documentation for simplicity.
+我们也可以传递通配符 "\*" 来接受任何 URL，这样做安全性较低，但为简单起见，我们将在整个文档中使用它。
 
-However, we recommend setting `"https://identity.deso.org"` for better security.
+然而，我们建议设置`"https://identity.deso.org"`以获得更好的安全性。
 
-A few quick notes about message formats:
+关于消息格式的一些快速说明：
 
-* Messages with an `id` and `method` are requests that expect a response. (like `initialize`)
-* Messages with an `id` and no `method` are responses to requests.
-* Messages without an `id` do not expect a response.
+* 具有 `id` 和 `method` 的消息是期望响应的请求（如`initialize`初始化）。
+* 具有 `id` 而没有 `method` 的消息是对请求的响应。
+* 没有 `id` 的消息不期望响应。
 
-Keep this in mind as you read through [window-api](../window-api/ "mention") and [iframe-api](../iframe-api/ "mention").
+在阅读[window-api](../window-api/ "mention")和[iframe-api](../iframe-api/ "mention")时，请牢记这一点。
 
-## Accounts
+## 账户
 
-The DeSo Identity Service implements account management such as login, signup, and logout. Identity takes care of all cryptographic complexities related to blockchain accounts.
+DeSo 身份服务实现了诸如登录、注册和注销等账户管理功能。身份服务处理与区块链账户相关的所有加密相关的复杂处理。
 
-In addition, we don't have to deal with passwords or any sensitive data when using the DeSo Identity.
+此外，我们在使用 DeSo 身份服务时，无需处理密码或任何敏感数据。
 
-All account-related actions are performed via the `window` context API.
+所有与账户相关的操作都是通过`window`窗口上下文 API 执行的。
 
-For now, we will solely focus on the general intuition about account management, and leave the details of each API endpoint for the guide on the [window-api](../window-api/ "mention").
+现在，我们将仅专注于账户管理的一般逻辑，每个 API 接口的详细信息在[window-api](../window-api/ "mention")的指南中给出。
 
-The account workflow involves the following steps:
+账户工作流程涉及以下步骤：
 
-1. App [opens](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L99) the Identity in a `window` context, with the `/log-in` [API endpoint](../window-api/#log-in).
-2. When user completes the login flow, Identity sends a response containing [`PublicUserInfo`](https://github.com/deso-protocol/identity/blob/f211503ea2420cc6e75e48683670d278cc152d8c/src/types/identity.ts#L20) that will be used when exchanging messages with the `iframe` context.
-3. App [closes](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L196) the Identity `window` and stores the `PublicUserInfo` from step 2. into [local storage](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/global-vars.service.ts#L857) / database.
-4. App uses `PublicUserInfo` when sending messages to the `iframe` context to handle transaction [signing](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L125), message [decryption](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L144), and other methods.
-5. App might launch more `window` contexts to handle other actions requiring user interaction.
+1. 应用程序使用 `/log-in`  [API接口](../window-api/#log-in)在`window窗口`上下文中[打开](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L99)身份服务。
+2. 当用户完成登录流程时，身份服务发送包含 [`PublicUserInfo`](https://github.com/deso-protocol/identity/blob/f211503ea2420cc6e75e48683670d278cc152d8c/src/types/identity.ts#L20) 的响应，该响应将在与 `iframe` 上下文交换消息时使用。
+3. 应用程序[关闭](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L196)身份服务窗口，并将步骤 2 中的 `PublicUserInfo` 存储到[本地存储](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/global-vars.service.ts#L857)/数据库中。
+4. 应用程序在将消息发送到 `iframe` 上下文以处理交易[签名](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L125)、消息[解密](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L144)和其他方法时使用 `PublicUserInfo`。
+5. 应用程序可能会启动更多窗口上下文以处理其他需要用户交互的操作。
 
-This communication pattern covers almost all of the interactions with the DeSo Identity.
+此通信模式涵盖了与 DeSo 身份服务的几乎所有交互。
 
-In Step #2, we mentioned the cryptic `PublicUserInfo`.
+在步骤#2中，我们提到了神秘的 `PublicUserInfo`。其中包含了三个重要字段，包含了用户安全凭据：
 
-This information can be thought of as secure user credentials consisting of three important fields:
+* `encryptedSeedHex` 用于在`window`窗口和 `iframe` 上下文之间验证用户帐户
+* `accessLevel` 和 `accessLevelHmac` 信息用于验证用户授权给您的应用程序的权限
 
-* `encryptedSeedHex` is used to verify user accounts between the `window` and the `iframe` contexts
-* `accessLevel` and `accessLevelHmac` information is used to verify the permission that the user has given to your application
+在处理用户帐户创建或登录时，您总是需要显式设定访问权限，因此我们接下来专门为它们分配了一个完整的章节来进行说明。
 
-When handling user account creation or login you will always need to deal with access levels explicitly, so we dedicated an entire section to them next.
+### 访问等级
 
-### Access Levels
-
-When handling user accounts in the DeSo Identity `window` context, you will always want to add a `accessLevelRequest` URL parameter to the request, such as below:
+在处理 DeSo 身份窗口上下文中的用户帐户时，您应该总是在请求中添加 `accessLevelRequest` URL 参数，如下所示：
 
 ```javascript
 window.open("https://identity.deso.org/log-in?accessLevelRequest=4", null);
 ```
 
-The DeSo Protocol's implementation uses a `params` variable when handling URL parameters, and `accessLevelRequest` logic can be found at line [#85](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L85).
+DeSo 协议的实现在处理 URL 参数时使用 `params` 变量，`accessLevelRequest` 逻辑可以在[#85](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L85) 行找到。
 
-The access level request ranges from `0` to `4` and determines what actions the user has authorized your application for.
+访问级别请求的范围从 `0` 到 `4`，决定了用户授权您的应用程序进行的操作。
 
-Higher permission level means higher number of authorized actions.
+更高的权限级别意味着更多的授权操作。
 
-The available access levels are:
+可用的访问级别是：
 
 ```javascript
 enum AccessLevel {
-  // User revoked permissions
+  // 用户撤销权限
   None = 0,
 
-  // Approval required for all transactions.
-  // This means no account action is authorized.
-  ApproveAll = 2, /* DEFAULT */
+  // 所有交易都需要批准。
+  // 这意味着没有授权任何帐户操作。
+  ApproveAll = 2, /* 默认 */
 
-  // Approval required for buys, sends, and sells
-  // This authorizes all non-spending actions.
+  // 需要批准购买、发送和出售
+  // 这将授权所有非支出操作。
   ApproveLarge = 3,
 
-  // Node can sign all transactions without approval
-  // This authorizes all non-spending & spending actions.
+  // 节点可以在不经批准的情况下签署所有交易
+  // 这将授权所有非支出和支出操作。
   Full = 4,
 }
 ```
 
-Or, here's how the levels `2,3,4` (increasing downwards) look like in the DeSo Identity UI:
+或者，这里是等级 2,3,4（向下递增）在 DeSo 身份 UI 中的样子：
 
-![DeSo Identity Access Level UI](<../../.gitbook/assets/Screenshot from 2021-11-22 01-13-56.png>)
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption><p>DeSo身份等级UI</p></figcaption></figure>
 
-Access level determines which actions would require an approval from the user.
+访问级别决定了哪些操作需要用户的批准。
 
-Approval here means we need to launch the Identity in a `window` context so that user can review and manually confirm a transaction.
+Approval批准在这里意味着我们需要在`window`窗口上下文中启动身份服务，以便用户可以查看并手动确认交易。
 
-The approval mechanism is explained in more detail in [#approve](../window-api/#approve "mention"). You should only require access level `4` if your app really needs it.
+批准机制在[#approve](../window-api/#approve "mention")中有更详细的解释。只有在您的应用程序真正需要它时，您才应该要求访问级别 4。
 
-In general, you should deliberately request the minimal permission level that fits the requirements of your application.
+通常，您应该刻意请求符合应用程序要求的最低权限级别。
 
-For an exhaustive list of `accessLevel` requirements for each action, check out our [iframe-api](../iframe-api/ "mention") documentation.
+要查看每个操作的 accessLevel 要求的详尽列表，请查阅我们的[iframe-api](../iframe-api/ "mention") 文档。
 
-## Transactions
+## 交易
 
-Transactions are the building material of every blockchain.
+交易是每个区块链的重要组成部分。
 
-When you think of transactions, you might think of them in financial terms, that is, a transaction is an exchange of money between users.
+当你想到交易时，你可能会从金融角度来看待它们，也就是说，交易是用户之间进行货币交换的过程。
 
-While this is true in traditional systems, in the world of blockchain transactions are actually more general. A blockchain transaction means any change to the underlying database, which is called the blockchain state.
+虽然在传统系统中这是正确的，但在区块链世界里，交易实际上更加通用。区块链交易意味着对底层数据库（即区块链状态）的任何更改。
 
-On DeSo, this includes financial transactions, but also social transactions such as submitting posts, following users, minting NFTs, etc.
+在DeSo上，这包括金融交易，但还包括社交交易，如提交帖子、关注用户、铸造NFT等。
 
-Since blockchain communication is peer-to-peer, we can't verify who made a transaction purely by looking at network information such as IP addresses.
+由于区块链通信是点对点的，我们无法仅通过查看网络信息（如IP地址）来验证交易的发起者。
 
-Instead, we use cryptography to have mathematical certainty that the person sending the transaction is really the person they claim to be.
+相反，我们使用密码学方法确保发送交易的人确实是他们声称的那个人。
 
-To do that we use digital signatures, which are special certificates issued by user's private key.
+为此，我们使用数字签名，这是由用户私钥颁发的特殊证书。
 
-When integrating with the DeSo Identity Service, we don't have to worry about all the cryptographic nuances related to user keys.
+在与DeSo身份服务集成时，我们无需担心与用户密钥相关的所有密码学细节。
 
-Instead, we can simply ask Identity to do the hard work such as issuing transaction signatures.
+相反，我们可以简单地请求身份接口处理诸如颁发交易签名之类的繁琐工作。
 
-### Lifecycle
+### 生命周期
 
-Transactions on the DeSo blockchain have a three-step lifecycle:
+DeSo区块链上的交易生命周期包含三个步骤：
 
-**Construct:** The first step for a developer is to interact with the DeSo Backend API through endpoints such as `/api/v0/buy-or-sell-creator-coin` to get an unsigned user transaction.
+**构建:** 开发者首先通过诸如`/api/v0/buy-or-sell-creator-coin` 等接口与DeSo后端API进行交互，以获取未签名的用户交易。
 
-**Sign:** The developer will then take the output `TransactionHex` from the construct step's response, which encodes the user transaction, and signs it using the DeSo Identity.
+**签名:** 开发者然后从构建步骤的响应中获取输出`TransactionHex`，该输出编码了用户交易，并使用DeSo身份服务对其进行签名。
 
-**Broadcast:** The signed transaction will be sent through the `/api/v0/submit-transaction` by the developer so that it can be added to the blockchain ledger.
+**广播:** 签名后的交易将通过`/api/v0/submit-transaction`由开发者发送，以便将其添加到区块链账本中。
 
-In this section, we're mostly interested in the signing step.
+在本节中，我们主要对签名步骤感兴趣。
 
-The DeSo Identity Sevice handles the issuance of transaction signatures through both the `iframe` and `window` contexts.
+DeSo身份服务通过`iframe`和`window`窗口上下文处理交易签名的颁发。
 
-The `AccessLevel` you've requested in`/log-in`, as mentioned in [#access-levels](concepts.md#access-levels "mention"), will determine which transactions you can sign using the `iframe` context.
+您在`/log-in`中请求的`AccessLevel`（如[#access-levels](concepts.md#access-levels "mention")中所述）将决定您可以使用`iframe`上下文签名的交易。
 
-The required AccessLevel for each `iframe` API is detailed in the [iframe-api](../iframe-api/ "mention") guide.
+每个`iframe` API所需的AccessLevel在 [iframe-api](../iframe-api/ "mention") 指南中有详细说明。
 
-If the transaction you intend to sign matches this AccessLevel, you could simply ask the DeSo Identity Service to issue a signature in the background through the [`iframe` context](../iframe-api/#sign).
+如果您要签名的交易与此AccessLevel匹配，您可以简单地通过[`iframe上下文` ](../iframe-api/#sign)要求DeSo身份服务在后台颁发签名。
 
-This would be done by sending a `postMessage` to the `iframe` such as in line [#274](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L274).
+这将通过向iframe发送`postMessage`来完成，如[#274](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L274)行所示。
 
 ```javascript
 this.iframe.contentWindow.postMessage(req, "*");
 ```
 
-Note that we're executing the `postMessage` on the iframe `contentWindow` .
+请注意，我们在iframe `contentWindow`上执行`postMessage`。
 
-We will explain the details of what belongs in the `req` variable in the `iframe` context guide, though we will essentially have to pass `method: "sign"` field, the `encryptedSeedHex,` `accessLevel`, and`accessLevelHmac` fields, and pass the `transactionHex` of the transaction we want to sign (example on line [#125](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L125)).
+尽管我们将在`iframe`上下文指南中详细解释`req`变量中应包含的内容，但我们实际上需要传递`method: "sign"`字段、encryptedSeedHex、`accessLevel`和and`accessLevelHmac`字段，并传递我们要签名的交易的`transactionHex`（例如[#125](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L125)行）。
 
-The response will contain either the `signedTransactionHex` , meaning the request was successful, or a `approvalRequired: true` field that will indicate we need to launch the Identity window with the approval flow.
+响应将包含 `signedTransactionHex`，表示请求成功，或者一个`approvalRequired: true`字段，表示我们需要启动身份窗口来进行审批流程。
 
-To do so, we will launch a `window` context with the `/approve` endpoint and pass the desired transaction as URL param:
+为此，我们将使用`/approve` 接口启动一个`window`窗口上下文，并将所需的交易作为URL参数传递：
 
 ```javascript
 window.open("https://identity.deso.org/approve?tx={transactionHex}", null);
 ```
 
-After receiving the `signedTransactionHex`, we can then broadcast it to the network.
+收到 `signedTransactionHex`后，我们可以将其广播到网络。
 
-We will further describe the `method: "sign"` iframe API message and `/approve` window API endpoint in the corresponding API documentation.
+我们将在相应的API文档中进一步描述 `method: "sign"`iframe API 消息和 `/approve` 窗口 API接口。
 
-## Messages
+## 消息
+
+任何社交网络的关键组成部分都是消息。
 
 A crucial component of any social network is messaging.
 
@@ -248,7 +245,7 @@ Messages are private and can only be read by the sender and the recipient thanks
 
 Consequently, messages are handled by Identity.
 
-As an application developer, it isn't crucial to understand the messaging scheme in-depth, but we want to share a few remarks for those crypto-savvy readers in the [Protocol](broken-reference) subsection.
+As an application developer, it isn't crucial to understand the messaging scheme in-depth, but we want to share a few remarks for those crypto-savvy readers in the [Protocol](broken-reference/) subsection.
 
 ### Protocol
 
@@ -264,16 +261,14 @@ New message transactions will have a `V: []byte` field in `ExtraData` which shou
 
 Here's how each version works:
 
-* **`V1`**: (LEGACY) Messages encrypted to the recipient public key using AES-128-CTR scheme. \
+* **`V1`**: (LEGACY) Messages encrypted to the recipient public key using AES-128-CTR scheme.\
   \
-  Messages can be decrypted with the private key of the user specified in transaction metadata field `RecipientPublicKey`.\
-
-* **`V2`**: (CURRENT) Messages encrypted to both the recipient and sender using [AES-128-CTR](https://github.com/deso-protocol/identity/blob/f211503ea2420cc6e75e48683670d278cc152d8c/src/lib/ecies/index.js#L175) scheme with shared secrets derived via [ECDH](https://github.com/deso-protocol/identity/blob/f211503ea2420cc6e75e48683670d278cc152d8c/src/lib/ecies/index.js#L100) and run through a simple [SHA256 ConcatKDF](https://github.com/deso-protocol/identity/blob/f211503ea2420cc6e75e48683670d278cc152d8c/src/lib/ecies/index.js#L23). \
+  Messages can be decrypted with the private key of the user specified in transaction metadata field `RecipientPublicKey`.\\
+* **`V2`**: (CURRENT) Messages encrypted to both the recipient and sender using [AES-128-CTR](https://github.com/deso-protocol/identity/blob/f211503ea2420cc6e75e48683670d278cc152d8c/src/lib/ecies/index.js#L175) scheme with shared secrets derived via [ECDH](https://github.com/deso-protocol/identity/blob/f211503ea2420cc6e75e48683670d278cc152d8c/src/lib/ecies/index.js#L100) and run through a simple [SHA256 ConcatKDF](https://github.com/deso-protocol/identity/blob/f211503ea2420cc6e75e48683670d278cc152d8c/src/lib/ecies/index.js#L23).\
   \
   Under `V1`, once a message was broadcasted to the blockchain, the sender of the message was unable to decrypt it on other devices.\
   \
-  On the other hand, shared secrets are available both to the recipient and sender, so both can decrypt messages.\
-
+  On the other hand, shared secrets are available both to the recipient and sender, so both can decrypt messages.\\
 * **`V3`**: (PLANNED) We intend to expand the `V2` scheme so it uses rotating messaging keys. Keys will be computed via HD wallet scheme with hardened derivation.\
   \
   Messaging keys can then be shared with third-party apps, specifically mobile clients, to simplify message handling.

@@ -1,188 +1,186 @@
 ---
-description: The incredible cost advantages of storage-heavy blockchains
+description: 存储密集型区块链的惊人成本优势
 ---
 
-# 4⃣ Infinite-State
+# 4⃣ 无限状态
 
-Many believe that general-purpose blockchains like Ethereum, Cardano, Avalanche, and Solana will come to power everything on the web, including financial apps, social apps, and even Amazon-like marketplaces.
+许多人认为，像以太坊、卡尔达诺、雪崩和Solana这样的通用区块链将支持网络上的所有应用，包括金融应用、社交应用，甚至亚马逊式的电商平台。
 
-But there's a show-stopping problem that's being widely overlooked: **on-chain storage**.
+但是，有一个被广泛忽视的问题：**链上存储**。
 
-While today's general-purpose blockchains have worked well for storage-light applications like DeFi, they cannot scale to handle storage-heavy applications like social apps and marketplaces.
+虽然当今的通用区块链对于存储轻型应用（如DeFi）效果不错，但它们无法扩展以处理存储密集型应用，如社交应用和电商平台。
 
-Imagine a world in which every "like" or "follow" on a decentralized app cost $1.00+ in storage fees.
+试想一下，在一个去中心化应用中，每个“点赞”或“关注”的存储费用超过1.00美元。
 
-Unfortunately, that is the reality now because of the storage limitations of all general-purpose blockchains on the market today.
+不幸的是，由于目前市面上所有通用区块链的存储限制，这已经成为现实。
 
-### Storage Costs[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#storage-costs) <a href="#storage-costs" id="storage-costs"></a>
+### 存储成本 <a href="#storage-costs" id="storage-costs"></a>
 
-The numbers don't lie. The simple table below illustrates how the cost of storing just 1 gigabyte of on-chain state varies across blockchains. Importantly, these costs are only expected to increase for general-purpose blockchains, as they become more popular and storage becomes more scarce.
+数字是不会撒谎的。下面的简单表格说明了在不同区块链上仅存储1GB链上状态的成本如何变化。值得注意的是，这些成本预计会随着通用区块链的普及而增加，因为存储变得越来越稀缺。
 
-We will discuss DeSo as a special case later on.
+稍后我们将讨论DeSo的独特之处。
 
-<figure><img src="https://uploads-ssl.webflow.com/6148aea00f7f907469e373ad/618492a6cae2196583f44adb_DESO_blog%20graphics_FINAL_7pm.png" alt=""><figcaption><p>Pricing snapshot taken as of Nov 09, 2021. Make sure to check out the Appendix for detailed calculations.</p></figcaption></figure>
+这些高昂的链上存储成本阻碍了绝大多数Web 2.0应用在今天的通用区块链上实现，即使通过桥接技术使用像Arweave或Filecoin这样的存储专注的区块链。
 
-These high on-chain storage costs prevent the vast majority of web 2.0 applications from being implementable on today’s general-purpose blockchains, even if using bridges to storage-focused blockchains such as Arweave or Filecoin.
+按照目前的价格，即使在上述任何一条链上存储一个指向Arweave或Filecoin的链接，成本也在0.10美元至1.00美元+之间，这是难以承受的。
 
-At current prices, even storing a single link to Arweave or Filecoin on any of the chains shown above would cost between $0.10 - $1.00+, which is prohibitively expensive.
+而且，随着这些链变得更受欢迎，成本可能会进一步上升，因为它们并未设计为可扩容状态存储。
 
-And the costs are likely going to go up even more as these chains become more popular because they weren't designed to scale state storage.
+此外，尽管许多区块链声称可以处理每秒数千笔交易（即TPS），但这一指标并未考虑到应用的存储属性。
 
-Moreover, even though many blockchains claim to be able to handle thousands of transactions per second, aka TPS, this metric does not take into account the storage properties of the application at hand.
+50,000笔DeFi交易（可能生成零字节的新状态数据）与50,000笔社交交易（可能生成需要存储、索引和查询的数十兆字节）之间存在很大的差异。
 
-There is a big difference between 50,000 DeFi transactions, which may generate zero bytes of new state data, as opposed to 50,000 social transactions, which may generate tens of megabytes that need to be stored, indexed, and queried.
+当今最先进的区块链完全无法处理后一种类型的交易，这一局限性阻碍了一些最有趣的Web3应用的发展。
 
-Today's most advanced blockchains fail completely at handling the latter type of transaction, and this limitation is blocking the development of some of the most interesting Web3 applications.
+经过多年研究，我们认为所有存储密集型的Web3应用程序，如社交应用和电商平台，都需要新型的区块链来开发。
 
-We've been researching this challenge for years, and we believe that all storage-heavy Web3 applications, such as social apps and marketplaces, will require new types of blockchains to develop.
+这是因为，正如我们将讨论的，这些应用程序是无限状态应用，而不是有限状态应用。
 
-That is because, as we will discuss, these applications are infinite-state applications rather than finite-state applications.
+### 从有限状态到无限状态 <a href="#from-finite-state-to-infinite-state" id="from-finite-state-to-infinite-state"></a>
 
-### From Finite-State to Infinite-State[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#from-finite-state-to-infinite-state) <a href="#from-finite-state-to-infinite-state" id="from-finite-state-to-infinite-state"></a>
+今天，市场上所有的通用区块链都是为我们所说的有限状态应用而构建的。
 
-Today, all general-purpose blockchains on the market were built to power what we call finite-state applications.
+这些应用程序中，每个用户需要保存的数据或状态是有限的。
 
-These are applications where the amount of data or state that you have to keep on hand for each user is, well, finite.
+例如，要构建一个金融应用，您真正需要知道的是每个用户的账户余额，以便验证交易。
 
-For example, in order to build a financial app, all you really need to know in order to validate transactions is each user's account balance.
+用户之间可以进行数百万次资金转账，但最后，您只需要存储几个数字，表示每个用户的最终余额。
 
-Users could transfer funds between each other millions of times, but in the end, all you need to store is just a few numbers indicating the final balance of each user.
+换句话说，您需要保留的状态是作为用户数量的函数而增长的，而不是作为交易数量的函数。或许令人惊讶的是，几乎所有的去中心化金融（DeFi）都是有限状态应用。
 
-Put another way, the state you have to keep around grows as a function of the number of users rather than as a function of the number of transactions. Perhaps surprisingly, virtually all of decentralized finance, aka DeFi, consists of finite-state applications.
+只要您能存储一些账户余额，您就可以开始构建任意复杂的交易、借款、贷款等工具......而且从长期来看，您永远不需要存储除最终余额外其他任何数据。
 
-As long as you can store a handful of account balances, you can start to build arbitrarily-complex tools for people to trade, borrow, lend, etc... and you'll never have to store more than the ending balances in the long-term.
+这是因为DeFi应用中用户执行的交易是状态中立的交易，这意味着它们只是修改现有的余额，而不是向状态集添加新数据。
 
-This is because the transactions users perform in DeFi applications are state-neutral transactions, meaning they simply modify existing balances rather than append new data to the state.
+问题是，随着区块链试图颠覆金融领域之外的应用程序，它们开始需要处理一种完全不同类型的应用程序：无限状态应用程序。
 
-The problem is that, as blockchains look to disrupt applications beyond the financial sector, they start needing to deal with a completely different class of applications: the infinite-state applications.
+**现在，如果我们想考虑金融之外的领域呢？**
 
-**Now, what if we want to look beyond finance?**
+无限状态应用程序是指需要存储的数据量随着每个用户执行的操作数无限增长的应用程序。
 
-Infinite-state applications are ones where the amount of data you need to store grows indefinitely with the number of actions that each user performs.
+例如，考虑一个典型的社交应用。
 
-For example, consider a typical social app.
+* 用户可以创建个人资料，这会增加状态……
+* 用户可以发帖子，这会增加状态……
+* 用户可以关注其他用户，这会增加状态……
+* 用户可以喜欢帖子和评论，这会增加状态……
 
-* Users can create a profile, which adds state...
-* Users can make a post, which adds state...
-* Users can follow other users, which adds state...
-* Users can like posts and comments, which adds stats...
+现在你大概有一些明白了。
 
-You get the picture.
+不同之处在于，对于社交应用程序，所有的交易都是“_状态增强_”的，而不是“_状态中立_”的，就像DeFi一样。
 
-The difference is that with social applications, all transactions are "_state-augmenting_" rather than "_state-neutral_", as is the case with DeFi.
+对于社交应用，你不仅仅需要在状态中保留一些账户余额，还需要能够存储无限量的数据。
 
-With social apps, instead of just having to keep a few account balances in your state, you need to be able to store an indefinite amount of data.
+更糟糕的是，这些状态需要被网络上的其他用户频繁查询，要求它具有高可用性。不幸的是，我们今天使用的许多应用程序都是这样的，包括大多数社交应用和市场。
 
-Even worse, this state needs to be frequently queried by other users on the network, requiring it to be highly-available. Unfortunately, many applications we use today are like this, including most social apps and marketplaces.
+更重要的是，正如我们将讨论的，目前市场上的所有现有通用区块链都无法处理这类应用程序。
 
-What's more, as we'll discuss, none of the existing general-purpose blockchains on the market today are equipped to handle these types of applications.
+### 通用区块链的拥堵问题[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#congestion-of-general-purpose-chains) <a href="#congestion-of-general-purpose-chains" id="congestion-of-general-purpose-chains"></a>
 
-### Congestion of General-Purpose Chains[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#congestion-of-general-purpose-chains) <a href="#congestion-of-general-purpose-chains" id="congestion-of-general-purpose-chains"></a>
+市场上所有的通用区块链，包括以太坊、Ada、雪崩、Solana等，都不适合处理无限状态应用程序，如社交应用和电商平台。
 
-All the general-purpose blockchains on the market today, including Ethereum, Cardano, Avalanche, Solana, and others are ill-equipped to handle infinite-state applications such as social apps and marketplaces.
+这是因为，即使是为少量用户扩展无限状态应用，也需要专门针对所涉及应用的存储和索引需求进行量身定制的解决方案。
 
-This is because scaling infinite-state applications, even to a small number of users, requires solutions that are inherently tailored to the storage and indexing requirements of the app at hand.
+> **请记住：**每秒50,000个状态修改事务并不等于每秒50,000个状态增加事务。
 
-> **Remember:** 50,000 state-neutral transactions per second — is not the same as — 50,000 state-augmenting transactions per second.
+例如，市场上大多数最新的通用区块链通过将所有帐户状态存储在内存中来保持高TPS。
 
-For example, most of the newest general-purpose blockchains on the market maintain high TPS by storing all account state in memory.
+这对有限状态应用程序（如DeFi）非常有效，如果您想成为最快的DeFi区块链，这是最佳选择。
 
-This doesn't just work great for finite-state applications like DeFi, but it is the optimal choice if you want to be the fastest DeFi blockchain.
+然而，一旦有人尝试在您的链上构建无限状态应用，您就需要为每个用户存储可能达到兆字节甚至更多的数据，这意味着放在内存中不再合适了。
 
-However, the second someone tries to build an infinite-state app on your chain, you go from having to store a single number for each user, to having to store potentially megabytes or more, which means things suddenly don't fit in memory anymore.
+此外，如果区块链是通用的，它就无法智能决策哪些帐户状态需要存储在内存中，哪些不需要，更别提实时地对数据进行索引了。
 
-Moreover, if the blockchain is general-purpose, it can't make intelligent decisions about what account state is needed in-memory vs what isn't, and it certainly can't index the data to make it query-able in real-time.
+最终的结果是，所有现有的通用区块链为了保持可行性，都不得不设置存储限制。这导致了存储费用的飙升，使得在这些链上构建无限状态应用变得非常昂贵，随着这些链变得越来越受欢迎，这个问题只会恶化。
 
-The end result is that all general-purpose blockchains today have had to impose storage limits in order to remain viable. This has resulted in skyrocketing storage fees that make it prohibitive to build infinite-state apps on them, and that will only worsen as these chains become more popular.
+没有人尝试在通用区块链上构建无限状态应用，因为在成本足够低的情况下这是不可能做到的。
 
-Nobody is trying to build infinite-state applications on a general-purpose blockchain because it's impossible to do so at a low enough cost.
+但是，有许多有趣的应用都是无限状态的。实际上，Web 2的绝大多数应用都是无限状态的（例如Facebook，Instagram，亚马逊等）。
 
-But there's a whole world of interesting applications that are infinite-state. In fact, the vast majority of Web 2 applications are infinite-state (FB, Insta, Amazon, etc).
+那么，如果您甚至不能在当今的有限状态链上构建大多数Web 2应用程序，Web3如何起飞呢？
 
-So how can Web3 take off if you can't even build the majority of Web 2 applications on today's finite-state chains?
+此外，只需一个人在通用区块链上构建一个无限状态应用，其存储就会变得拥堵。
 
-Moreover, all it takes is for a single person to build an infinite-state application on a general-purpose blockchain before its storage becomes congested.
+用一个类比来说，想象一下你和其他三个室友共享一个宿舍房间，如果其中一个人很不整洁，那么你的房间就会被杂物充斥。
 
-To use an analogy, imagine you're sharing a dorm room with three other roommates-- if a single one of them is messy, then your room gets filled with clutter.
+类似地，在较新的通用区块链上构建一个全规模的社交应用或市场，将立即触及这些区块链的固有存储限制，导致所有无限状态应用相对较快地变得几乎无法使用。
 
-Similarly, building a full-scale social app or a marketplace, even on one of the newer general-purpose blockchains, will immediately hit these blockchains' inherent storage limits, causing all infinite-state apps to become virtually unusable relatively quickly.
+我们已经看到了以太坊上的这种悲剧，Solana也开始出现类似情况。
 
-We have already seen this tragedy of the commons play out with Ethereum and it's starting to happen on Solana as well.
+### 扩容无限状态应用 <a href="#scaling-infinite-state-apps" id="scaling-infinite-state-apps"></a>
 
-### Scaling Infinite-State Apps[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#scaling-infinite-state-apps) <a href="#scaling-infinite-state-apps" id="scaling-infinite-state-apps"></a>
+为了处理无限状态应用程序固有的存储和索引需求，我们相信需要构建专门为特定应用量身定制的区块链。
 
-In order to handle the storage and indexing requirements inherent to infinite-state applications, we believe blockchains will need to be built that are custom-tailored to the application at hand.
+这是因为，在无法对存储数据的类型（即模式）进行假设的情况下，存储、索引和查询数据的成本将飙升，使得在链上构建的应用程序失去竞争力。
 
-This is because, without being able to make assumptions about the type of data that will be stored, _aka the schema_, the costs of storing, indexing, and querying the data will skyrocket, making applications built on the chain uncompetitive.
+举一个非常具体的例子，考虑去中心化社交区块链（DeSo）。DeSo是从头开始定制的，以支持社交应用，这意味着它存储和索引的所有数据都遵循已知的模式。
 
-To give a very concrete example, consider the Decentralized Social blockchain, aka DeSo. DeSo is custom-built from the ground up to power social applications, and that means that all of the data that it stores and indexes follows a known schema.
+个人资料的存储和索引方式不同于帖子，而帖子的存储和索引方式又不同于关注等……
 
-Profiles are stored and indexed differently than posts, which are stored and indexed differently than follows, etc...
+这种定制化程度不仅使存储成本比雪崩或Solana**低10000倍**，而且还允许所有DeSo节点提供所有相关数据的即时查询。
 
-This level of customization not only makes storage costs **10,000x cheaper** than Avalanche or Solana, but it also allows all DeSo nodes to offer instant querying of all relevant data.
+像查找谁喜欢某篇帖子或者查找某人关注谁这样的查询，如果数据以非结构化方式存储，将会变得昂贵，但在DeSo上几乎是瞬间完成的。
 
-Queries like figuring out who liked a post or figuring out who someone follows, which would be expensive if the data was stored in an unstructured way, are virtually instant.
+这使得开发人员更容易在DeSo上构建应用程序，并且这也是为什么已经有100多个应用程序构建在它上面的原因，包括Diamond、Pearl、Desofy、DeSocialWorld、Stori等。
 
-This makes it much easier for developers to build apps on DeSo, and it is part of the reason why there are already over a hundred apps built on it, including Diamond, Pearl, Desofy, DeSocialWorld, Stori, and more.
+下面的简单表格说明了在不同区块链上存储1GB链上状态的成本的区别。
 
-The simple table below illustrates how the cost of storing just 1 gigabyte of on-chain state varies across blockchains.
+<figure><img src="https://uploads-ssl.webflow.com/6148aea00f7f907469e373ad/618492a6cae2196583f44adb_DESO_blog%20graphics_FINAL_7pm.png" alt=""><figcaption><p>截至2021年11月9日的价格快照。详细的计算方法在附录中。</p></figcaption></figure>
 
-Note also that, as time goes on, the storage rents of the general-purpose chains are expected to increase as storage becomes scarce. In contrast, DeSo's costs are expected to remain fixed, and potentially even decrease, since it was built to handle the infinite-state use-case.
+还要注意的是，随着时间的推移，通用链的存储价格预计会随着存储变得稀缺而增加。相比之下，DeSo的成本预计将保持固定，甚至可能降低，因为它是为处理无限状态用例而构建的。
 
-Interestingly, even though the DeSo blockchain was designed to support social applications, it is important to note that it can be augmented to support any infinite-state application, as long as the schema is well-defined.
+有趣的是，尽管DeSo区块链是为支持社交应用而设计的，但需要注意的是，只要模式定义明确，它可以被扩展以支持任何无限状态应用。
 
-The key is that each new type of application is supported at the bare metal level and customized in such a way that the storage and indexing requirements of that application are optimized.
+关键在于，每种新型应用都在裸机级别得到支持，并进行定制，以便优化该应用的存储和索引需求。
 
-This means that, over time, as a network effect forms around the DeSo blockchain, it can be extended to support marketplace data structures and more, giving it the potential to disrupt all of Web 2.0, and not just the social media giants.
+这意味着，随着时间的推移，随着DeSo区块链周围形成网络效应，它可以扩展以支持市场数据结构等更多内容，从而具有颠覆Web 2.0的全部内容的潜力，而不仅仅是社交媒体巨头。
 
-### Other Storage Blockchains[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#other-storage-blockchains) <a href="#other-storage-blockchains" id="other-storage-blockchains"></a>
+### 其他存储区块链[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#other-storage-blockchains) <a href="#other-storage-blockchains" id="other-storage-blockchains"></a>
 
-It is important to mention that there are also blockchains that have focused exclusively on storage, such as Filecoin or Arweave.
+值得一提的是，还有一些专注于存储的区块链，如Filecoin或Arweave。
 
-Some have suggested that these blockchains can be used in combination with a general-purpose blockchain in order to alleviate the storage issues they face.
+有人建议，这些区块链可以与通用区块链结合使用，以减轻它们面临的存储问题。
 
-In practice, however, the storage costs of general-purpose blockchains are so high that even storing a simple link to Filecoin or Arweave for each piece of content would cost between $0.10 - $1.00+ at today's prices.
+然而，在实践中，通用区块链的存储成本如此之高，以至于即使为每个内容存储一个指向Filecoin或Arweave的简单链接，也需要在今天的价格下支付0.10美元至1.00美元+的费用。
 
-This makes it prohibitively expensive to build most infinite-state apps using these bridges, and the cost will only increase as these chains become more popular.
+这使得使用这些链构建大多数无限状态应用变得过于昂贵，而且随着这些链变得越来越受欢迎，成本只会增加。
 
-Additionally, data stored in Filecoin or Arweave would not be indexed appropriately, and thus a whole separate indexing layer would need to be created in order to support each app at scale. The indexing layer would then need its own incentive structure in place as it becomes more and more expensive to run at scale.
+此外，存储在Filecoin或Arweave中的数据将无法适当地进行索引，因此需要创建一个完全独立的索引层，以支持每个大规模的应用程序。随着索引层在大规模运行中的成本越来越高，它还需要具有自己的激励结构。
 
-The above being said, Arweave can be useful for storing data that does not need to be indexed, aka blob storage, and the DeSo blockchain allows for images and videos to be stored on Arweave if the user desires.
+尽管如此，Arweave可用于存储不需要索引的数据，即blob存储，如果用户需要，DeSo区块链允许将图像和视频存储在Arweave中。
 
-The DeSo blockchain then stores a link to Arweave as opposed to storing the image on-chain or in a centralized service.
+然后DeSo区块链存储一个指向Arweave的链接，而不是将图像存储在链上或集中式服务中。
 
-Notably, because the cost of storing links on DeSo is virtually free ($0.0000184), DeSo can integrate these systems in a way that today’s general-purpose blockchains cannot.
+值得注意的是，由于在DeSo上存储链接的成本几乎是免费的（0.0000184美元），DeSo可以以当前通用区块链无法实现的方式整合这些系统。
 
-### Conclusion[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#conclusion) <a href="#conclusion" id="conclusion"></a>
+### 结论[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#conclusion) <a href="#conclusion" id="conclusion"></a>
 
-We think that the difficulty of storing and indexing data in a scalable way is something that has been underestimated by most of the crypto space.
+我们认为，大多数加密领域都低估了大规模存储和索引数据的难度。
 
-For a long time, the entire space has been limited to finite-state applications without much consideration for the wide range of infinite-state applications, like social apps and marketplaces, that in fact make up the majority of Web 2.0 applications.
+很长一段时间以来，整个领域都局限于有限状态应用，而没有充分考虑到无限状态应用的广泛范围，如社交应用和市场，事实上，这些应用占据了Web 2.0应用的大部分。
 
-In order for Web3 to reach its full potential to disrupt Web 2.0 and the systems of the past, we believe blockchains that are custom-built to support new use-cases will be required because of the storage and indexing limitations inherent to the existing general-purpose chains.
+为了使Web3充分发挥其颠覆Web 2.0和过去系统的潜力，我们相信，由于现有通用链固有的存储和索引限制，将需要定制构建的区块链来支持新用例。
 
-### Appendix[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#appendix) <a href="#appendix" id="appendix"></a>
+### [​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#appendix)附录 <a href="#appendix" id="appendix"></a>
 
-In this section we explain the calculations of how much it costs to store 1 GB of state data on each blockchain as of publishing on Nov 09, 2021
+在本节中，我们解释了截至2021年11月9日发布时，每个区块链上存储1GB状态数据的成本计算方法。
 
 #### DeSo[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#deso) <a href="#deso" id="deso"></a>
 
-In DeSo’s transaction cost model, the fee is simply the transaction size in KB multiplied by MinFeeRateNanosPerKB. The current rate is 1000 Nanos per KB, which means 1 GB of storage costs 1 DeSo. As of writing, the price of DeSo is $80. Storage costs in USD are expected to remain fixed or even decrease as the blockchain scales and efficiency increases over time.
+在DeSo的交易成本模型中，费用仅为交易大小（KB）乘以MinFeeRateNanosPerKB。当前费率为每KB 1000Nanos，这意味着1GB存储成本为1 DeSo。撰写本文时，DeSo的价格为80美元。预计随着区块链的扩展和效率的提高，存储成本（以美元计）将保持不变甚至可能降低。
 
 #### Cardano[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#cardano) <a href="#cardano" id="cardano"></a>
 
-Cost is calculated using the a + b x size formula. Taking a = 0.155381 ADA, b = 0.000043946 ADA. For simplicity, we skip the costs associated with Cardano’s Plutus execution (which would further increase the price), and instead just focus on the bare minimum transaction cost.
-
-We assume an average state-augmenting transaction appends 500 bytes of data to the state, hence 1GB of storage would cost about 354708 ADA. As of writing, the price of ADA is $1.97, which gives a total cost of $698,775.
+成本使用a + b x size公式计算。取a = 0.155381 ADA，b = 0.000043946 ADA。为简单起见，我们跳过与Cardano的Plutus执行相关的成本（这将进一步增加价格），而只关注最低交易成本。 我们假设平均状态扩展交易将500字节的数据附加到状态，因此1GB的存储将花费大约354708 ADA。撰写本文时，ADA的价格为1.97美元，总成本为698,775美元。
 
 #### Avalanche[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#avalanche) <a href="#avalanche" id="avalanche"></a>
 
-Cost is calculated based on today’s gas price of 25 NanoAVAX and one word (32 bytes) costing 20,000 gas or 0.0005 AVAX. For simplicity, we skip the gas costs of smart contract code execution and of allocating the storage and instead only consider the bare minimum cost of SSTORE operations. This makes storing 1GB of data cost about 15625 AVAX. As of writing, the price of AVAX is $63.24, which gives a total cost of $988,125.
+成本是根据今天的25 NanoAVAX的Gas费价格和一个字（32字节）计算的，它花费20,000Gas费或0.0005 AVAX。为简化起见，我们跳过智能合约代码执行的Gas费成本和分配存储的成本，而只考虑SSTORE操作的最低成本。这使得存储1GB的数据成本约为15625 AVAX。撰写本文时，AVAX的价格为63.24美元，总成本为988,125美元。
 
 #### Solana[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#solana) <a href="#solana" id="solana"></a>
 
-Cost is calculated based on today’s rent fee of 19.05 lamports per byte-epoch and epoch lasts 2 days. For 1 GB of state, this gives the biennial rent equal to 6858 SOL. As of writing, the price of SOL is $200, which gives a total cost of $1,371,600. It’s worth noting that this is only the amount required to be rent-exempt, otherwise Solana will charge a recurring fee of 19.05 SOL every 2 day epoch.
+成本是根据当今的每字节-高度租金为19.05 lamports以及每个高度持续2天计算的。对于1GB的状态数据，这使得每两年的租金等于6858 SOL。在撰写本文时，SOL的价格为200美元，总成本为1,371,600美元。值得注意的是，这仅是免除租金所需的金额，否则Solana将每2天一个纪元收取19.05 SOL的循环费用。
 
 #### Ethereum[​](https://deso-docs.vercel.app/docs/blockchain/infinite-state#ethereum) <a href="#ethereum" id="ethereum"></a>
 
-Cost is calculated based on today’s gas price of 150 Gwei and one word (32 bytes) costing 20,000 gas or 0.003 ETH. For simplicity, we skip the gas costs of smart contract code execution and of allocating the storage and instead only consider the bare minimum cost of SSTORE operations. This makes storing 1GB of data cost about 93750 ETH. As of writing, the price of ETH is $4200, which gives a total cost of $393,750,000.
+成本是根据当天的Gas价格为150 Gwei和一个字（32字节）的成本为20,000Gas或0.003 ETH计算的。为简化起见，我们跳过智能合约代码执行和分配存储的Gas成本，而仅考虑SSTORE操作的最低成本。这使得存储1GB数据的成本约为93,750 ETH。在撰写本文时，ETH的价格为4,200美元，总成本为393,750,000美元。

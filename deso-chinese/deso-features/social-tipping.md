@@ -1,19 +1,19 @@
-# 5⃣ Social Tipping
+# 5⃣ 社交打赏
 
-## What is Social Tipping?
+## 什么是社交打赏？
 
-Because DeSo is money-native, it can tie tipping with content in ways that no other social network can.\
-\
-On DeSo, the core mechanic introduced is called "**diamonds**," and it functions as a like, only it allows users to give variable amounts of money to content.
+由于DeSo天生支持货币功能，它可以将打赏与内容联系在一起，这是其他社交网络无法做到的。
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+在DeSo中，引入了一个名为“**钻石**”的核心机制，它的功能类似于点赞，但它允许用户为内容提供不同金额的打赏。
 
-In the screenshot above, a single diamond is a fraction of a penny while a six-diamond tip is \~$53.&#x20;
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
-All of this is instant, and the receiver of the tip immediately gets $DESO in their wallet for their content. Many users already earn thousands of dollars a week off of this feature alone, and as DeSo scales, the economics will only get better.
+在上面的截图中，一个钻石只相当于一分钱，而一个六钻石的打赏价值约为53美元。
 
-Just to do some math, imagine a post with 1 million likes gets 100,000 diamonds, worth on average ten cents each.
+所有这些都是即时的，接收打赏的人会立即在他们的钱包中收到$DESO。许多用户仅仅依靠这个功能就已经每周赚取数千美元，随着DeSo的发展，经济效益只会变得更好。
 
-That's $100,000 in pure cash from _just_ the diamonds!
+让我们来做个计算，假设一个有100万点赞的帖子获得10万个钻石，每个钻石平均价值十美分。
 
-Moreover, users typically get a higher ratio of likes to diamonds, but we wanted to be conservative in our calculations.
+_仅仅_来自钻石的收入就有10万美元！
+
+此外，用户通常给出钻石与点赞的比例会更高，但我们在计算中考虑的还是保守的。

@@ -2,23 +2,25 @@
 description: Description of steps required to download and start your node
 ---
 
-# 2⃣ Node: Setup
+# 2⃣ 节点：设置
 
-Setting up a Deso Node is a simple process, but first verify that you have both [#docker](requirements.md#docker "mention") and [#git](requirements.md#git "mention") installed.
+设置 DeSo 节点是一个简单的过程，但首先请确认您已安装了[#docker](requirements.md#docker "mention") 和[#git](requirements.md#git "mention")。
 
-### Cloning The Repository&#x20;
+### 克隆代码仓库
 
-Create a folder where you want your node to be held then open your terminal of choice in that location.
+在您希望存放节点内容的位置创建一个文件夹，然后在该位置打开您选择的终端。
 
-Execute the command `git clone` [`https://github.com/deso-protocol/run.git`](https://github.com/deso-protocol/run.git) in your terminal.
+在终端中运行命令 `git clone` [`https://github.com/deso-protocol/run.git`](https://github.com/deso-protocol/run.git) 。
 
-![](<../.gitbook/assets/git clone updated.PNG>)
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-### Download The Containers
+### 下载容器
 
-Once the installation is complete navigate to the run folder with `cd run` and execute the command `./run.sh`&#x20;
+安装完成后，使用 `cd run` 命令进入 run 文件夹，然后执行命令`./run.sh`。
 
-![](../.gitbook/assets/run-sh-1.PNG)
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+一个小终端将出现并自动下载节点的前端、后端和 nginx 容器。这可能需要几分钟的时间。
 
 A small terminal will appear and automatically download the containers for the node's frontend, backend, and nginx. This may take a few minutes.
 
@@ -26,4 +28,4 @@ Note in order to turn your node on or off open the Docker GUI navigate to the co
 
 ![](../.gitbook/assets/docker-toggle-container.PNG)
 
-Congratulations, your Deso node is now running locally! Navigate to [http://deso.run](http://deso.run/) or `locahost:8080` in your browser to see your local instance.&#x20;
+Congratulations, your Deso node is now running locally! Navigate to [http://deso.run](http://deso.run/) or `locahost:8080` in your browser to see your local instance.

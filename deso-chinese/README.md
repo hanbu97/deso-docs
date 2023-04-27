@@ -1,5 +1,5 @@
 ---
-description: Decentralized Social(DeSo)项目，创造了一个以创作者为主导、用户具有主权、并向全球数百万开发者开放的互联网。
+description: Decentralized Social(DeSo)项目，创造了一个以创作者为主导、用户具有主权、向全球数百万开发者开放的互联网。
 ---
 
 # 🚀 DeSo 愿景

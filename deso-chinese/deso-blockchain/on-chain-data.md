@@ -1,46 +1,46 @@
 ---
-description: Defending against the risk of censorship via maximum on-chain transparency
+description: 通过最大程度的链上透明度来抵御审查风险
 ---
 
-# 5⃣ On-Chain Data
+# 5⃣ 链上数据
 
-### Centralization Risks
+### 中心化风险
 
-Some would argue that social applications can get by without storing everything on-chain.
+有人可能会认为，社交应用可以不用将所有数据存储在链上。
 
-For example, one could imagine an Ethereum-based app that registers a user's public key on the blockchain initially, but then stores all posts on a centralized server.
+例如，我们可以想象一个基于以太坊的应用，最初将用户的公钥注册在区块链上，但是将所有帖子存储在中心化的服务器上。
 
-The problem with such an app is that whoever is running the centralized server has a significant incentive to, eventually, become a gatekeeper just like the social juggernauts we have today.
+这样一个应用的问题在于，运行中心化服务器的人最终会有很大的动力成为我们今天所拥有的社交巨头那样的审查者。
 
-This is especially true if the app is structured as a for-profit company since its fiduciary duty to its shareholders will inevitably accelerate its transformation into a closed-walled garden of content.&#x20;
+特别是如果应用的背后是以营利为目的的公司，因为其受托于股东，承担盈利的责任，这将不可避免地加速其变成一个封闭的内容园区。
 
-Moreover, this risk means that developers building on top of this ecosystem will be deterred from ever investing in it, and even those that do will have trouble raising money.
+此外，这种风险意味着在这个生态系统上构建应用的开发者，很难参与进去，甚至那些想要参与的人也会在筹集资金方面遇到困难，整个应用会被中心化的机构所垄断。
 
-Thus, with DeSo, we believe it is tantamount to store every piece of data we possibly can directly on the blockchain and to adjust the architecture of the chain by whatever means necessary to maintain this.
+因此，在DeSo中，我们认为把我们可能直接存储在区块链上的每一条数据都存储起来，并通过任何必要的方式调整链的架构以维持这一状态，这一点非常重要。
 
-In the long-term, we believe this value will prove critical not only in ensuring that DeSo's growth surpasses that of other networks but also in ensuring that DeSo's end-state does not mirror the closed, highly-centralized social ecosystem we have today.
+从长远来看，我们相信这个价值不仅对确保DeSo的增长超过其他网络至关重要，而且对确保DeSo的最终形态不会面临我们今天社交应用的封闭、高度集中的社交生态系统也至关重要。
 
-### List of On-Chain Data
+### 链上数据列表
 
-To be concrete, below is a complete list of everything that DeSo is currently equipped to store on-chain, and the notable exceptions:
+具体而言，以下是DeSo目前已配备的全部链上可存储数据及明显例外情况的完整列表：
 
-* All identity & profiles
-* All posts and comments
-* All private messages between users, which are end-to-end encrypted
-* All likes and follows
-* All social token activity
-* All social tipping activity
-* All NFT activity, including NFT bids
-* All $DESO transfer activity
-* Links to all rich media, such as video and images
-* All profile verifications via a new verification paradigm called "[associations](https://diamondapp.com/u/deso/blog/associations-explained-building-network-effects-on-chain)"
+* 所有身份和个人资料
+* 所有帖子和评论
+* 用户之间所有端到端加密的私人消息
+* 所有点赞和关注
+* 所有社交代币活动
+* 所有社交打赏活动
+* 所有NFT活动，包括NFT竞价记录
+* 所有$DESO转账活动
+* 所有富媒体（如视频和图片）的链接
+* 所有通过名为 "[associations](https://diamondapp.com/u/deso/blog/associations-explained-building-network-effects-on-chain)"的新验证范式进行的个人资料验证
 
-**Exceptions:**
+**例外情况:**
 
-* Raw images and videos are stored in centralized but publicly accessible and easily replicable repositories, making the on-chain links sufficient to guarantee access into perpetuity.
-* Emails and phone numbers are stored by individual node operators in order to protect users' privacy. We do not think this presents a significant centralization risk; however, if this proves incorrect then this information can be encrypted and stored with the profile in a privacy-preserving fashion relatively easily.
-* Decisions about what profiles to show or hide, or how to curate content, lie with node operators. However, we think this is a positive force for decentralization, as we will discuss  moderation here [content-moderation.md](content-moderation.md "mention")
+* 原始图像和视频存储在集中式但可公开访问且易于复制的存储库中，确保链上链接保持永久访问。
+* 为保护用户隐私，电子邮件和电话号码由单个节点操作者存储。我们认为这不会带来显著的中心化风险；然而，如果事实证明这是错误的，那么这些信息可以相对轻松地以保护隐私的方式加密并与个人资料一起存储。
+* 关于展示或隐藏哪些个人资料，或如何策划内容的决定由节点运营者做出。然而，我们认为这是去中心化的积极力量，我们在此讨论审查 [content-moderation.md](content-moderation.md "mention")
 
-As more features are added to DeSo, we will continue to ensure that all data that could pose a centralization risk lives on-chain.
+随着DeSo增加更多功能，我们将继续确保所有可能构成中心化风险的数据都存储在链上。
 
-Moreover, we believe immensely that this value will come to separate DeSo from other more centralized efforts in terms of the value that can be created.
+此外，我们坚信这个价值观将努力使DeSo在创造价值方面与其他更为中心化的方案区分开来。

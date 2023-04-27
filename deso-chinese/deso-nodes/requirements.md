@@ -2,56 +2,56 @@
 description: Description of hardware and software dependencies for your DeSo Node
 ---
 
-# Requirements
+# 1⃣ 节点：需求
 
-Before running a node check your computer to verify the correct software and hardware is installed.
+在运行节点之前，请检查计算机确保已安装正确的软件和硬件。
 
-### Hardware
+### 硬件
 
-There is no strict minimum spec to run a DeSo Node, but to ensure optimal performance we recommend:
+运行 DeSo 节点没有严格的最低配置要求，但为确保最佳性能，我们建议：
 
-**CPU:** 8 cores, or more
+**CPU:** 8核或以上
 
-**RAM:** 32gb, or more
+**RAM:** 32GB或以上
 
-**Disk Space:** 400gb, or more
+磁盘空间**:** 400GB或以上
 
-### Software
+### 软件
 
 #### Docker
 
-Go to https://docs.docker.com/get-docker/ and select the operating system of your machine.
+访问 [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/) ，选择您计算机操作系统对应的docker版本。
 
 ![](../../.gitbook/assets/operating-systems.PNG)
 
-If you're mac is from 2020 or newer select Mac with Apple chip, otherwise select Mac with Intel chip.
+如果您的 Mac 是 2020 年或更新版本，请选择 Mac with Apple chip；否则，请选择 Mac with Intel chip。
 
 ![](../../.gitbook/assets/mac.PNG)
 
-If you're on windows select the Docker Desktop for Windows to begin downloading the installer.
+如果您使用的是 Windows，选择 Docker Desktop for Windows， 下载安装程序。
 
 ![](../../.gitbook/assets/win-save.PNG)
 
-&#x20;Once the installer opens, step through the defaults and if you're on windows be sure to select the Install required Windows component for WSL 2, finally accept the terms and conditions.
+安装程序打开后，按照默认设置进行操作，如果您使用的是 Windows，请确保选择安装 WSL 2 所需的 Windows 组件，最后接受条款。
 
 ![](../../.gitbook/assets/windows-check.PNG)
 
-&#x20;Congratulations Docker is installed and ready to go!
+恭喜您，Docker 已安装成功！
 
 #### Git
 
-Go to https://github.com/git-guides/install-git and download the installer for your operating system.
+访问 [https://github.com/git-guides/install-git](https://github.com/git-guides/install-git)，下载您操作系统对应的安装程序。
 
-**Download installer** **windows** https://gitforwindows.org/
+**下载 Windows 安装程序：** https://gitforwindows.org/
 
-**Download installer mac:** https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use\_mirror=autoselect
+**下载 Mac 安装程序：** https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use\_mirror=autoselect
 
-Click through the installer.
+点击运行安装程序。
 
 ![](../../.gitbook/assets/git-setup.PNG)
 
-Open your terminal of choice and execute the command `git` to verify it was properly installed. Your terminal output should look similar to the image below.&#x20;
+打开您选择的终端，执行命令 git 以验证是否正确安装。您的终端输出应与下图类似。
 
 ![](../../.gitbook/assets/git.PNG)
 
-Congratulations, git is now installed and ready to go!
+恭喜您，Git 现已安装成功！

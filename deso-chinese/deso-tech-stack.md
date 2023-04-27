@@ -1,141 +1,122 @@
 ---
-description: An overview of tools & resources for building on DeSo
+description: 构建DeSo的工具和资源概览
 ---
 
-# 🛠 DeSo Tech Stack
+# 🛠 DeSo 技术栈
 
 {% embed url="https://www.youtube.com/watch?v=q2FPbh6zBTg" %}
-Learn about the advantages of building on DeSo in 90 seconds
+在90秒内了解在DeSo上构建应用的优势
 {% endembed %}
 
-\
-The DeSo Foundation's goal is to give founders and developers a set of world-class tools and resources to focus on building decentralized social and consumer-focused applications.
+DeSo基金会的目标是提供一组世界一流的工具和资源，使得创始人和开发人员可以专注于构建去中心化的社交和消费级应用。
 
-There will be countless other ideas and opportunities that arise as DeSo unlocks an army of web2 developers who are aching to participate in the future of decentralization and social.&#x20;
+随着DeSo的发布，将会使得一大批渴望参与去中心化和社交未来的web2开发人员进入区块链领域，将会有无数的其他想法和机会产生。
 
-## Building on DeSo
+## 在DeSo上构建应用
 
-We make it incredibly simple and easy for anyone, even with little knowledge about blockchains and web3, to get started building decentralized apps that can target mainstream audiences.
+我们使任何人，即使对区块链和web3的了解很少，也能轻松开始构建可以针对主流受众的去中心化应用程序。
 
-We strive on the following development principles:
+我们遵循以下开发原则：
 
-### **1) Easy for web2 developers to build.**
+### **1)** 易于web2开发人员构建
 
-* **API-Driven & Permissionless**\
-  Everything that DeSo builds is API-driven from the start. We believe this makes it easier for Web2 developers to focus on creating world-class Web3 applications, using familiar programming languages like [Javascript](deso-frontend/exchange-listing-api.md) & Python. There's no need to learn smart-contract languages and write cost-prohibitive contracts.\
-  \
-  Anyone in the world can also run their own DeSo node to curate and moderate their own feed. Read more: [feeds-and-moderation.md](deso-features/feeds-and-moderation.md "mention")\
+*   **API驱动和无需许可**\
+    DeSo一开始就采用API驱动的方式构建。我们相信这使得Web2开发人员更容易专注于使用熟悉的编程语言（如[Javascript](deso-frontend/exchange-listing-api.md) 和Python）创建世界一流的Web3应用程序，而无需学习智能合约语言和编写成本高昂的合约。
 
-* **Virtually Zero Gas Fees**\
-  On DeSo, you'll never expect to pay more than a fraction of a penny for thousands of on-chain transactions. The average fee per post is <$0.000017, in contrast to Ethereum where the average fee per post can cost >$50 depending on gas fees.\
-  \
-  DeSo solves very complex storage & indexing problems to be able to handle decentralized social applications extremely efficiently. This is an advantage of DeSo being an "infinite-state" blockchain that's optimized for storage-heavy use cases. Read more: [infinite-state.md](deso-blockchain/infinite-state.md "mention")\
 
-* **Solving the Cold-Start Problem**\
-  DeSo solves cold-start problems for developers in **three** very significant ways:\
 
-  * **User & Content Liquidity.** Developers can tap into an open firehose of millions of wallets, profiles, and content from day one of launching your application.\
-
-  * **Blockchain-Level Features.** Developers are provided with on-chain money & social features out-of-the-box, without needing to write a single line of smart-contract logic. Every new feature added benefits all apps being built on the blockchain.\
+    世界上任何人也可以运行自己的DeSo节点来策划和管理自己的信息流。阅读更多：[feeds-and-moderation.md](deso-features/feeds-and-moderation.md "mention")\\\
+    &#x20;
+*   **几乎零交易费**\
+    在DeSo上，您永远不会为数千个链上交易支付超过一分钱的费用。每篇帖子的平均费用为<$0.000017，而在以太坊上，每篇帖子的GAS费用可能高达50美金以上。\
     \
-    This creates unprecedented speed and parallelization for social applications to build world-class products with far fewer off-chain centralization risks.\
+    DeSo解决了非常复杂的存储和索引问题，能够极其高效地处理分散的社交应用程序。这是DeSo作为“无限状态”区块链的优势，其针对存储密集型用例进行了优化。阅读更多： [infinite-state.md](deso-blockchain/infinite-state.md "mention")\\
 
-  * **Cross-Chain Social Layer.** Developers can utilize built-in support for cross-chain onboarding with features like "Sign in With MetaMask" & swapping between ETH and DESO via [MegaSwap](https://megaswap.xyz/).\
+    &#x20;
+* **解决应用冷启动问题**\
+  DeSo 以**三种**非常重要的方式解决开发人员的冷启动问题：\\
+  * **用户和内容流动性**。开发人员从应用程序推出的第一天起，就可以使用DeSo上面用户的数百万个钱包、个人资料和内容，构建自己的开放式信息流。\\
+  * **区块链特性。**开发人员提供了开箱即用的链上货币和社交功能，无需编写一行智能合约逻辑。添加的每个新功能都有助于为在区块链上构建的所有应用程序带来好处。 \
     \
-    Support for additional Layer-1s like Solana, NEAR, Cardano, Avalanche, Polygon, and more will be planned. This will also open up cross-chain wallet-2-wallet messaging to build a truly universal social layer of Web3.
+    这为社交应用程序构建世界一流的产品提供了前所未有的速度和并行性，同时减少了链下中心化的风险。 \\
+  * **跨链社交层**。 开发人员可以利用内置的跨链入门支持，例如“使用MetaMask登录”和用[MegaSwap](https://megaswap.xyz/)实现ETH和DESO之间的互换。\
+    \
+    支持其他Layer-1，例如Solana、NEAR、Cardano、Avalanche、Polygon等，这也将开放钱包到钱包的跨链消息传递，构建一个真正的Web3通用社交层。
 
-### **2) Easy for mainstream users to onboard.**
+### **2)** 易于主流用户接入生态
 
-* **Frictionless Usage & Onboarding**\
-  DeSo is a very user-experienced-driven project, as we believe the key to Web3 social is to make the user experience on par with the expectations of Web2 social.\
+* **无缝使用和接入生态**\
+  DeSo是一个把用户体验为其重要核心的项目，因为我们认为Web3社交的关键是使用户体验与Web2社交应用的体验相当。\
   \
-  This means unlike other blockchains, DeSo makes it very simple to sign up and try applications with an identity, wallet, and free "starter $DESO" to start engaging.\
+  这意味着与其他区块链不同，DeSo使得注册并尝试应用程序变得非常简单，只需一个身份、钱包和免费的“初始$DESO”即可开始应用交互。\
   \
-  Users also don't have to worry about exorbitant gas fees or explicitly approving each transaction when engaging on DeSo. We always continue to aim to remove friction wherever necessary.\
+  用户在参与DeSo时也不必担心过高的Gas费用或显式批准每笔交易。我们始终致力于在必要的前提下最大限度地减少用户的交互，并通过优化链上处理来降低费用，从而提供更好的用户体验。\
   \
-  Here's a list of how DeSo Identity solves many of these problems:\
-
-  * **Sign in with DeSo**
-    * Any developer can add a "Sign in With DeSo" login with a [few lines of Javascript](deso-frontend/exchange-listing-api.md).\
-
-  * **Self-Custodial Wallet**
-    * Take full custody of your own keys. We like to say "_**not your keys, not your content**_". \
-
-  * **Multiple Login Options**
-    * For Ethereum Users: "Sign in with MetaMask"
-    * For Mainstream Users: "Sign in with Google"
-    * For Any User: "Sign in with DeSo Seed" (advanced)\
-
-  * **Starter $DESO**
-    * All users can attain a small amount of starter DESO for free (which will potentially last forever) by verifying their phone number.\
-
-  * **Social Graph & Content**
-    * Take your content, followers, identity, and social graph with you anywhere. You take full ownership of the data you generate.\
-
-  * **Store Your Assets**
-    * All of your NFTs, Creator Coins, and DeSo Tokens are coupled with your Identity. See an example here: [https://signup.deso.com/wallet](https://signup.deso.com/wallet)\
-
-* **Privacy & Safety**\
-  DeSo was built with ideas like Account Abstraction in mind from day one. \
+  以下列出了DeSo Identity是如何解决这些问题的：\\
+  * **使用DeSo登录**
+    * 任何开发人员都可以使用[几行Javascript代码](deso-frontend/exchange-listing-api.md) 实现“使用DeSo登录”功能。\\
+  * **自我托管钱包**
+    * 完全托管自己的私钥。我们喜欢说**“不是你的密钥，不是你的内容”**。 \\
+  * **多个登录选项**
+    * 对于以太坊用户：“使用MetaMask登录”
+    * 对于主流用户：“使用Google登录”
+    * 对于任何用户：“使用DeSo Seed登陆”（高级）\\
+  * **初始$DESO**
+    * 所有用户都可以通过验证其电话号码获得少量免费的起始DESO（这个活动可能会永久持续）\\
+  * **社交关系和内容**
+    * 将您的内容、粉丝、身份和社交关系带到任何地方。您完全拥有所生成的数据。\\
+  * **存储您的资产**
+    * 您的所有NFT、创作者币和DeSo代币都与您的DeSo身份相关联。可以在此处查看示例： [https://signup.deso.com/wallet](https://signup.deso.com/wallet)\\
+* **隐私与安全**\
+  DeSo 从一开始就考虑了像账户抽象这样的概念。\
   \
-  We utilize "derived keys" and "spending limits" which makes it safer to give permissions to specific applications like posting, commenting, or following — without giving up your private keys.\
+  我们使用“派生密钥”和“消费限制”，使得把账户授权给特定应用程序（如发布、评论或关注）变得更安全，而不必放弃您的私钥。\
   \
-  We are firm believers that user primary keys should **never** be shared with third-party applications, regardless of their security practices, and so we created derived keys, which significantly lower attack vectors related to unauthorized access to user credentials.\
+  我们坚信，用户主密钥**永远不**应与第三方应用程序共享，无论它们的安全性如何。因此，我们创建了派生密钥，它显著降低了与未经授权访问用户凭据相关的攻击。\
   \
-  Derived keys are impermanent and they usually automatically expire about 30 days after being issued and can also be de-authorized at any point.
+  派生密钥是临时的，通常在颁发后约30天自动过期，并且可以在任何时候取消授权。
 
-### **3) Easy for creators to engage & monetize.**
+### **3)** 方便创作者参与和实现经济价值
 
-* **Monetization & Social Features**\
-  A unique advantage for DeSo being its own layer-1 is that the blockchain combines social + money transactions very seamlessly.\
-  \
-  This allows DeSo offers multiple methods of on-chain monetization and social features for developers to build on, like the following:\
-
-  * **Social Graph & Identity**
-    * On-chain social identity
-    * On-chain social graph
-    * On-chain user associations (verifications, blocks, etc)
-    * On-chain profile metadata \
-
-  * **Social Actions**
-    * On-chain follows
-    * On-chain likes
-    * On-chain replies, comments & threads
-    * On-chain reposts & quote posts
-    * On-chain post associations (moderation, reactions, polls, etc.)
-    * On-chain post metadata \
-
-  * **Social Tipping**
-    * On-chain basic transfers \
-
-  * **Social Tokens (Creator Coins)**
-    * On-chain creator coin transfers
-    * On-chain founders rewards\
-
-  * **Social NFTs**
-    * On-chain creator royalties
-    * On-chain coin-holder (community) royalties
-    * On-chain bids & auctions
-    * On-chain royalty splits
-    * On-chain exclusive content
-    * On-chain NFT transfers
-    * On-chain NFT burns\
-
-  * **DeSo Tokens (Formerly DAO Coins)**
-    * On-chain minting & burning
-    * On-chain limit orders
-    * On-chain token transfers\
-
-  * **E2E Encrypted Messaging**
-    * On-chain end-to-end encrypted direct messaging (DMs)
-    * On-chain end-to-end encrypted group chat messaging\
-
-  * **E2E Encrypted Content (Access Groups)**
-    * On-chain end-to-end encrypted content\
-
-  * **Social Stable Coins**
-    * On-chain stable coins (DesoDollar)\
-
-  * **File Storage (coming soon with DeSo Vaults)**
-    * On-chain blob storage for images & videos (soon)
-    * On-chain file storage for static HTML websites (soon)
+* **货币化 & 社交属性**\
+  DeSo作为专属的layer-1区块链的独特优势之一是，该区块链无缝地整合了社交属性和货币交易属性。\
+  这使得DeSo提供了多种链上赚钱和社交功能，供开发人员构建，例如：\\
+  * **社交关系和身份**
+    * 链上社交身份
+    * 链上社交关系图谱
+    * 链上用户关联（认证、封禁等）
+    * 链上个人资料数据 \\
+  * **社交行为**
+    * 链上关注
+    * 链上点赞
+    * 链上回复、评论和线程（推特线程）
+    * 链上转发和引用帖子
+    * 链上帖子关联（审核、反应、投票等）
+    * 链上帖子元数据 \\
+  * **社交打赏**
+    * 链上基本转账 \\
+  * **社交代币（创作者币）**
+    * 链上创作者币转账
+    * 链上创始人奖励\\
+  * **社交NFT**
+    * 链上创作者版税
+    * 链上代币持有者（社区）版税
+    * 链上竞标和拍卖
+    * 链上版税分成
+    * 链上专属内容
+    * 链上NFT转账
+    * 链上NFT销毁\\
+  * **DeSo代币（以前称为DAO代币）**
+    * 链上铸造和销毁
+    * 链上限价订单
+    * 链上代币转账\\
+  * **端对端加密消息传递**
+    * 链上端对端加密直接消息传递（私信）
+    * 链上端对端加密群聊消息\\
+  * **端对端加密内容（访问组）**
+    * 链上端对端加密内容\\
+  * **社交稳定币**
+    * 链上稳定币（DesoDollar）\\
+  * **文件存储（很快将推出DeSo Vaults）**
+    * 链上图像和视频的Blob存储（即将推出）
+    * 链上静态HTML网站的文件存储（即将推出）

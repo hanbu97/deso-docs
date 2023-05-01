@@ -2,9 +2,9 @@
 description: Description of flags related to the Onboarding proces and starter DESO
 ---
 
-# Onboarding
+# 入门
 
-Note: Starter DESO Seed is required in order to send DESO to users for verifying their phone number or for verifying through Jumio.
+注意：需要提供 Starter DESO Seed才能向用户发送DESO，以验证他们的手机号码或通过Jumio进行验证。
 
 ## Starter DESO Seed
 
@@ -14,7 +14,9 @@ Type: String
 
 Default: None
 
-Seed phrase that is used to send DESO to users who go through [phone-number-verification.md](phone-number-verification.md "mention") or [Broken link](broken-reference "mention"), and to [#comp-profile-creation](onboarding.md#comp-profile-creation "mention")
+用于向通过手机验证或通过Jumio验证的用户发送DESO的种子短语。
+
+Seed phrase that is used to send DESO to users who go through [phone-number-verification.md](phone-number-verification.md "mention") or [broken-reference](broken-reference/ "mention"), and to [#comp-profile-creation](onboarding.md#comp-profile-creation "mention")
 
 ## Starter DESO Nanos
 

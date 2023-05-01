@@ -6,7 +6,7 @@
 
 在DeSo中，引入了一个名为“**钻石**”的核心机制，它的功能类似于点赞，但它允许用户为内容提供不同金额的打赏。
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 在上面的截图中，一个钻石只相当于一分钱，而一个六钻石的打赏价值约为53美元。
 

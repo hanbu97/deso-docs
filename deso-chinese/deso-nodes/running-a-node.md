@@ -62,117 +62,116 @@ DeSo与现有的社交网络不同，因为其数据完全去中心化，并像�
 节点同步完成后，您将实时访问到完整的DeSo数据！以下是关于如何充分利用节点的一些建议。
 
 * 转到管理员标签页，观察节点同步时未经过滤的信息流更新。这就像一部时间机器！
-* Go to your Admin tab and watch the unfiltered feed update as your node syncs. It's like a time machine!
-* Try to whitelist some posts in the Admin tab and see that they've made their way onto your global feed.
-* Read through the flags available in the [dev.env](https://github.com/deso-protocol/run/blob/main/dev.env) file. You can adjust these flags however you want, but note that we strongly recommend keeping your node in read-only mode for now. Turning read-only mode off could cause users who visit your node to make transactions that are not ultimately confirmed.
-* Set `ADMIN_PUBLIC_KEYS` to your public key so that the Admin tab is only visible to your username.
-* Set `SUPER_ADMIN_PUBLIC_KEYS` to your public key so that the Super Admin tab is only visible to your username.
-* Whitelist some posts and verify that they show up on the global feed.
-* Deploy your node on any cloud provider with a static IP to make it accessible to anyone on the internet.
-* Set a `PASSWORDS_FILE` if you want to restrict read access to your node.
-* Add an `SSL_CERT_DIR` and `SSL_DOMAIN` using a letsencrypt cert in order to protect your node with HTTPS.
-* Set the `TWILIO*` flags to allow new users to get some starter DeSo.
-* Set a `SUPPORT_EMAIL` so your users can contact you if they run into trouble.
-* Play with the logging verbosity by increasing `GLOG_V`.
+* 尝试在管理员标签页中将一些帖子列入白名单，然后查看它们是否已出现在您的全球信息流中。
+* 仔细阅读 [dev.env](https://github.com/deso-protocol/run/blob/main/dev.env)文件中的可用标志。您可以根据需要调整这些标志，但请注意，我们强烈建议您现在将节点设置为只读模式。关闭只读模式可能会导致访问您节点的用户进行最终未被确认的交易。
+* 将`ADMIN_PUBLIC_KEYS`设置为您的公钥，以便管理员标签页仅对您的用户名可见。
+* 将`SUPER_ADMIN_PUBLIC_KEYS`设置为您的公钥，以便Super Admin标签页仅对您的用户名可见。
+* 将一些帖子列入白名单，然后验证它们是否出现在全球信息流中。
+* 在具有静态IP的任何云提供商上部署节点，使其可以被互联网上的任何人访问。
+* 如果您想限制对节点的读取权限，请设置`PASSWORDS_FILE`。
+* 使用letsencrypt证书为`SSL_CERT_DIR`和`SSL_DOMAIN`添加SSL，以便通过HTTPS保护您的节点。
+* 设置`TWILIO`\*标志，以便新用户获得一些初始DeSo。.
+* 设置`SUPPORT_EMAIL`，以便用户在遇到问题时可以与您联系。
+* 通过增加GLOG\_V来调整日志详细程度。
 
-## Managing Your Feed
+## 管理您的信息流
 
-To manage your feed, start by navigating to the Admin tab as shown below. The Admin tab shows the full firehose of posts in real time, with a button next to each one that allows you to add it to the global feed. You can also sort the posts by DESO. These are all the same tools that the bitclout.com mods have, now at your fingertips through the power of decentralization.
+要管理您的信息流，请首先导航至如下所示的管理员标签页。管理员标签页实时显示所有帖子的完整信息流，每个帖子旁边都有一个按钮，允许您将其添加到全球信息流中。您还可以根据DESO对帖子进行排序。这些都是 bitclout.com 管理员所使用的相同工具，现在通过去中心化的力量掌握在您的手中。
 
-![](../.gitbook/assets/image-deso-2-8-1-2-2-2-2-%20\(2\)%20\(1\).png)
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-You can also add any post from anyone's profile to the global feed simply by hitting the dropdown at the top-right of the post. You can also pin posts to your feed, which is a good way of communicating announcements to your user-base.
+您还可以通过点击帖子右上角的下拉菜单，将任何人资料中的任何帖子添加到全球信息流中。您还可以将帖子固定到您的信息流中，这是向您的用户群传达公告的好方法。
 
-![](../.gitbook/assets/image-deso-2-3-.png)
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
-When you run a node, you act as a moderator and have a variety of superpowers that help you manage spam and harmful content.
+当您运行一个节点时，您充当管理员，并拥有各种超能力来帮助您管理垃圾信息和有害内容。
 
-* **Blacklisting** a profile removes it everywhere except from peoples' wallet pages. This makes it so that anyone who was holding the blacklisted profile can sell out of their holdings.
-* **Graylisting** a profile removes it from the leaderboard, removes it from search, removes its comments from threads, and removes its posts from the Admin panel.
-* **Whitelisting** a profile makes that user's posts show up on the global feed automatically with some frequency (currently it allows five posts per day).
-* Finally, a mod can allow a phone number to be re-used to claim starter DeSo. This is useful for various testing situations.
+* **黑名单：**将个人资料列入黑名单会将其从钱包页面之外的所有地方删除。这样，持有被列入黑名单的创作者的代币的任何人都可以出售他们的持仓。
+* **灰名单：**将个人资料列入灰名单会将其从排行榜中移除，从搜索中移除，从帖子中移除其评论，并从管理员面板中移除其帖子。
+* **白名单：**将个人资料列入白名单会让该用户的帖子自动以一定频率出现在全球信息流中（目前允许每天发布五篇帖子）。
+* 最后，管理员可以允许重新使用电话号码来领取初始DeSo。这对于各种测试情况都很有用。
 
-![](../.gitbook/assets/image-deso-4-%20\(1\).png)
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-When you've set your public key as an `ADMIN_PUBLIC_KEY`, the Admin tab becomes visible only to you. This is a critical step in securing your node. Not doing this would make it so that all your users can add posts to the global feed.
+当您将您的公钥设置为`ADMIN_PUBLIC_KEY`时，管理员标签页仅对您可见。这是保护您的节点的关键步骤。如果不这样做，所有您的用户都可以将帖子添加到全球信息流中。
 
-## Super Admin Public Keys
+## 超级管理员公钥
 
-Within the Admin Panel, there is a `Super` tab which is only accessible by Super Admins. Super Admin can manage user verification and $DESO purchasing behavior from the `Super` tab.
+在管理员面板中，有一个仅供超级管理员访问的“超级`Super`”标签页。超级管理员可以从“超级`Super`”标签页管理用户验证和$DESO购买行为。
 
-### Username Verification
+### 用户名验证
 
-![](../.gitbook/assets/verify-users-image-deso.png)
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-Super Admins can grant verification badges (on their node) to a user by putting the username in the `Grant Verification Badge` input box and then clicking `Verify`. Similarly, a Super Admin can revoke verification by putting the username in the `Remove Verification Badge` and then clicking `Remove`.
+超级管理员可以通过将用户名输入“`Grant Verification Badge`授予验证徽章”输入框，然后点击“`Verify`验证”来授予用户（在他们的节点上）验证徽章。类似地，超级管理员可以通过将用户名输入“`Remove Verification Badge`移除验证徽章”输入框，然后点击“`Remove`移除”来撤销验证。
 
-### Buy $DESO Management
+### 购买$DESO管理
 
-Any node can sell $DESO if they set the following flags appropriately. Super Admins can set two values in the `Super` tab to manage the price at which $DESO is sold on their node: `USD-to-DeSo Reserve Price`and `Buy DeSo Fee Rate`.
+任何节点只要适当设置以下标志就可以出售$DESO。超级管理员可以在“`Super`超级”标签页中设置两个值，以管理在他们的节点上出售$DESO的价格：`USD-to-DeSo`回收价格和 `Buy DeSo Fee Rate`购买DeSo费率。
 
-![](../.gitbook/assets/buy-deso-settings-3.png)
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-#### USD-to-DeSo Reserve Price
+#### USD-to-DeSo回收价格
 
-This is the minimum price at which you are willing to sell $DESO on your node. If the price retrieved from exchange APIs is lower than this amount, your node will sell $DESO at this reserve price instead of the API price. Additionally, the price in the right sidebar will appear the reserve price in the event that the price from the API dips below the reserve price.
+这是您愿意在您的节点上出售$DESO的最低价格。如果从交易所API获取的价格低于此金额，您的节点将以此回收价格而不是API价格出售$DESO。此外，如果API价格低于回收价格，右侧边栏中的价格将显示为回收价格。
 
-#### Buy DeSo Fee Rate
+#### 购买DeSo费率
 
-This is a percentage-based fee applied to all $DESO purchased on your node. If the current price of $DESO in USD is $100 and the `Buy DeSo Fee Rate` is 5%, the buyer will pay $105 per $DESO and the node operator has earned $5 net. For more details on configuring your node to sell $DESO, please read the section titled `Sell $DESO on your node`.
+这是一个基于百分比的费用，适用于在您的节点上购买的所有$DESO。如果$DESO的当前美元价格为$100，购买DeSo费率为5%，那么买家每购买$DESO需支付$105，节点运营商净赚$5。有关配置您的节点以出售$DESO的更多详细信息，请阅读名为“在您的节点上出售$DESO”的部分。
 
-## Sell $DESO on your node
+## 在您的节点上出售$DESO
 
-To simplify the on-boarding experience for new users on your node, you can sell $DESO for Bitcoin directly to users. To configure your node to sell $DESO, please set the following flags:
+为了简化您节点上的新用户入门体验，您可以直接向用户出售$DESO，获得比特币。要配置您的节点出售$DESO，请设置以下标志：
 
-* `BUY_DESO_SEED`: This is a seed phrase for the public key that contains $DESO that you will sell to users. As with all seed phrases, keep this secret and share it with nobody. Take extra precautions to not commit it to version control and quickly move funds if this seed is ever compromised.
-  * You will need to deposit $DESO to the public key for this seed phrase. All $DESO purchases on your node will send $DESO from this wallet.
-* `BUY_DESO_BTC_ADDRESS`: This is a Bitcoin address you control. When users purchased $DESO with Bitcoin, the Bitcoin will arrive at this address.
+* `BUY_DESO_SEED`: 这是一个种子短语，用于包含您将出售给用户的$DESO的公钥。与所有种子短语一样，请保密，不要与任何人分享。请特别注意不要将其提交给git，如果此种子受到威胁，请尽快转移资金。
+  * 您需要将$DESO存入此种子短语的公钥。您节点上的所有$DESO购买都将从此钱包发送$DESO。
+* `BUY_DESO_BTC_ADDRESS`: 这是一个由您控制的比特币地址。当用户使用比特币购买$DESO时，比特币将到达此地址。
 
-## How Users Login
+## 用户如何登录
 
-When a user logs in on your node, they have the ability to sign in with their DeSo identity, without having to re-enter their seed phrase. Once a user signs in, your node can sign transactions on their behalf with varying levels of approval required depending on what kind of permission the user granted. This creates a login mechanism for node operators that is as easy for users as "login with Facebook," but it unlocks a wallet in addition to a user's identity.
+当用户在您的节点上登录时，他们可以使用他们的DeSo身份登录，无需重新输入种子短语。用户登录后，您的节点可以代表他们签署各种事务，根据用户授权的类型，需要不同级别的批准。这为节点运营商创建了一个像“使用Facebook登录”一样简单的登录机制，但是相比之下除了用户身份外，这种方式还可以解锁相应的去中心化钱包。
 
-## FAQ
+## 常见问题解答
 
-Answers to common questions and issues about running your own node:
+关于运行您自己的节点的常见问题和问题的答案：
 
-### What are the minimum requirements for syncing a node?
+### 节点同步所需的最低配置要求是什么？
 
-We recommend having a machine with at least 32GB of RAM and 350GB of storage (as at 21 July 2021). If TXIndex is disabled, then you need about 200GB in total. The Blockchain DB takes up about 90 GB, and the TXIndex takes up 160 GB. THe DB+TXindex size grows by about 50GB a month currently.
+我们建议使用至少具有32GB RAM和350GB存储空间的计算机（截至2021年7月21日）。如果禁用TXIndex，则总共需要约200GB。区块链数据库占用约90GB，TXIndex占用160GB。目前，DB+TXindex的大小每月增长约50GB。
 
-### How do I configure SSL?
+### 如何配置SSL？
 
-There is an example SSL configuration in `nginx.dev`.
+在`nginx.dev`中有一个示例SSL配置。
 
-### How do I use the BlockCypher API?
+### 如何使用BlockCypher API？
 
-BlockCypher will help prevent double-spends in the mempool. You can signup for a [BlockCypher](https://www.blockcypher.com/) account on the BlockCypher website. BlockCypher does offer a free amount of API calls.
+BlockCypher将帮助防止内存池中的双重支出。您可以在BlockCypher网站上注册一个 [BlockCypher](https://www.blockcypher.com/) 帐户。BlockCypher确实提供了一定数量的免费API调用。
 
-Once you have signed up for an account you may copy a token from the [tokens](https://accounts.blockcypher.com/tokens) section of the dashboard.
+注册帐户后，您可以从仪表板的 [tokens](https://accounts.blockcypher.com/tokens) 部分复制一个令牌。
 
-You will copy this token in your `dev.env` file as the value for `BLOCK_CYPHER_API_KEY`.
+您将在`dev.env`文件中将此令牌作为`BLOCK_CYPHER_API_KEY`的值。
 
-### What type of records do I use with custom domains?
+### 使用自定义域名时，我应该使用哪种类型的记录？
 
-You must create two seperate **A** type domain records.
+您必须创建两个单独的 **A** 类型域名记录。
 
-Both records should point to the IP address of your node.
+两个记录都应指向您节点的IP地址。
 
-#### Example DNS Records:
+#### 示例DNS记录：
 
 | Hostname          | Type | TTL | Priority | Content     |
 | ----------------- | ---- | --- | -------- | ----------- |
 | node.`DOMAIN`.com | A    | 299 |          | `IPADDRESS` |
 | api.`DOMAIN`.com  | A    | 299 |          | `IPADDRESS` |
 
-If you do not create both records you will be unable to use a custom domain.
+如果您没有创建两个记录，您将无法使用自定义域名。
 
-### Can my node write back to the mainnet?
+### 我的节点可以回写到主网吗？
 
-Yes! Every transaction is broadcast to all other nodes on the network, and should eventually be mined into a block.
+是的！每笔交易都会广播给网络上的其他所有节点，并最终被打包到一个区块中。
 
-### What does Twilio provide to my node?
+### Twilio为我的节点提供什么？
 
-Twilio provides an SMS API that allows you to confirm user phone numbers and thus send them currency from your seed wallet set inside the `dev.env` file. If you do not have this set users will be unable to verify a phone number.
+Twilio提供了一个SMS API，允许您确认用户手机号码，从而将您在`dev.env`文件中设置的种子钱包中的货币发送给他们。如果您没有设置这个，用户将无法验证手机号码。
 
-Twilio pricing can be reviewed [here](https://www.twilio.com/sms/pricing/us).
+&#x20;Twilio定价可以在[此处](https://www.twilio.com/sms/pricing/us)查看。

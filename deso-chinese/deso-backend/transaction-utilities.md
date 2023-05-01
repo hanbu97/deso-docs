@@ -1,18 +1,19 @@
 # 4⃣ 交易：API
 
-Transactions are the building material of every blockchain.
+交易是每个区块链的重要组成部分。
 
-Transactions allow users to submit data to the blockchain which allows user to perform actions such as transferring DeSo, creating posts and profiles, and minting NFTs.
+交易允许用户向区块链提交数据，使用户能够执行诸如转移DeSo、创建帖子和个人资料以及铸造NFT等操作。
 
-Transactions have three steps in their lifecycle
+交易的生命周期中有三个步骤：
 
-1. **Construct:** The first step for a developer is to interact with the DeSo Backend API through a transaction construction endpoint to get an unsigned user transaction.\
+1. **构造**：对于开发者来说，第一步是通过交易构造端点与DeSo后端API进行交互，以获取未签名的用户交易。
+2. **Construct:** The first step for a developer is to interact with the DeSo Backend API through a transaction construction endpoint to get an unsigned user transaction.\
    \
    [social-transactions-api.md](construct-transactions/social-transactions-api.md "mention"), [nft-transactions-api.md](construct-transactions/nft-transactions-api.md "mention"), [financial-transactions-api.md](construct-transactions/financial-transactions-api.md "mention"), and [derived-keys-transaction-api.md](construct-transactions/derived-keys-transaction-api.md "mention") explain the endpoints that will get you an unsigned transaction.\\
-2. **Sign:** The developer will then take the output `TransactionHex` from the construct step's response, which encodes the user transaction, and signs it using DeSo Identity.\
+3. **Sign:** The developer will then take the output `TransactionHex` from the construct step's response, which encodes the user transaction, and signs it using DeSo Identity.\
    \
    You can read about signing transactions in the[#sign](../deso-identity/iframe-api/endpoints.md#sign "mention") section of the [endpoints.md](../deso-identity/iframe-api/endpoints.md "mention") documentation.\\
-3. **Broadcast:** The signed transaction will be sent through the `/api/v0/submit-transaction` by the developer so that it can be added to the blockchain ledger.\
+4. **Broadcast:** The signed transaction will be sent through the `/api/v0/submit-transaction` by the developer so that it can be added to the blockchain ledger.\
    \
    The [#submit-a-transaction](transaction-utilities.md#submit-a-transaction "mention") submit explains how this endpoint works.
 

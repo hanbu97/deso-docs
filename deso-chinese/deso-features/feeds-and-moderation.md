@@ -147,7 +147,7 @@ DeSo基本上通过为每个人解决“内容”部分的问题，将子版块�
 
 这些都是 [Diamond](https://diamondapp.com) 版主拥有的相同工具，现在通过去中心化的力量掌握在您的手中。
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 您还可以通过点击帖子右上角的下拉菜单，将任何人的个人资料中的任何帖子添加到全球信息流中。
 

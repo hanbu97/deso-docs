@@ -2,65 +2,66 @@
 description: Description of frequently asked questions on Deso nodes
 ---
 
-# 4⃣ Node: FAQ
+# 4⃣ 节点：常见问题
 
-## The Power of Decentralization
+## 去中心化的力量
 
-DeSo is unlike any existing social network in that the data is fully-decentralized and stored on a blockchain like Bitcoin. **This means that anyone on the internet can run a DeSo "node" and download a** _**full copy**_ **of all the data, with real-time updates, without needing to ask for permission and without the risk of being de-platformed.**
+DeSo与现有的社交网络不同，因为其数据完全去中心化，并像比特币一样存储在区块链上。**这意味着互联网上的任何人都可以运行一个DeSo“节点”并下载所有数据的**_**完整副本**_**，实时更新，无需请求许可，也不用担心被解除平台资格。**
 
-## What Can You Do With a Node?
+## 你能用节点做什么？
 
-Running a node gives you full access to the DeSo firehose. Access to every profile, post, follow, creator coin trade, etc... But what can you do with all this power?
+运行节点让您完全访问DeSo的数据源。访问每个个人资料、帖子、关注、创作者币交易等等...但是，您可以用所有这些能力做什么呢？
 
-### **Running your own feed**
+### 运行您自己的信息流
 
-When you run a node, it starts with a blank global feed and an "Admin" panel that you can use to start adding posts to it. **All of the same tools that the diamondapp.com team uses to manage their global feed are now available to you to manage a feed of your own.**
+当您运行一个节点时，它首先会有一个空白的全球信息流和一个“管理员”面板，您可以使用它开始向信息流中添加帖子。现在，**所有diamondapp.com团队用来管理其全球信息流的工具都可以让您用来管理自己的信息流。**
 
-Essentially, running a DeSo node allows you to expose your own "view" of the firehose of content. For example, [Diamond](https://diamondapp.com) node exposes all of the crypto-related content, but when you run your own node you have full control to surface whatever content speaks to you. What will you do with your feed? Here are some ideas for feeds that we think would be popular:
+从本质上讲，运行一个DeSo节点可以让您展示自己对数据源内容的“视角”。例如，[Diamond](https://diamondapp.com) 节点展示了所有与加密货币相关的内容，但当您运行自己的节点时，您可以完全控制展现什么样的内容。您会如何使用您的信息流呢？以下是我们认为会受欢迎的信息流的一些建议：
 
-* **A feed for every country and every language.** Isn't it weird that people all over the world consume information curated predominantly by the US? How much does an engineer working in Silicon Valley really know about what people in other countries want to see, or what features they want? In the past, we were stuck with this model because US companies built a data network effect that entrenched them, even in non-US countries. But DeSo can break this status quo because all of its data is open and the barrier to entry to starting a competitive feed is virtually zero. For the first time, people who actually live in a country can curate a feed for their people, no matter how large or small their country is. And this applies to every country that succumbed too quickly to the network effects of the Silicon Valley tech companies. By lowering the barrier to entry to creating a feed, and opening up the data firehose to anyone, we think DeSo has the potential to bring international social media products to a whole new level.
-* **The politics-focused feed.** Imagine a feed where all the posts from the top political figures are highlighted. You could even imagine segmenting the firehose into two feeds: a "red" feed and a "blue" feed that's dedicated to each political party.
-* **The sports-focused feed.** Wouldn't it make sense for someone to operate a feed that just highlights all of the best sports content from the best sports influencers? So many people are interested in this content, and we think it deserves its own feed.
-* **The NSFW feed.** There are so many talented adult influencers on DeSo, with thousands of followers, who are posting every day. It's about time they had their own feed dedicated to them.
+* **为每个国家和每种语言提供信息流。**全球各地的人们消费的信息主要是由美国策划的，这不奇怪吗？在硅谷工作的工程师真的了解其他国家的人想看什么，或者他们需要什么功能吗？过去，我们被困在这个模式中，因为美国公司建立了一种数据网络效应，使它们在非美国国家也变得牢不可破。但是，DeSo可以打破这种现状，因为它的所有数据都是公开的，启动一个有竞争力的信息流的门槛几乎为零。首次让实际生活在一个国家的人们为他们的同胞策划信息流，无论国家大小。这适用于所有过于依赖硅谷科技公司网络效应的国家。通过降低创建信息流的门槛，并向所有人开放数据源，我们认为DeSo有潜力将国际社交媒体产品提升到一个全新的水平。
+* **关注政治的信息流。**想象一个突出显示顶级政治人物所有帖子的信息流。您甚至可以想象将数据源分为两个信息流：一个“红色”信息流和一个专注于每个政党的“蓝色”信息流。
+* **关注体育的信息流。**有没有人运营一个信息流，专门突出显示来自顶级体育影响者的最佳体育内容？许多人对此类内容感兴趣，我们认为它应该有自己的信息流。
+* **适合成人的信息流。**DeSo上有很多才华横溢的成人内容网红，他们每天都在发布内容，拥有数千名粉丝。是时候让他们有一个专门为他们服务的信息流了。
 
-We're just scratching the surface here-- it's now up to you, the community, to figure out how best to display the DeSo firehose. Reddit pioneered the concept of a "Subreddit," but the problem with a Subreddit is that every time one is created, it has to solve a "chicken and egg" problem with regard to its content. If nobody is posting, then the subreddit has no content-- but without content, nobody will start posting. DeSo bascially takes the subreddit concept to the next level by solving the "content" part of the equation for everyone. When you run a node, you don't need to bootstrap content because you have full access to the DeSo firehose. All you need to do is curate it in some interesting way and you'll have created value for anyone who visits your node.
+我们这里只是触及了表面——现在由您，社区来决定如何最好地展示DeSo的数据源。Reddit首创了“子版块”的概念，但子版块的问题在于，每当创建一个子版块时，它就需要解决与其内容相关的“鸡和蛋”的问题。如果没有人发布，那么子版块就没有内容——但是没有内容，也没有人会开始发布。DeSo通过解决每个人的“内容”部分将子版块的概念提升到一个新的水平。当您运行一个节点时，您无需引导内容，因为您可以完全访问DeSo的数据源。您只需以某种有趣的方式策划它，就为访问您的节点的所有人创造了价值。
 
-### Add social to your platform
+### 将社交功能添加到您的平台
 
-Suppose you're a platform with millions of users like Coinbase or Robinhood, or even traditional media companies like ESPN. Your users would probably love it if you could integrate a social component into your products-- but you can't because Twitter and Facebook don't allow it. They [closed down their APIs](https://www.theverge.com/2018/8/16/17699626/twitter-third-party-apps-streaming-api-deprecation) a long time ago because they realized that third-party integrations eat into their ad revenue. Every user who engages on a third-party platform is a user who's engaging less on Twitter and Facebook.
+假设您是一个拥有数百万用户的平台，如Coinbase或Robinhood，甚至是像ESPN这样的传统媒体公司。您的用户可能会很喜欢您能够在产品中整合社交组件——但是您无法做到，因为Twitter和Facebook不允许。他们很久以前就[关闭了他们的API](https://www.theverge.com/2018/8/16/17699626/twitter-third-party-apps-streaming-api-deprecation)，因为他们意识到第三方集成会影响他们的广告收入。在第三方平台上参与的每个用户都是在Twitter和Facebook上减少的用户。
 
-Enter DeSo. With DeSo, you don't need to build a billion-user data moat in order to be able to add social features to your platform. All you need to do is run a DeSo node, and use its API to expose whatever content you want. Suddenly, with just one engineer's worth of effort, any major platform can spin up a social product that's adjacent to its core business. Moreover, it's possible that the best feeds will come from existing publishers that have already built a competency in a particular area. For example, ESPN might be the best entity to run the sports-focused feed because of their relationships and connections, and now they can.
+进入DeSo。有了DeSo，您不需要建立一个拥有数十亿用户的数据壁垒，就能将社交功能添加到您的平台。您只需运行一个DeSo节点，并使用其API显示您想要的任何内容。突然之间，只需一名工程师的努力，任何主要平台都可以创建一个与其核心业务相关的社交产品。而且，最好的信息流可能来自已经在特定领域建立了竞争力的现有发布商。例如，由于他们的关系和联系，ESPN可能是运行体育关注信息流的最佳实体，DeSo使得这样做成为了可能。
 
-### Analysis tools
+### 分析工具
 
-Building the best analysis tools requires access to the best data, and running a node is the best way to get full access to the DeSo firehose. Until now, the DeSO nodes have had to set up rate limits to avoid having our machines get overloaded. But now, because DeSo is a blockchain that allows anyone to run a full copy of the platform, anyone who wants to build analytics tools can simply run a node and query it in whatever way they want.
+构建最佳分析工具需要访问最佳数据，运行节点是获取完整DeSo数据源的最佳方法。现在，DeSo节点已经设置了速率限制，以避免我们的设备过载。但现在，由于DeSo是一个允许任何人运行平台完整副本的区块链，任何希望建立分析工具的人只需运行一个节点，然后以他们想要的方式通过节点查询数据。
 
-### Invent your own features
+### 发明您自己的功能
 
-When you run a node, you have the flexibility to expose the DeSo content in whatever way most resonates with your users. If you wanted to, you could even build a whole new frontend with totally different features than what the "default" node gives you. If you feel like DeSo is missing a feature, like dark mode or paid messages or better filtering for spam for example, now you can build it and run your own node to back it.
+当您运行一个节点时，您可以灵活地以最符合您用户需求的方式展示DeSo内容。如果您愿意，您甚至可以使用与“默认”节点完全不同的功能构建一个全新的前端。如果您觉得DeSo缺少某项功能，比如深色模式、付费消息或更好的垃圾邮件过滤等，现在您可以自己构建它，并运行自己的节点来支持它。
 
-## Making Money on Your Node
+## 在您的节点上赚钱
 
-Incentives are key to making DeSo truly decentralized in the long run. It's not sufficient that nodes be runnable by the community, they must be _profitable_ to run as well. Many cryptocurrencies struggle with this, and even Bitcoin and Ethereum nodes are still largely run by volunteers. DeSo is truly unique in this regard, however, because the social features it introduces give node operators incentives that other blockchains don't have.
+激励措施对于确保DeSo长期真正去中心化至关重要。仅仅让社区可以运行节点是不够的，运行节点也必须具有盈利能力。许多加密货币在这方面都面临困境，甚至比特币和以太坊节点仍然主要由志愿者运行。然而，DeSo在这方面具有真正的独特性，因为它引入的社交功能为节点运营商提供了其他区块链所没有的激励。
 
-The above being said, there are several ways that DeSo node operators can earn a profit:
+正如前面所言，DeSo节点运营商有几种方式可以盈利：
 
-* **Promoted content.** Because running a node comes with the ability to have a social media product with minimal marginal effort, every node operator has an opportunity to amass and monetize the reach that comes from curating a popular feed. This can be as simple as showing promoted posts that partners pay the node operator to pin to their feed.
-* **Trading fees.** Anyone who runs a node can modify their frontend to add trading fees on every creator coin trade, which go to the node operator's wallet. By doing this, any node operator basically doubles as a crypto exchange.
-* **Other transaction fees.** Any transaction users complete on one's node can be augmented to contain a small fee that goes to the node operator. Thus there should eventually arise an efficient market for node operator fees that is high enough to justify operating a node.
+* **推广内容。**由于运行节点伴随着极小的边际努力就能拥有一个社交媒体产品，每个节点运营商都有机会通过策划热门信息流来积累并变现覆盖范围。只需要通过置顶推广向节点运营商支付过推广费用的合作伙伴的帖子就可实现。
+* **交易费用**。任何运行节点的人都可以修改其前端，为每笔创作者币交易添加交易费用，这些费用将进入节点运营商的钱包。通过这样做，任何节点运营商基本上都可以兼做加密货币交易所。
+* **其他交易费用**。在某个节点上完成的任何用户交易都可以增加一笔小费，这笔费用将支付给节点运营商。因此，最终应该会出现一个关于节点运营商费用的高效市场，使其足以支持运营节点。
 
-The above mechanisms don't even factor in profits that could be derived from augmenting the DeSo feature set. For example, if someone creates an app experience for DeSo that is significantly better than alternatives, they could even charge a monthly subscription fee or some other premium to cover costs.
+上述机制甚至还没有考虑到从改进DeSo功能集所可能产生的利润。例如，如果有人为DeSo创建了一个明显优于其他选择的应用体验，他们甚至可以收取月度订阅费或其他溢价来支付费用。
 
-## How to Run a Node
+## 如何运行节点
 
-Running a node currently requires a modest amount of technical know-how. For the full instructions on how to run a node, checkout this [setup.md](setup.md "mention") guide.
+目前，运行节点需要一定的技术知识。要获取有关如何运行节点的完整说明，请查看 [setup.md](setup.md "mention")指南。
 
-Once a node is running, it syncs all of the blocks from its peers, as well as the transactions in the "mempool," which have yet to be mined into a block. Every node comes with an Admin panel with a Network tab that allows you to monitor the node's sync state.
+一旦节点开始运行，它会从其对等节点同步所有区块，以及尚未挖掘到区块的“内存池”中的交易。每个节点都配备了一个带有网络标签的管理员面板，可让您监控节点的同步状态。
 
-![](<../.gitbook/assets/image-deso-7-1-2-2-2-2- (2).png>)
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-Once your node is synced, you have access to the full firehose of DeSo data in real time! Below are some tips on how take full advantage of your node.
+节点同步完成后，您将实时访问到完整的DeSo数据！以下是关于如何充分利用节点的一些建议。
 
+* 转到管理员标签页，观察节点同步时未经过滤的信息流更新。这就像一部时间机器！
 * Go to your Admin tab and watch the unfiltered feed update as your node syncs. It's like a time machine!
 * Try to whitelist some posts in the Admin tab and see that they've made their way onto your global feed.
 * Read through the flags available in the [dev.env](https://github.com/deso-protocol/run/blob/main/dev.env) file. You can adjust these flags however you want, but note that we strongly recommend keeping your node in read-only mode for now. Turning read-only mode off could cause users who visit your node to make transactions that are not ultimately confirmed.
@@ -78,7 +79,7 @@ Once your node is synced, you have access to the full firehose of DeSo data in r
 
 To manage your feed, start by navigating to the Admin tab as shown below. The Admin tab shows the full firehose of posts in real time, with a button next to each one that allows you to add it to the global feed. You can also sort the posts by DESO. These are all the same tools that the bitclout.com mods have, now at your fingertips through the power of decentralization.
 
-![](<../.gitbook/assets/image-deso-2-8-1-2-2-2-2- (2) (1).png>)
+![](../.gitbook/assets/image-deso-2-8-1-2-2-2-2-%20\(2\)%20\(1\).png)
 
 You can also add any post from anyone's profile to the global feed simply by hitting the dropdown at the top-right of the post. You can also pin posts to your feed, which is a good way of communicating announcements to your user-base.
 
@@ -91,7 +92,7 @@ When you run a node, you act as a moderator and have a variety of superpowers th
 * **Whitelisting** a profile makes that user's posts show up on the global feed automatically with some frequency (currently it allows five posts per day).
 * Finally, a mod can allow a phone number to be re-used to claim starter DeSo. This is useful for various testing situations.
 
-![](<../.gitbook/assets/image-deso-4- (1).png>)
+![](../.gitbook/assets/image-deso-4-%20\(1\).png)
 
 When you've set your public key as an `ADMIN_PUBLIC_KEY`, the Admin tab becomes visible only to you. This is a critical step in securing your node. Not doing this would make it so that all your users can add posts to the global feed.
 

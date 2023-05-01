@@ -22,10 +22,8 @@ description: Description of steps required to download and start your node
 
 一个小终端将出现并自动下载节点的前端、后端和 nginx 容器。这可能需要几分钟的时间。
 
-A small terminal will appear and automatically download the containers for the node's frontend, backend, and nginx. This may take a few minutes.
+请注意，要打开或关闭节点，请打开 Docker GUI，导航到容器/应用程序选项卡，将鼠标悬停在 run 选项卡上，然后点击启动/停止按钮以打开或关闭节点。
 
-Note in order to turn your node on or off open the Docker GUI navigate to the containers/apps tab, hover over the run tab, and hit the start/stop button to turn your node on or off.
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-![](../.gitbook/assets/docker-toggle-container.PNG)
-
-Congratulations, your Deso node is now running locally! Navigate to [http://deso.run](http://deso.run/) or `locahost:8080` in your browser to see your local instance.
+恭喜您，您的 Deso 节点现在已在本地运行！在浏览器中导航至 [http://deso.run](http://deso.run/) 或 `locahost:8080`以查看您的本地运行的节点。

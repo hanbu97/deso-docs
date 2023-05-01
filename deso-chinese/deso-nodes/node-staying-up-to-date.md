@@ -1,76 +1,63 @@
-# 3⃣ Node: Staying Up-To-Date
+# 3⃣ 节点：保持最新
 
-This is a step-by-step guide on how to stay up to date with hardforks of the core repository, as well as instructions for core team members on how to execute updates that could cause a hard fork on the network.\
-\
-This doc should help node operators and the core team release new code in an organized way, particularly so that the developer community has sufficient time and resources to upgrade their nodes.
+这是一份关于如何与核心代码仓库的硬分叉保持同步的手把手指南。此外，还提供了关于核心团队成员如何执行可能导致网络硬分叉的更新的指南。
 
-## Instructions for Node Operators <a href="#_cv2t10tt14ya" id="_cv2t10tt14ya"></a>
+本文档旨在帮助节点运营商和核心团队以有组织的方式发布新代码，特别是让开发者社区有足够的时间和资源升级他们的节点。
 
-1. Subscribe to release notifications on GitHub
-   * Which repos?
-     * [https://github.com/deso-protocol/core](https://github.com/deso-protocol/core) (important)
-     * [https://github.com/deso-protocol/backend](https://github.com/deso-protocol/backend) (important)
-     * [https://github.com/deso-protocol/rosetta-deso](https://github.com/deso-protocol/rosetta-deso) (important for exchanges like Coinbase)
+## 节点运营商的操作说明 <a href="#_cv2t10tt14ya" id="_cv2t10tt14ya"></a>
+
+1. 在 GitHub 上订阅新版本发布通知
+   * 需要关注哪些代码仓库？
+     * [https://github.com/deso-protocol/core](https://github.com/deso-protocol/core) (重要)
+     * [https://github.com/deso-protocol/backend](https://github.com/deso-protocol/backend) (重要)
+     * [https://github.com/deso-protocol/rosetta-deso](https://github.com/deso-protocol/rosetta-deso) (对Coinbase等交易所重要))
      * [https://github.com/deso-protocol/identity](https://github.com/deso-protocol/identity)
      * [https://github.com/deso-protocol/frontend](https://github.com/deso-protocol/frontend)
-   * How to subscribe
-     1. Click “Watch” at the top
-     2. Select “Custom”
-     3. Check “Releases”\
+   * 如何订阅？
+     1. 点击页面顶部的 “Watch”
+     2. 选择 “Custom”
+     3. 勾选 “Releases”\\
+2. 当主要版本更新发生时，例如从2.9.9升级到3.0.0，请务必阅读发布说明，并在下周内重启您的节点以避免问题。
+   * 请注意，偶尔需要进行重新同步，除非与第二个运行节点并行执行，否则可能会导致大约20分钟的停机时间。请务必阅读发布说明以避免任何中断。\\
+3. 关注  [@deso](https://diamondapp.com/u/deso) 和 [@nader](https://diamondapp.com/u/nader)r 在 [node.deso.org](https://node.deso.org/) 或 [DiamondApp](https://diamondapp.com/) 上的链上公告和讨论。\\
+4. 在Twitter上关注 [@desoprotocol](https://twitter.com/desoprotocol) 和 [@nadertheory](https://twitter.com/nadertheory)&#x20;
 
-2. Whenever a major version update occurs, e.g. moving from 2.9.9 to 3.0.0, be sure to read the release notes and reboot your node within the next week to avoid issues
-   * Note that occasionally a resync will be required, which could cause \~20 minutes of downtime unless done in parallel with a second running node. Be sure to read the release instructions to avoid any interruptions.\
+## 核心团队的操作说明 <a href="#_9wdvp7tesgvk" id="_9wdvp7tesgvk"></a>
 
-3. Follow [@deso](https://diamondapp.com/u/deso) and [@nader](https://diamondapp.com/u/nader) on [node.deso.org](https://node.deso.org/) or [DiamondApp](https://diamondapp.com/) for on-chain announcements and discussion\
+### 代码准备 <a href="#_2tidf3tg7ql4" id="_2tidf3tg7ql4"></a>
 
-4. Follow [@desoprotocol](https://twitter.com/desoprotocol) and [@nadertheory](https://twitter.com/nadertheory) on Twitter
-
-## Instructions for Core Team <a href="#_9wdvp7tesgvk" id="_9wdvp7tesgvk"></a>
-
-### Code preparation <a href="#_2tidf3tg7ql4" id="_2tidf3tg7ql4"></a>
-
-1. Gate all the forking changes by a ForkHeight which initially should be set to `math.MaxUint32` for both mainnet and testnet, and 0 for regtest.\
-
-2. Verify that the code passes all basic tests:
-   1. core unit tests
-   2. core integration tests
-   3. node syncs with hypersync + txindex on testnet and mainnet
-   4. node syncs with blocksync + txindex on testnet and mainnet
-   5. rosetta can sync mainnet
-   6. repeat steps c. and d. for postgres
-   7. test that all of the changes work in the reference frontend
-   8. make sure to run more comprehensive tests when deploying a complex change\
-
-3. Assuming you’re ready with all the content for the steps in the next sections, you should announce everything at 12:00 PM PT and set the testnet fork height to 1 day from the announcement, and the mainnet fork height to **a minimum of** 7 days from the announcement.
-   * We will strive to give as much time for node operators to upgrade as possible, erring on the side of two weeks.\
+1. 通过 ForkHeight 对所有分叉更改进行限制，初始值 mainnet 和 testnet 应为 `math.MaxUint32`，以及 regtest 应为 0。\\
+2. 确保代码通过所有基本测试：
+   1. 核心单元测试
+   2. 核心集成测试
+   3. 使用 hypersync + txindex 在 testnet 和 mainnet 上同步节点
+   4. 使用 blocksync + txindex 在 testnet 和 mainnet 上同步节点
+   5. rosetta 可以同步 mainnet
+   6. 对于postgres，重复步骤c. 和 d.
+   7. 测试所有更改在参考前端中的工作情况
+   8. 确保在部署复杂更改时运行更全面的测试\\
+3. 假设您已准备好下一节中所有步骤的内容，您应在太平洋时间12:00 PM宣布所有内容，并将 testnet 的分叉高度设置为从公告发布后的第一天，mainnet 的分叉高度应当**至少为**从公告发布起的第七天。       &#x20;
+   * 我们将尽量为节点运营商提供尽可能多的升级时间，以两周为限，避免出错。\
      \
-     However, in the interest of moving quickly, it will sometimes be necessary to make updates with less warning, though generally with no less than one week of warning.
+     然而，为了快速推进升级，有时需要在较短的时间内进行更新，但通常至少提前一周发出警告。
 
-### Release preparation <a href="#_nkce44tidl7s" id="_nkce44tidl7s"></a>
+### 发布准备 <a href="#_nkce44tidl7s" id="_nkce44tidl7s"></a>
 
-1. Come up with a description of what happens in the fork. Make it a couple sentences, or a couple paragraphs depending on the scope of the change. See what fits based on next steps.\
+1. 撰写关于分叉中发生的情况的描述。根据接下来的步骤，使其成为几句话或几段文字。 \\
+2. 草拟一个分叉准备清单文档，该文档是关于节点运营商需要执行哪些操作来升级节点的逐步检查表/操作指南( [受到Prism的合并准备检查表启发](https://docs.prylabs.network/docs/prepare-for-merge))\。
+3. (可选)编写一个分叉前后对照表，描述分叉中发生的情况。左列应描述“之前”技术的不同方面，右列显示它们在“分叉后”如何更新/更改( [受到Prism的合并准备检查表启发](https://docs.prylabs.network/docs/prepare-for-merge))。\\
+4. 将上述所有内容放在GitHub上的一个新draft草稿发布中，类似于[ConsenSys在teku中所做的方式](https://github.com/ConsenSys/teku/releases)，或者[ethereum所做的](https://github.com/ethereum/go-ethereum/releases) 那样。\\
+5. 假设发布编号为XX.YY.ZZ（主要.次要.修订）:\\
+   * 您应该增加主要部分 XX
+     * \-> 如果节点运营商需要在固定时间内升级他们的软件，否则冒着陷入过时分叉的风险\\
+   * 您应该增加次要部分 YY
+     * \->如果节点运营商可以不做任何事情仍然正确地参与网络。 代码以向后兼容的方式增强节点。\\
+   * 您应该增加修订部分 ZZ
+     * \-> 如果更新以向后兼容的方式修复Bug错误。\\
+6. 发布新版本。
 
-2. Draft a Fork Preparation Checklist document which is a step-by-step checklist/walkthrough of what node operators need to do in order to upgrade their nodes (inspired by [prism’s merge preparation checklist](https://docs.prylabs.network/docs/prepare-for-merge))\
+### 公告 <a href="#_persa8n1a2dg" id="_persa8n1a2dg"></a>
 
-3. (Optionally) Write a before and after table which describes what happens in the fork. The left column should describe different aspects of the “before” tech and the right shows how they updated / changed “after” the fork. (also [prism’s merge preparation docs](https://docs.prylabs.network/docs/prepare-for-merge#the-merge-before-and-now))\
-
-4. Put all of the above in a new draft release on github, similar to how [consensys does it with teku](https://github.com/ConsenSys/teku/releases), or how [ethereum does it](https://github.com/ethereum/go-ethereum/releases)\
-
-5. Assuming the release number is XX.YY.ZZ (major.minor.patch):\
-
-   * You should increment the major XX
-     * \-> if the node operators will be required to upgrade their software within a fixed amount of time, otherwise risking ending up on a stale fork.\
-
-   * You should increment the minor YY
-     * \-> if the node operators can do nothing and still properly participate in the network. The code augments the node in a backwards-compatible fashion.\
-
-   * You should increment the patch ZZ
-     * \-> If the update fixes a bug in a backwards-compatible fashion.\
-
-6. Cut the new release
-
-### Announcement <a href="#_persa8n1a2dg" id="_persa8n1a2dg"></a>
-
-1. Create twitter announcement for the fork
-2. Create diamond announcement for the fork
-3. Create discord announcement for the fork
+1. 为分叉创建Twitter公告
+2. 为分叉创建Diamond公告
+3. 在Discord上创建分叉公告

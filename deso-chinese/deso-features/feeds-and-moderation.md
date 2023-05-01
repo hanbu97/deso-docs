@@ -164,7 +164,7 @@ DeSo基本上通过为每个人解决“内容”部分的问题，将子版块�
 * **白名单**：将个人资料列入白名单会使该用户的帖子自动出现在全球信息流中（目前每天允许5篇帖子）。\\
 * 最后，版主可以允许一个电话号码被重新使用，以认领初始$DESO。这对于各种测试场景非常有用。
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 当您将公钥设置为`ADMIN_PUBLIC_KEY`时，管理选项卡仅对您可见。这是保护您的节点的关键步骤。不这样做会导致您的所有用户都可以将帖子添加到全球信息流中。
 

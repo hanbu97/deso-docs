@@ -2,21 +2,21 @@
 description: Guide on integrating with the DeSo Identity iframe API
 ---
 
-# Overview
+# 概述
 
-The iframe allows you to perform actions such as signing transactions or encrypting/decrypting messages without user interaction, as is the case in the [window-api](../window-api/ "mention").
+iframe 可以让您在不需要用户交互的情况下执行诸如签署交易或加密/解密消息等操作，就像在[window-api](../window-api/ "mention")中一样。
 
-The iframe is usually entirely invisible to the user.
+iframe 通常对用户完全不可见。
 
-However, the iframe does need to render on some browsers such as Safari as the user needs to click on the iframe to grant it storage access.
+然而，在某些浏览器（如 Safari）上，iframe 需要渲染，因为用户需要点击 iframe 授权其存储访问权限。
 
-We will explain how to implement this later in the guide.
+我们将在指南后面部分解释如何实现这一点。
 
-In order to communicate with the iframe API, you need to include the iframe window HTML component into your app and point it to the `https://identity.deso.org/embed` URL.
+要与 iframe API 通信，您需要在应用中加入 iframe 窗口 HTML 组件，并将其指向 `https://identity.deso.org/`URL。
 
-Below is an example component.
+下面是一个示例组件。
 
-We also provided you with an example with CSS styling.
+我们还为您提供了一个带有 CSS 样式的示例。
 
 ```markup
 <iframe
@@ -28,25 +28,23 @@ We also provided you with an example with CSS styling.
 ></iframe>
 ```
 
-Take notice of the CSS styling of the iframe component. As mentioned, the iframe is typically invisible to the user. That's why we set the `display: none` in the CSS style.
+请注意 iframe 组件的 CSS 样式。如前所述，iframe 通常对用户不可见。这就是为什么我们在 CSS 样式中设置 `display: none`。
 
-We also want the iframe window to be on top of your application and take the entire display, hence the other CSS attributes.
+我们还希望 iframe 窗口位于您的应用之上，并占据整个显示区域，因此添加了其他 CSS 属性。
 
-You should modify the `z-index` attribute to fit your application. In case that we will have to show the iframe to the user, you will set the attribute `display: block`
+您应根据您的应用程序修改 z-index 属性。在我们需要向用户显示 iframe 时，您将设置属性 `display: block`。
 
-For example, `document.getElementById("identity.style.display = "block");`
+例如，`document.getElementById("identity.style.display = "block");`
 
-## Messages
+## 消息
 
-Communication with the iframe context is done through sending `postMessage()` requests. Similarly, the iframe context will send you responses by sending message events.
+与 iframe 上下文的通信是通过发送 `postMessage()`请求来完成的。类似地，iframe 上下文会通过发送消息事件向您发送响应。
 
-When you open the iframe context for the first time, the Identity will send you an `initialize` message, which requires you to respond.
+当您第一次打开 iframe 上下文时，Identity 将向您发送一个`initialize`初始化消息，需要您回应。
 
-This concept has been explained in more detail in the [#events](../identity/concepts.md#events "mention") section.
+这个概念在 [#events](../identity/concepts.md#events "mention") 部分中有更详细的解释。
 
-When sending requests to the Identity iframe, you will need to include an `id` field. The `id` should be in [UUID v4](https://en.wikipedia.org/wiki/Universally\_unique\_identifier#Version\_4\_\(random\)) format.
-
-We recommend using the [uuid npm package](https://www.npmjs.com/package/uuid), or you can also use the following implementation in Vanilla JavaScript:
+向 Identity iframe 发送请求时，您需要包含一个`id`字段。id 应采用 [UUID v4](https://en.wikipedia.org/wiki/Universally\_unique\_identifier#Version\_4\_\(random\)) 格式。我们建议使用  [uuid npm](https://www.npmjs.com/package/uuid) 包，或者您也可以使用以下 Vanilla JavaScript 实现：
 
 ```javascript
 function uuid() {
@@ -57,7 +55,7 @@ function uuid() {
 }
 ```
 
-Here's an example message format that you can send to the Identity iframe.
+以下是您可以发送给 Identity iframe 的示例消息格式：
 
 ```javascript
 {
@@ -67,47 +65,47 @@ Here's an example message format that you can send to the Identity iframe.
 }
 ```
 
-Let's take a look at what each of these fields mean:
+让我们看看这些字段的含义：
 
-* `id` should be generated to follow the UUID v4 format.
-* `service` this should always be set to `"identity"` so that the DeSo Identity Service knows it's supposed to read this message.
-* `method` this is the API type that you'll request, in this case it's `"info"` but it could be`"sign"`, `"encrypt"`, etc. as outlined in the [#api](./#api "mention") section
+* `id` 应采用 UUID v4 格式生成。
+* `service` 应始终设置为 "`identity`"，以便 DeSo 身份验证服务知道它应该读取此消息。
+* `method` 这是您将要请求的 API 类型，在这种情况下是 "`info`"，但它可以是 "`sign`"、""`encrypt`" 等，如 [#api](./#api "mention") 部分所述。
 
-You should index requests by `id` so that you can match them with responses.
+您应该根据 `id` 对请求进行索引，以便您可以将它们与响应进行匹配。
 
-We recommend looking at the [DeSo Protocol sourcecode](https://github.com/deso-protocol/frontend) to see how this could be implemented.&#x20;
+我们建议查看 [DeSo 协议源代码](https://github.com/deso-protocol/frontend)，以了解如何实现这一点。
 
-In particular, you could trace through the `send()` method on [line #257 in `src/app/identity.service.ts`](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L257).
+尤其是，您可以跟踪 [#257 in `src/app/identity.service.ts`](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L257)的 `send()` 方法。
 
-## Storage Access
+## 存储访问
 
-Besides `initialize`, you will need to send an `info` message to the `iframe` context.
+除了`initialize`初始化外，您还需要向 `iframe` 上下文发送一个`info`消息。
 
-The DeSo Identity uses local storage and cookies to share information about users between the window and iframe contexts.
+DeSo Identity 使用本地存储和 cookies 在窗口和 iframe 上下文之间共享有关用户的信息。
 
-However, some browsers such as Safari and Chrome on iOS prevent storing data in such a way without user's explicit permission.
+然而，某些浏览器（如 Safari 和 iOS 上的 Chrome）在未经用户明确许可的情况下禁止以这种方式存储数据。
 
-For example, Apple's Intelligent Tracking Prevention (ITP) places strict limitations on cross-domain data storage and access.
+例如，苹果的智能跟踪防护（ITP）对跨域数据存储和访问施加了严格的限制。
 
-This means the Identity iframe must request storage access every time the page reloads.
+这意味着每次页面重新加载时，Identity iframe 必须请求存储访问权限。
 
-This can be accomplished by showing the iframe to the user, i.e. setting `display: "block"`, and having the user click on the iframe.
+这可以通过向用户显示 iframe（即设置 `display: "block"`）并让用户点击 iframe 来实现。
 
-When a user visits a DeSo application in Safari they will see a "Tap anywhere to unlock your wallet" prompt which is a giant button in the iframe. When the user clicks on the button, he will give Identity the required access.
+当用户在 Safari 中访问 DeSo 应用程序时，他们会看到一个 "点击任意位置以解锁您的钱包" 的提示，这是 iframe 中的一个巨大按钮。当用户点击按钮时，他将为 Identity 提供所需的访问权限。
 
-Here's how it looks for the user:
+以下是用户看到的操作界面：
 
-![iframe UI for granting storage access](<../../.gitbook/assets/Screenshot from 2021-11-28 15-45-23.png>)
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Iframe界面以确保获得存储权限</p></figcaption></figure>
 
-To simplify this process, there's a special API call that you should perform, called `info`, that will indicate if you should display the iframe window to the user.
+为简化此过程，您应执行一个名为 `info` 的特殊 API 调用，该调用将指示您是否应向用户显示 iframe 窗口。
 
-The best practice is to send the `info` message just when you're about to send the first non-`initialize` request (sign, encrypt, etc.) to the iframe API.
+最佳实践是在向 iframe API 发送第一个non-`initialize`非初始化请求（如签名、加密等）时发送 `info` 消息。
 
-We recommend tracing through the `identity/iframe-info-storage-access` code snippet in the [examples repository,](https://github.com/deso-protocol/examples/tree/main/identity/iframe-info-storage-access/) which implements this communication pattern in Vanilla JavaScript using promises.
+我们建议查看[示例仓库](https://github.com/deso-protocol/examples/tree/main/identity/iframe-info-storage-access/)中的 `identity/iframe-info-storage-access`代码片段，该代码片段使用 Vanilla JavaScript 和 promises 实现此通信模式。
 
-If you're familiar with [RxJS](https://rxjs.dev), you can also trace through the [Deso Protocol code](https://github.com/deso-protocol/frontend), starting with the `storageGranted` variable on [line #32](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L32). Here's how the `info` request looks like:
+如果您熟悉 [RxJS](https://rxjs.dev)，还可以查看  [Deso协议代码](https://github.com/deso-protocol/frontend)，从[第32行](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/identity.service.ts#L32)的 `storageGranted` 变量开始。以下是 `info` 请求的示例：
 
-#### Request
+#### 请求
 
 ```javascript
 {
@@ -117,9 +115,9 @@ If you're familiar with [RxJS](https://rxjs.dev), you can also trace through the
 }
 ```
 
-And here's the response that the iframe will send you:
+以下是 iframe 将发送给您的响应：
 
-#### Response
+#### 响应
 
 ```javascript
 {
@@ -134,38 +132,38 @@ And here's the response that the iframe will send you:
 }
 ```
 
-Let's take a look at the above payload fields:
+让我们看一下上述返回体中的字段：
 
-* `browserSupported` tells you if DeSo Identity Service is compatible with the user's browser. If it's set to `false` you should notify the user that Identity won't work for them. Most modern browsers will output `true`.
-* `hasCookieAccess` indicates if user browser allows cookies. Identity might store some information in cookies if local storage is unavailable.
-* `hasLocalStorageAccess` will be `true` if local storage is available on user's browser.
-* `hasStorageAccess` indicates if browser has access to storage. If it's set to `false` you will need to show the `iframe` window to the user so he can grant access. We will get to this next.
+* `browserSupported` 告诉您 DeSo Identity 服务是否与用户的浏览器兼容。如果设置为 false，则应通知用户 Identity 对他们不起作用。大多数现代浏览器的输出为 true。
+* `hasCookieAccess` 表示用户浏览器是否允许使用 cookies。如果本地存储不可用，Identity 可能会在 cookies 中存储一些信息。
+* `hasLocalStorageAccess` 如果用户浏览器上的本地存储可用，则为 `true`。
+* `hasStorageAccess` 表示浏览器是否有存储访问权限。如果设置为 `false`，您将需要向用户显示 `iframe` 窗口，以便他可以授予访问权限。我们接下来将介绍这个部分。
 
-If the `info` message returns `hasStorageAccess: false`, your application should make the iframe take over the entire page.
+如果 `info` 消息返回`hasStorageAccess: false`，您的应用程序应使 iframe 占据整个页面。
 
-You could do that by setting:
+您可以通过设置以下内容来实现此目的：&#x20;
 
 ```javascript
 document.getElementById("identity").style.display = "block"
 ```
 
-The `info` message also detects if a user has disabled third party cookies.
+`info` 消息还检测用户是否禁用了第三方 cookie。
 
-Third party cookies are required for Identity to securely sign transactions.
+第三方 cookie 对于 Identity 在安全地签署交易中是必需的。
 
-If neither localStorage nor cookies are available, the `info` returns `browserSupported: false` and your application should inform the user they will not be able to use Identity to sign or decrypt anything.
+如果无法使用 localStorage 或 cookie，`info` 返回`browserSupported: false`，您的应用程序应告知用户他们将无法使用 Identity 进行签名或解密操作。
 
-When a user clicks "Tap anywhere to unlock your wallet," the iframe will indicate it by sending a `storageGranted` message.&#x20;
+当用户点击 "点击任意位置以解锁您的钱包" 时，iframe 会通过发送 `storageGranted` 消息来表示。
 
-This request does not expect a response. When your application receives the `storageGranted` message it can hide the `iframe` window from the user and the iframe is now ready to receive `sign` and `decrypt`, etc. messages.
+这个请求不需要回应。当您的应用程序收到 `storageGranted` 消息时，它可以向用户隐藏 `iframe` 窗口，此时 iframe 已准备好接收签名、解密等消息。
 
-To hide the `iframe`, simply call:
+要隐藏 `iframe`，只需调用：
 
 ```javascript
 document.getElementById("identity").style.display = "none"
 ```
 
-#### `storageGranted` Message
+#### `storageGranted` 消息
 
 ```javascript
 {
@@ -174,10 +172,10 @@ document.getElementById("identity").style.display = "none"
 }
 ```
 
-## User Credentials
+## 用户凭证
 
-In order to use the iframe API, you will need to first acquire secure user credentials from the [window-api](../window-api/ "mention"), through the [#log-in](../window-api/#log-in "mention") endpoint.
+要使用 iframe API，您首先需要从[window-api](../window-api/ "mention")通过[#log-in](../window-api/#log-in "mention") 接口获取安全的用户凭证。
 
-The user credentials include three fields, namely `encryptedSeedHex,` `accessLevel`, and`accessLevelHmac`.
+用户凭证包括三个字段，即 `encryptedSeedHex`、`accessLevel` 和 `accessLevelHmac`。
 
-Which you have to include in all requests to the iframe API. We also explained this concept in the [#accounts](../identity/concepts.md#accounts "mention") section.
+您必须将这些信息包含在 iframe API 的所有请求中。我们还在[#accounts](../identity/concepts.md#accounts "mention")部分解释了这个概念。

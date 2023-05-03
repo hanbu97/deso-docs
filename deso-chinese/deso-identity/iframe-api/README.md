@@ -2,19 +2,19 @@
 description: Documentation on the iframe Context API
 ---
 
-# 2⃣ Identity: iFrame API
+# 2⃣ 身份：iFrame API
 
-## Introduction
+## 介绍
 
-This guide describes the iframe API, which is an essential component of integrating with the DeSo Identity Service for web application developers.
+本指南介绍了 iframe API，这是与 DeSo 身份验证服务集成的 Web 应用程序开发者的关键组成部分。
 
-If you haven't yet read through the [identity](../identity/ "mention") and [concepts.md](../identity/concepts.md "mention") guides, it would be helpful to do so prior to reading this documentation.
+如果您还没有阅读过 [identity](../identity/ "mention") 和 [concepts.md](../identity/concepts.md "mention") 指南，我们建议在阅读本文档之前先了解它们。
 
-This guide also depends on [window-api](../window-api/ "mention"), so we recommend reading about it first.
+此外，本指南还依赖于[window-api](../window-api/ "mention")，因此我们建议您先阅读它。
 
-The iframe API guide consists of two subpages, which should give you a comprehensive view of the API:
+iframe API 指南包括两个子页面，它们将为您提供 API 的全面了解：
 
-* [basics.md](basics.md "mention") guide outlines the fundamentals of integrating with the iframe API
-* [endpoints.md](endpoints.md "mention") is an exhaustive list of all API endpoints.
+* [basics.md](basics.md "mention") 指南概述了与 iframe API 集成的基本原理
+* [endpoints.md](endpoints.md "mention") 是所有 API 接口的详尽列表。
 
-If you're creating a mobile app, check out our [mobile-integration.md](../identity/mobile-integration.md "mention") guide next.
+如果您正在创建移动应用，请接着阅读我们的 [mobile-integration.md](../identity/mobile-integration.md "mention") 指南。

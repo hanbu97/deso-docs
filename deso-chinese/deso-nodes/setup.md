@@ -12,7 +12,7 @@ description: Description of steps required to download and start your node
 
 在终端中运行命令 `git clone` [`https://github.com/deso-protocol/run.git`](https://github.com/deso-protocol/run.git) 。
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 下载容器
 

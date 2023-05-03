@@ -57,7 +57,7 @@ DeSo与现有的社交网络不同，因为其数据完全去中心化，并像�
 
 一旦节点开始运行，它会从其对等节点同步所有区块，以及尚未挖掘到区块的“内存池”中的交易。每个节点都配备了一个带有网络标签的管理员面板，可让您监控节点的同步状态。
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 节点同步完成后，您将实时访问到完整的DeSo数据！以下是关于如何充分利用节点的一些建议。
 
@@ -101,7 +101,7 @@ DeSo与现有的社交网络不同，因为其数据完全去中心化，并像�
 
 ### 用户名验证
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 超级管理员可以通过将用户名输入“`Grant Verification Badge`授予验证徽章”输入框，然后点击“`Verify`验证”来授予用户（在他们的节点上）验证徽章。类似地，超级管理员可以通过将用户名输入“`Remove Verification Badge`移除验证徽章”输入框，然后点击“`Remove`移除”来撤销验证。
 

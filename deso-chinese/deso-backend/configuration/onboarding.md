@@ -16,7 +16,7 @@ Default: None
 
 用于向通过手机验证或通过Jumio验证的用户发送DESO的种子短语。
 
-Seed phrase that is used to send DESO to users who go through [phone-number-verification.md](phone-number-verification.md "mention") or [broken-reference](broken-reference/ "mention"), and to [#comp-profile-creation](onboarding.md#comp-profile-creation "mention")
+Seed phrase that is used to send DESO to users who go through [phone-number-verification.md](phone-number-verification.md "mention") or , and to [#comp-profile-creation](onboarding.md#comp-profile-creation "mention")
 
 ## Starter DESO Nanos
 

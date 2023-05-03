@@ -2,32 +2,32 @@
 description: List of DeSo Identity iframe API endpoints
 ---
 
-# Endpoints
+# 终端
 
-#### Note:
+#### 注意：
 
-The iframe API supports functionality for both public keys and derived keys. You can determine key type from the login response by checking for `derivedPublicKeyBase58Check`.
+iframe API 支持公钥和派生密钥的功能。您可以通过检查登录响应中的 `derivedPublicKeyBase58Check` 来确定密钥类型。
 
 ## sign
 
-[**AccessLevel**](broken-reference)**: 3, 4 (depends on** [**transaction**](https://github.com/deso-protocol/identity/blob/9dad527dc46498b9aaa0344abd70dc8895acf246/src/app/identity.service.ts#L288)**)**
+[**访问级别**](broken-reference/)**: 3, 4 (取决于**[**交易**](https://github.com/deso-protocol/identity/blob/9dad527dc46498b9aaa0344abd70dc8895acf246/src/app/identity.service.ts#L288)**)**
 
-The sign message is responsible for signing transaction hexes. If approval is required an application must call the [#approve](../window-api/#approve "mention") endpoint in the Window API to sign the transaction.
+sign 消息负责对交易十六进制进行签名。如果需要批准，应用程序必须调用窗口 API 中的[#approve](../window-api/#approve "mention")接口来对交易进行签名。
 
-#### Payload for public keys
+#### Public keys公钥返回体
 
-| Name           | Type   | Description                              |
-| -------------- | ------ | ---------------------------------------- |
-| transactionHex | string | Hex of the transaction you want to sign. |
+| 名称             | 类型     | 描述            |
+| -------------- | ------ | ------------- |
+| transactionHex | string | 您想签名的交易十六进制哈希 |
 
-#### Payload for derived keys
+#### Derived keys派生秘钥的返回体
 
-| Name                        | Type   | Description                                                                                      |
-| --------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
-| transactionHex              | string | Hex of the transaction you want to sign.                                                         |
-| derivedPublicKeyBase58Check | string | Only required if logged in user is using a derived key to sign on behalf of an owner public key. |
+| 名称                          | 类型     | 描述                            |
+| --------------------------- | ------ | ----------------------------- |
+| transactionHex              | string | 您想签名的交易十六进制哈希                 |
+| derivedPublicKeyBase58Check | string | 仅在已登录用户使用派生密钥代表所有者公钥进行签名时才需要。 |
 
-#### Request
+#### 请求
 
 ```javascript
 {
@@ -45,9 +45,9 @@ The sign message is responsible for signing transaction hexes. If approval is re
 }
 ```
 
-#### Response (Success)
+#### 响应（成功）
 
-You will get this response if the transaction was successful signed.
+如果交易成功签名，您将得到此响应。
 
 ```javascript
 {
@@ -59,9 +59,9 @@ You will get this response if the transaction was successful signed.
 }
 ```
 
-#### Response (Approval Required)
+#### 响应（需要批准）
 
-You will get this response if the `accessLevel` your user has authorized doesn't match the access level required to sign a transaction.
+如果您的用户授权的访问级别与签署交易所需的`accessLevel`访问级别不匹配，您将得到此响应。
 
 ```javascript
 {
@@ -75,30 +75,30 @@ You will get this response if the `accessLevel` your user has authorized doesn't
 
 ## encrypt
 
-[**AccessLevel**](broken-reference)**: 2**
+[**访问等级**](broken-reference/)**: 2**
 
-The encrypt API is responsible for encrypting messages. For more details check out [#messages](../identity/concepts.md#messages "mention")
+encrypt API 负责加密消息。有关更多详细信息，请查看 [#messages](../identity/concepts.md#messages "mention")
 
-#### Payload for public keys
+#### Public keys公钥返回体
 
-| Name               | Type   | Description                                        |
-| ------------------ | ------ | -------------------------------------------------- |
-| recipientPublicKey | string | Public key of the recipient in base58check format. |
-| message            | string | Message text that you want to encrypt.             |
+| 名称                 | 类别     | 描述                       |
+| ------------------ | ------ | ------------------------ |
+| recipientPublicKey | string | 接收者的公钥，以base58check格式表示。 |
+| message            | string | 您想加密的消息文本。               |
 
-#### Payload for derived keys
+#### Derived keys派生秘钥的返回体
 
-Only required if logged in user is using a derived key to sign on behalf of an owner public key.
+仅在登录用户使用派生密钥代表所有者公钥签名时需要。
 
-|                                 |        |                                                                                    |
-| ------------------------------- | ------ | ---------------------------------------------------------------------------------- |
-| recipientPublicKey              | string | Public key of the recipient in base58check format.                                 |
-| message                         | string | Message text that you want to encrypt.                                             |
-| encryptedMessagingKeyRandomness | string | This value is used in place of the `encryptedSeedHex` when encrypting the message. |
-| derivedPublicKeyBase58Check     | string | Public key requesting encryption in base58check format.                            |
-| ownerPublicKeyBase58Check       | string | Public key used  only for validation.                                              |
+| 名称                              | 类别     | 描述                                |
+| ------------------------------- | ------ | --------------------------------- |
+| recipientPublicKey              | string | 接收者的公钥，以base58check格式表示。          |
+| message                         | string | 您想加密的消息文本。                        |
+| encryptedMessagingKeyRandomness | string | 在加密消息时，此值将用于替代`encryptedSeedHex`。 |
+| derivedPublicKeyBase58Check     | string | 以base58check格式请求加密的公钥。            |
+| ownerPublicKeyBase58Check       | string | 公钥仅用于验证。                          |
 
-#### Request
+#### 请求
 
 ```javascript
 {
@@ -119,9 +119,9 @@ Only required if logged in user is using a derived key to sign on behalf of an o
 }
 ```
 
-#### Response for Derived keys (Encrypted Messaging Key Randomness Required)
+**派生密钥的响应（需要加密的消息随机性密钥）**
 
-You will get this response if the request includes a `derivedPublicKeyBase58Check` and does not include both `ownerPublicKeyBase58Check` and `encryptedMessagingKeyRandomness`.
+如果请求包含 `derivedPublicKeyBase58Check` 并且不包括 `ownerPublicKeyBase58Check` 和 `encryptedMessagingKeyRandomness`，您将获得此响应。
 
 ```javascript
   id: '21e02080-0ef4-4056-a319-a66403f33768',
@@ -133,13 +133,13 @@ You will get this response if the request includes a `derivedPublicKeyBase58Chec
 }
 ```
 
-You can request Encrypted MessagingKeyRandomness by calling the messaging-group in the Window API.
+您可以通过调用窗口 API 中的 messaging-group 请求加密的 MessagingKeyRandomness。
 
-#### Response (Approval Required)
+#### 响应（需要批准）
 
-You will get this response if the `accessLevel` your user has authorized doesn't match the access level required to sign a transaction.
+如果您的用户授权的访问级别与签署交易所需的`accessLevel`访问级别不匹配，您将获得此响应。
 
-To fix, the user needs to allow at least access level 2.
+要解决此问题，用户需要允许至少访问级别 2。
 
 ```javascript
 {
@@ -151,7 +151,7 @@ To fix, the user needs to allow at least access level 2.
 }
 ```
 
-#### Response
+#### 响应
 
 ```javascript
 {
@@ -165,19 +165,19 @@ To fix, the user needs to allow at least access level 2.
 
 ## decrypt
 
-[**AccessLevel**](broken-reference)**: 2**
+[**访问等级**](broken-reference/)**: 2**
 
-The decrypt API is responsible for decrypting messages.
+解密 API 负责解密消息。
 
-As we mentioned in the [#messages](../identity/concepts.md#messages "mention") section, the current messaging protocol is `V2`; however, it is still possible to decrypt messages from the `V1` scheme.
+正如我们在前文[#messages](../identity/concepts.md#messages "mention") 提到的，当前的消息协议是 `V2`；然而，仍然可以解密来自 `V1` 方案的消息。&#x20;
 
-The decrypt API allows you to decrypt multiple messages at once by passing an array of `encryptedMessage` objects.
+解密 API 允许您通过传递一个 `encryptedMessage` 对象数组一次解密多个消息。
 
-The `decrypt` API is intended to be constructed right after calling the `/api/v0/get-messages-stateless` backend API endpoint, and so the structure of `encryptedMessage` matches the structure of the response from backend.
+解密 API 旨在在调用`/api/v0/get-messages-stateless` 后端 API 接口之后构建，因此 `encryptedMessage` 的结构与后端响应的结构相匹配。
 
-We recommend tracing through [`GetMessages()` ](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/backend-api.service.ts#L1293)function in the DeSo Protocol frontend's `src/app/backend-api.service.ts`.
+我们建议跟踪 DeSo 协议前端的 `src/app/backend-api.service.ts` 中的  [`GetMessages()` ](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/backend-api.service.ts#L1293)函数。&#x20;
 
-Assuming `message` is a taken from `OrderedContactsWithMessages.Messages` from the backend API response, `encryptedMessage` can be constructed as follows:
+假设消息是从后端 API 响应的 `OrderedContactsWithMessages`.`Messages` 中获取的，可以按以下方式构建 `encryptedMessage`：
 
 ```javascript
 encryptedMessage : {
@@ -188,26 +188,26 @@ encryptedMessage : {
 }
 ```
 
-Another use-case for the `decrypt` API is decrypting unlock-able text in NFTs.
+解密 API 的另一个用例是解密 NFT 中的可解锁文本。&#x20;
 
-To see how this can be done, we recommend tracing through the [`DecryptUnlockableTexts()`](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/backend-api.service.ts#L945) in the DeSo Protocol repository.
+要查看如何实现此功能，我们建议跟踪 DeSo 协议存储库中的 [`DecryptUnlockableTexts()`](https://github.com/deso-protocol/frontend/blob/6d6225a8425f2fe7ad84a222027159333b2c754f/src/app/backend-api.service.ts#L945)。
 
-#### Payload for public keys
+#### Public keys公钥返回体
 
-| Name              | Type                | Description                         |
-| ----------------- | ------------------- | ----------------------------------- |
-| encryptedMessages | \[]encryptedMessage | List of encrypted messages objects. |
+| 名称                | 类型                  | 描述        |
+| ----------------- | ------------------- | --------- |
+| encryptedMessages | \[]encryptedMessage | 加密消息对象列表。 |
 
-#### Payload for derived keys
+#### Derived keys派生秘钥的返回体
 
-|                                 |                     |                                                                                        |
-| ------------------------------- | ------------------- | -------------------------------------------------------------------------------------- |
-| derivedPublicKeyBase58Check     | string              | Public key requesting decryption in base58check format.                                |
-| ownerPublicKeyBase58Check       | string              | Used to identify which messaging group member entry is used to decrypt group messages. |
-| encryptedMessagingKeyRandomness | string              | Required to decrypt the request.                                                       |
-| encryptedMessages               | \[]encryptedMessage | List of encrypted messages objects.                                                    |
+| 名称                              | 类型                  | 描述                     |
+| ------------------------------- | ------------------- | ---------------------- |
+| derivedPublicKeyBase58Check     | string              | 以base58check格式请求解密的公钥。 |
+| ownerPublicKeyBase58Check       | string              | 用于识别哪个消息组成员条目用于解密群组消息。 |
+| encryptedMessagingKeyRandomness | string              | 需要解密请求。                |
+| encryptedMessages               | \[]encryptedMessage | 加密消息对象列表。              |
 
-#### Request
+#### 请求
 
 ```javascript
 {
@@ -239,9 +239,9 @@ To see how this can be done, we recommend tracing through the [`DecryptUnlockabl
 }
 ```
 
-#### Response (Encrypted Messaging Key Randomness Required)
+#### 响应（需要加密的消息密钥随机性）
 
-You will get this response if the request includes a `derivedPublicKeyBase58Check` and does not include both `ownerPublicKeyBase58Check` and `encryptedMessagingKeyRandomness`.
+如果请求包含 `derivedPublicKeyBase58Check` 并且不包括 `ownerPublicKeyBase58Check` 和 `encryptedMessagingKeyRandomness`，您将获得此响应。
 
 ```javascript
 {
@@ -254,11 +254,11 @@ You will get this response if the request includes a `derivedPublicKeyBase58Chec
 }
 ```
 
-#### Response (Approval Required)
+#### 响应（需要批准）
 
-You will get this response if the `accessLevel` your user has authorized doesn't match the access level required to sign a transaction.
+如果您的用户授权的`accessLevel`访问级别与签署交易所需的访问级别不匹配，您将获得此响应。
 
-To fix, the user needs to allow at least access level 2.
+要解决此问题，用户需要至少允许访问级别 2。
 
 ```javascript
 {
@@ -270,9 +270,9 @@ To fix, the user needs to allow at least access level 2.
 }
 ```
 
-#### Response
+#### 响应
 
-Response contains a `decryptedHexes` field which is a map of decrypted messages, indexed by `EncryptedHex` from the request.
+响应包含一个 `decryptedHexes` 字段，它是一个解密消息的映射，索引为请求中的 `EncryptedHex`。
 
 ```javascript
 {
@@ -287,31 +287,29 @@ Response contains a `decryptedHexes` field which is a map of decrypted messages,
 }
 ```
 
-
-
 ## jwt
 
-[**AccessLevel**](broken-reference)**: 2**
+[**访问等级**](broken-reference/)**: 2**
 
-The `jwt` message creates signed JWT tokens that can be used to verify a user's ownership of a specific public key.
+`jwt` 消息创建已签名的 JWT 令牌，可用于验证用户对特定公钥的所有权。
 
-The JWT is only valid for 10 minutes.
+JWT 仅在 10 分钟内有效。
 
-JWTs are used in some Backend API endpoints such as `/api/v0/upload-image.` The best practice is to request the JWT right before calling these endpoints.
+JWT 用于某些后端 API 接口，如`/api/v0/upload-image`。最佳做法是在调用这些接口之前请求 JWT。
 
-#### Payload for public keys
+#### Public keys公钥返回体
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| N/A  | N/A  | No payload. |
+| 名称  | 类型  | 描述           |
+| --- | --- | ------------ |
+| N/A | N/A | <p><br>无</p> |
 
-#### payload for derived keys
+#### Derived keys派生秘钥的返回体
 
-| Name                        | Type    | Description                                      |
-| --------------------------- | ------- | ------------------------------------------------ |
-| derivedPublicKeyBase58Check | string  | Informs Identity on how to sign the transaction. |
+| 名称                          | 类型     | 描述                |
+| --------------------------- | ------ | ----------------- |
+| derivedPublicKeyBase58Check | string | 告知Identity如何签署交易。 |
 
-#### Request
+#### 请求
 
 ```javascript
 {
@@ -327,7 +325,7 @@ JWTs are used in some Backend API endpoints such as `/api/v0/upload-image.` The 
 }
 ```
 
-#### Response
+#### 响应
 
 ```javascript
 {
@@ -339,9 +337,9 @@ JWTs are used in some Backend API endpoints such as `/api/v0/upload-image.` The 
 }
 ```
 
-#### Validation in Go
+#### 在 Go 中进行验证
 
-In case you want to validate the JWT token in Go, you could use the code below:
+如果您想在 Go 中验证 JWT 令牌，可以使用以下代码：
 
 ```javascript
 func (fes *APIServer) ValidateJWT(publicKey string, jwtToken string) (bool, error) {

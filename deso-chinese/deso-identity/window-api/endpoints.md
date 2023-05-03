@@ -2,57 +2,57 @@
 description: List of DeSo Identity Window API endpoints
 ---
 
-# Endpoints
+# 接口
 
-This section describes all endpoints for the Window API.
+本节描述了Window API的所有接口。
 
-Endpoints are called with URL parameters, some of which are optional. After the user completes the flow within the window, Identity will send a `postMessage` response.
+接口通过URL参数进行调用，其中一些参数是可选的。在用户在窗口内完成操作后，Identity将发送一个`postMessage`响应。
 
-## log-in
+## log-in登录
 
-This endpoint is used to handle user login or account creation.
+此接口用于处理用户登录或帐户创建。
 
-#### Request
+#### 请求
 
 ```javascript
 const login = window.open('https://identity.deso.org/log-in');
 ```
 
-#### URL Parameters
+#### URL 参数
 
-| Name                          | Type   | Description                                                                                                                                                                                               |
-| ----------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| accessLevelRequest (optional) | int    | Requested access level, as in [#access-levels](../identity/concepts.md#access-levels "mention") Default is Access Level 2                                                                                 |
-| testnet (optional)            | bool   | Whether we're on testnet or mainnet. Default is `false`                                                                                                                                                   |
-| webview (optional)            | bool   | Whether we're using webview. Default is `false`                                                                                                                                                           |
-| jumio (optional)              | bool   | Whether to show "get free deso" during signup. Default is `false`                                                                                                                                         |
-| referralCode (optional)       | string | Referral Code through which the user accessed the site. The referral code allows the user to get a greater amount of money as a sign-up bonus. Also check out[#get-free-deso](./#get-free-deso "mention") |
-| hideGoogle (optional)         | bool   | Hide Google login from the Identity UI. Default is `false`                                                                                                                                                |
+| 名称                            | 类型     | 描述                                                                                         |
+| ----------------------------- | ------ | ------------------------------------------------------------------------------------------ |
+| accessLevelRequest (optional) | int    | 请求的访问级别，如 [#access-levels](../identity/concepts.md#access-levels "mention") 中描述的，默认是访问级别为2 |
+| testnet (optional)            | bool   | 是否使用测试网还是主网。默认为`false`                                                                     |
+| webview (optional)            | bool   | 是否使用webview。默认为 `false`                                                                    |
+| jumio (optional)              | bool   | 是否在注册时显示 "获得免费deso"。默认为`false`                                                             |
+| referralCode (optional)       | string | 用户访问网站所用的推荐代码。推荐代码允许用户获得更多的钱作为注册奖励。[#get-free-deso](./#get-free-deso "mention")有更多描述。      |
+| hideGoogle (optional)         | bool   | 从个人信息界面中隐藏谷歌登录。默认为`false`                                                                  |
 
-`accessLevelRequest` can take values from {0, 2, 3, 4}. You should only ask for the lowest permission that fits the requirements of your application.
+`accessLevelRequest` 可以取值 {0, 2, 3, 4}。您应该只请求满足应用程序需求的最低权限。
 
-Here's what each level means:
+以下是每个级别的含义：
 
 ```javascript
 enum AccessLevel {
-  // User revoked permissions
+  // 用户撤销权限
   None = 0,
 
-  // Approval required for all transactions.
-  // This means no account action is authorized.
-  ApproveAll = 2, /* DEFAULT */
+  // 所有交易都需要批准。
+  // 这意味着没有帐户操作被授权。
+  ApproveAll = 2, /* 默认值  */
 
-  // Approval required for buys, sends, and sells
-  // This authorizes all non-spending actions.
+  // 买入、发送和卖出需要批准
+  // 这授权所有非消费操作。
   ApproveLarge = 3,
 
-  // Node can sign all transactions without approval
-  // This authorizes all non-spending & spending actions.
+  // 节点可以在无需批准的情况下签署所有交易
+  // 这授权所有非消费和消费操作。
   Full = 4,
 }
 ```
 
-#### Response
+#### 响应
 
 ```javascript
 {
@@ -77,41 +77,41 @@ enum AccessLevel {
 }
 ```
 
-For a log in or sign up action, the selected `publicKey` will be included in `publicKeyAdded`.&#x20;
+对于登录或注册操作，所选公钥将包含在 `publicKeyAdded` 中。
 
-When a user signs up the `signedUp` field will be set to `true`, otherwise it'll be `false` for log in.
+当用户注册时，`signedUp` 字段将设置为 `true`，否则对于登录将为 `false`。
 
-An application should store the current `publicKeyAdded` and `users` objects in its local storage.
+应用程序应将当前的 `publicKeyAdded` 和 `users` 对象存储在本地存储中。
 
-You should always overwrite the existing, saved users.
+您应该始终覆盖现有的保存的用户。
 
-Check out the [#messages](./#messages "mention") section for more information.
+查看[#messages](./#messages "mention") 部分以获取更多信息。
 
-When an application wants to sign a transaction or decrypt a message, the `accessLevel`, `accessLevelHmac`, and `encryptedSeedHex` values will be required.
+当应用程序要签署交易或解密消息时，需要 `accessLevel`、`accessLevelHmac` 和 `encryptedSeedHex` 值。
 
-## logout
+## logout登出
 
-Logout is used to reset the `accessLevel` of an individual user. You should handle user logout by calling this endpoint.
+登出用于重置单个用户的 `accessLevel`。您应该通过调用此接口来处理用户登出。
 
-When you logout a user, you should delete the corresponding `userCredentials` entry form the local storage/database.
+当您登出用户时，您应该从本地存储/数据库中删除相应的 `userCredentials` 条目。
 
-Consult the [#messages](./#messages "mention") section for more information.
+有关更多信息，请参阅[#messages](./#messages "mention") 部分。
 
-#### Request
+#### 请求
 
 ```javascript
 const logout = window.open('https://identity.deso.org/logout');
 ```
 
-#### URL Parameters
+#### URL 参数
 
-| Name               | Type   | Description                                             |
-| ------------------ | ------ | ------------------------------------------------------- |
-| publicKey          | string | Public key of the user that is logging out              |
-| testnet (optional) | bool   | Whether we're on testnet or mainnet. Default is `false` |
-| webview (optional) | bool   | Whether we're using webview. Default is `false`         |
+| 名称                 | 类型     | 描述                      |
+| ------------------ | ------ | ----------------------- |
+| publicKey          | string | 正在登出的用户的公钥              |
+| testnet (optional) | bool   | 是否使用测试网还是主网。默认为`false`  |
+| webview (optional) | bool   | 是否使用webview。默认为 `false` |
 
-#### Response
+#### 响应
 
 ```javascript
 {
@@ -134,33 +134,33 @@ const logout = window.open('https://identity.deso.org/logout');
 }
 ```
 
-## approve
+## 批准
 
-The approve endpoint is used for transaction signing.
+批准接口用于事务签名。
 
-If you're unsure what this means, make sure to check out the [#transactions](../identity/concepts.md#transactions "mention") section to see how transactions work in the DeSo blockchain.&#x20;
+如果您不确定这意味着什么，请确保查看 [#transactions](../identity/concepts.md#transactions "mention")以了解 DeSo 区块链中事务是如何工作的。
 
-Usually, the approve endpoint is called when you want to sign a transaction that's outside the scope of the [`accessLevel`](broken-reference) you have requested during [#log-in](./#log-in "mention").
+通常，在您想要签署一个超出您在[#log-in](./#log-in "mention")登录期间请求的[`accessLevel`](broken-reference/) 范围的事务时，会调用批准接口。
 
-For example, if you requested `accessLevel=3` and want to sign a `BasicTransfer` transaction (constructed via `api/v0/send-deso`Backend API), you would need to use the approve endpoint because `BasicTransfer` requires `accessLevel=4`.
+例如，如果您请求`accessLevel=3` 并想要签署一个 `BasicTransfer` 事务（通过 `api/v0/send-deso` API 构造），您需要使用批准接口，因为 `api/v0/send-deso` 需要 `accessLevel=4`。
 
-If the transaction you want to sign is within the scope of the `accessLevel` you have, you should sign it through the [iframe-api](../iframe-api/ "mention").
+如果您要签署的事务在您拥有的 `accessLevel` 范围内，您应该通过[iframe-api](../iframe-api/ "mention")接口签署。
 
-#### Request
+#### 请求
 
 ```javascript
 const approve = window.open('https://identity.deso.org/approve');
 ```
 
-#### URL Parameters
+#### URL 参数
 
-| Name               | Type   | Description                                             |
-| ------------------ | ------ | ------------------------------------------------------- |
-| tx                 | string | Transaction hex of the transaction to sign              |
-| testnet (optional) | bool   | Whether we're on testnet or mainnet. Default is `false` |
-| webview (optional) | bool   | Whether we're using webview. Default is `false`         |
+| 名称                 | 类型     | 描述                      |
+| ------------------ | ------ | ----------------------- |
+| tx                 | string | 要签署的交易的十六进制哈希           |
+| testnet (optional) | bool   | 是否使用测试网还是主网。默认为`false`  |
+| webview (optional) | bool   | 是否使用webview。默认为 `false` |
 
-#### Response
+#### 响应
 
 ```javascript
 {
@@ -184,35 +184,35 @@ const approve = window.open('https://identity.deso.org/approve');
 }
 ```
 
-## derive
+## derive派生
 
-The derive endpoint is used to generate a derived key for a user.
+派生接口用于为用户生成派生密钥。
 
-When you hold a derived key, you can sign transactions for a user without having to interact with the DeSo Identity Service.
+当您持有派生密钥时，您可以在不与 DeSo 身份服务交互的情况下为用户签署事务。&#x20;
 
-Derived keys are intended to be used primarily in mobile applications and with [#callbacks](./#callbacks "mention").
+派生密钥主要用于移动应用程序和使用[#callbacks](./#callbacks "mention")回调。&#x20;
 
-If no callback is specified, you will receive the derived key through [#messages](./#messages "mention").
+如果没有指定回调，您将通过[#messages](./#messages "mention")接收派生密钥。&#x20;
 
-In such case, you will receive the payload with `method: "derive"` (opposed to `"login"`). More information on derived keys can be found in [#derived-keys](../identity/mobile-integration.md#derived-keys "mention").
+在这种情况下，您将收到带有 `method: "derive"`"（与 "`login`" 相对）的请求体。有关派生密钥的更多信息可以在 [#derived-keys](../identity/mobile-integration.md#derived-keys "mention")部分找到。
 
-After the Transaction Spending Limits fork height hits, derived keys will require authorization of transaction spending limits, which provides granular permissions on transaction type and even more granular permissions on NFTs, Creator Coins, and DAO Coins.
+在事务支出限制分叉高度达到后，派生密钥将需要对事务支出限制进行授权，这将为事务类型提供粒度权限，甚至为 NFT、创作者币和 DAO 币提供更细粒度的权限。&#x20;
 
-To learn more, read the [#derived-keys](../identity/mobile-integration.md#derived-keys "mention") section.
+要了解更多信息，请阅读[#derived-keys](../identity/mobile-integration.md#derived-keys "mention")部分。
 
-#### Request
+#### 请求
 
 ```javascript
 const derive = window.open('https://identity.deso.org/derive');
 ```
 
-#### URL Parameters
+#### URL 参数
 
-| Name                     | Type   | Description                                                                                                                                                                                          |
+| 名称                       | 类型     | 描述                                                                                                                                                                                                   |
 | ------------------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| callback (optional)      | string | Callback URL for the payload as explained in [#callbacks](./#callbacks "mention")                                                                                                                    |
-| testnet (optional)       | bool   | Whether we're on testnet or mainnet. Default is `false`                                                                                                                                              |
-| webview (optional)       | bool   | Whether we're using webview. Default is `false`                                                                                                                                                      |
+| callback (optional)      | string | <p><a data-mention href="./#callbacks">#callbacks</a>中阐述的有效载荷的回调URL。 回调</p><p></p><p>Callback URL for the payload as explained in <a data-mention href="./#callbacks">#callbacks</a></p>             |
+| testnet (optional)       | bool   | 是否使用测试网还是主网。默认为`false`                                                                                                                                                                               |
+| webview (optional)       | bool   | 是否使用webview。默认为 `false`                                                                                                                                                                              |
 | TransactionSpendingLimit | string | [#transactionspendinglimitresponse](../../deso-backend/api/#transactionspendinglimitresponse "mention") as a JSON string. Use `encodeURIComponent(JSON.stringify(transactionSpendingLimitResponse))` |
 | PublicKey                | String | Public key (in base 58) for which you want to generate a derived key (Optional)                                                                                                                      |
 | DerivedPublicKey         | String | Derived key (in base 58) that you want to use instead of allowing identity to generate a new one (Optional)                                                                                          |
@@ -278,7 +278,7 @@ const secrets = window.open('https://identity.deso.org/get-shared-secrets');
 | derivedPublicKey   | string                                                                                    | Derived public key                                                                |
 | JWT                | string                                                                                    | JWT signed by the derived key, it's passed as `derivedJwt` in `/derive`           |
 | messagePublicKeys  | strings, [CSV format](https://en.wikipedia.org/wiki/Comma-separated\_values#Basic\_rules) | Public keys of users for which we want to fetch shared secrets.                   |
-| testnet (optional) | bool                                                                                      | Whether we're on testnet or mainnet. Default is `false`                           |
+| testnet (optional) | bool                                                                                      | 是否使用测试网还是主网。默认为`false`                                                            |
 
 #### Response
 
@@ -301,11 +301,11 @@ const free = window.open('https://identity.deso.org/get-free-deso');
 
 #### URL Parameters
 
-| Name                    | Type   | Description                                             |
-| ----------------------- | ------ | ------------------------------------------------------- |
-| public\_key             | string | Public key of the user to be KYC verified               |
-| referralCode (optional) | string | Referral code to be used in Jumio                       |
-| testnet (optional)      | bool   | Whether we're on testnet or mainnet. Default is `false` |
+| Name                    | Type   | Description                               |
+| ----------------------- | ------ | ----------------------------------------- |
+| public\_key             | string | Public key of the user to be KYC verified |
+| referralCode (optional) | string | Referral code to be used in Jumio         |
+| testnet (optional)      | bool   | 是否使用测试网还是主网。默认为`false`                    |
 
 #### Response
 
@@ -347,10 +347,10 @@ const phone = window.open('https://identity.deso.org/verify-phone-number');
 
 #### URL Parameters
 
-| Name               | Type   | Description                                             |
-| ------------------ | ------ | ------------------------------------------------------- |
-| public\_key        | string | Public key of the user to be phone verified             |
-| testnet (optional) | bool   | Whether we're on testnet or mainnet. Default is `false` |
+| Name               | Type   | Description                                 |
+| ------------------ | ------ | ------------------------------------------- |
+| public\_key        | string | Public key of the user to be phone verified |
+| testnet (optional) | bool   | 是否使用测试网还是主网。默认为`false`                      |
 
 #### Response
 

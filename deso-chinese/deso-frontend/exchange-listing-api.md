@@ -2,98 +2,93 @@
 description: Get started building on DeSo with our Javascript SDK
 ---
 
-# 1⃣ Frontend: Get Started
+# 1⃣ 前端：开始
 
-### Setup
+### 设置
 
-If you’re already familiar with a particular framework, feel free to set up a project using the documentation for your preferred tool (Create React App, Vite, Nextjs, Remix, Angular, Vue, etc).
+如果您已经熟悉某个特定的框架，可以根据您喜欢的工具的文档创建一个项目（Create React App，Vite，Nextjs，Remix，Angular，Vue 等）。
 
-If you're not sure, [our examples](https://github.com/deso-protocol/deso-examples-react) will be using [Create React App](https://create-react-app.dev/), which is a reasonable choice for getting a development environment up and running for quick prototyping.\
+如果您不确定，我们的[示例](https://github.com/deso-protocol/deso-examples-react)将使用[Create React App](https://create-react-app.dev/),，这是一种合理的选择，用于为快速原型设计搭建开发环境。
+
+您可以在 Create React App  [入门页面](https://create-react-app.dev/docs/getting-started)上找到系统要求和安装步骤。\
 \
-You can find the system requirements and installation steps on the Create React App [getting started page](https://create-react-app.dev/docs/getting-started).
+请注意，CRA 的默认脚手架使用的是原生 JavaScript。
 
-Note that CRA’s default scaffolding uses vanilla javascript.\
+如果您熟悉 TypeScript 并且更喜欢使用它，请查看[这个章节](https://create-react-app.dev/docs/getting-started#creating-a-typescript-app)以开始使用。不然的话，使用原生 JavaScript 是一个合理的选择。\
 \
-If you’re comfortable with typescript and prefer to use it, [see this section](https://create-react-app.dev/docs/getting-started#creating-a-typescript-app) to get started. Otherwise, using vanilla javascript is a reasonable choice.
+当您使用默认脚手架使您的应用运行起来后，我们将安装 DeSo 身份包并查看一些示例。
 
-Once you have your app up and running with the default scaffolding, we’ll install the DeSo identity package and look at some examples.
+### 安装
 
-### Installation
-
-[The DeSo Protocol SDK](https://www.npmjs.com/package/deso-protocol) is used for core functionality when building an application for the DeSo blockchain: logging in, logging out, signing and submitting transactions, and more. \
+[DeSo 协议 SDK](https://www.npmjs.com/package/deso-protocol) 用于构建 DeSo 区块链应用程序的核心功能：登录、登出、签名和提交交易等。\
 \
 NPM: [https://www.npmjs.com/package/deso-protocol](https://www.npmjs.com/package/deso-protocol)\
 Github: [https://github.com/deso-protocol/deso-workspace/tree/main/libs/deso-protocol](https://github.com/deso-protocol/deso-workspace/tree/main/libs/deso-protocol)
 
 \
-In the root of your application run:
+在应用程序的根目录下运行：
 
 ```
 npm i deso-protocol
 ```
 
-And now you should be ready to start building!
+现在，您应该准备好开始构建了！
 
-## Configuration
+## 配置
 
-Change the identity library’s behavior based on the needs of your app.
+根据您的应用需求，更改身份库进行的操作
 
-### Transaction spending limit options
+### 交易支出限制选项
 
-Setting transaction spending limit options will determine what permissions your users will see when logging into your app, and the amount in DeSo your app can spend on their behalf.
+设置交易支出限制选项将决定用户在登录您的应用时会看到什么权限，以及您的应用可以代表他们花费多少 DeSo。
 
-On DeSo, every user gets a main or _**owner**_ keypair generated for them when they create an account for the first time.\
+在 DeSo 上，每个用户在首次创建帐户时都会为他们生成一个主要或_**owner**_**所有者**密钥对。
+
+所有者密钥可以代表用户签署_**任何**_交易，包括花费他们_**所有**_的钱，以及转移他们_**所有**_的 NFT 或代币！
+
+让用户与之交互的每个应用都可以直接访问这个密钥显然不是一个好主意。但我们也不想让用户不得不手动批准应用要求他们执行的每一笔交易。
+
+想象一下，如果每个喜欢和评论都需要一个烦人的批准弹出窗口，您会怎么使用 Twitter？&#x20;
+
+解决方案是允许应用生成具有有限权限集的**子密钥**或**派生密钥**，这些权限由所有者_**owner**_**密钥**批准。\
 \
-The owner key is able to sign _**any**_ transaction on behalf of the user, including spending _**all**_ of their money, and transferring **all** of their NFTs or tokens!
+这看起来是这样的：
 
-It wouldn’t be a good idea to give every app the user interacts with direct access to this key. But we also don’t want to make users have to manually approve _every single transaction_ that an app wants them to do.\
-\
-Can you imagine using Twitter if every like and comment required an annoying approval popup?
+* 用户首次创建帐户，生成一个存储在 DeSo 身份中的_**owner**_**所有者**公钥/私钥对（存储在浏览器中的本地位置，但位于与应用无法访问的不同域上）。\\
+* 用户通过输入手机号码或购买一些 $DESO 代币来获得一些启动 $DESO 代币以支付燃料费。\\
+* 应用程序生成一个_**派生密钥**_，这可以是任意随机密钥对，并生成一个赋予此派生密钥特定权限的交易，例如代表用户发表 3 次帖子。
+* 一旦生成了派生密钥批准交易，DeSo Identity 钱包可以提示用户_**批准**_它，从而使用用户的_**所有者**_公钥对交易进行签名。\\
+* 一旦批准交易由用户的所有者公钥签署，它可以_**广播**_ 到 DeSo 区块链，然后赋予派生密钥所需的权限。\\
+* 应用程序可以代表用户愉快地签署交易，而用户不必担心应用程序窃取他们的资金（也称为被 **rug-pulled** 或 **rugged**）。
 
-The solution is to allow apps to generate **subkeys** or _**derived**_ keys that have a limited set of permissions, approved by the _**owner**_ key.\
-\
-This looks as follows:
-
-* User creates an account for the first time, generating an _**owner**_ public/private keypair that is stored in DeSo Identity (stored locally in the browser, but on a distinct domain that is not accessible to apps).\
-
-* User gets some starter $DESO coins to cover gas, either by entering their phone number or buying some.\
-
-* App generates a _**derived**_ key, which can just be any random keypair, and a transaction granting this derived key certain permissions, e.g. the ability to post 3 times on the user’s behalf.\
-
-* Once the derived key approval transaction is generated, the DeSo Identity wallet can prompt the user to _**approve**_ it, thus signing the transaction with the user’s _**owner**_ public key.\
-
-* Once an approve txn is signed by the user’s owner public key, it can be _**broadcast**_ to the DeSo blockchain, which then gives the _**derived**_ key the desired permissions.\
-
-* The app can then happily sign transactions on the user’s behalf, without the user having to worry about the app stealing their funds (also known as getting **rug-pulled** or **rugged**).
-
-In this example, we will ask users for permission to create an unlimited number of posts and make an unlimited number of transfers until they meet the global limit of 1 $DESO.
+在此示例中，我们将要求用户允许创建无限数量的帖子，并进行无限次转账，直到他们达到 1 $DESO 的全局限制。
 
 ```
 import { configure } from 'deso-protocol';
 
 configure({
   spendingLimitOptions: {
-    // NOTE: this value is in Deso nanos, so 1 Deso * 1e9
+    // 注意：此值以 DeSo 纳诺为单位，因此 1 DeSo * 1e9
     GlobalDESOLimit: 1 * 1e9 // == 1 Deso
-    // Map of transaction type to the number of times this derived key is
+    // 交易类型到派生密钥允许代表所有者公钥执行此操作的次数的映射
     // allowed to perform this operation on behalf of the owner public key
     TransactionCountLimitMap: {
-      BASIC_TRANSFER: 'UNLIMITED', // Sending/receiving DESO is a "basic transfer"
+      BASIC_TRANSFER: 'UNLIMITED', // 发送/接收 DESO 是 "basic transfer"基本交易
       SUBMIT_POST: 'UNLIMITED',
     },
   }
 });
 ```
 
-**Important:** You’ll want to make sure you call configure only once prior to calling any other identity methods.
+**重要提示**：在调用任何其他身份方法之前，您需要确保只调用一次 configure。
 
-Note that even though we approve an unlimited number of **basic transfer** transactions in the above configure() call, we cannot take more than 1 $DESO from the user’s wallet before we have to pop up an approval again.
+请注意，尽管我们在上面的 configure() 调用中批准了无限次**基本转账**交易，但我们在再次弹出批准之前无法从用户钱包中获取超过 1 $DESO。
 
-This is a good thing for the user!
+这对用户来说是一件好事！
 
-While you’ll typically want to ask for specific permissions in a production app, it is possible to ask for unlimited access for prototyping or quickly testing things.\
-\
-This example requests approval for unlimited access:
+虽然您通常希望在生产应用程序中请求特定权限，但可以请求无限制访问以进行原型设计或快速测试。
+
+此示例请求无限制访问权限：
 
 ```
 import { configure } from 'deso-protocol';
@@ -105,11 +100,11 @@ configure({
 });
 ```
 
-### App Name
+### 应用名称
 
-`appName` is used to identify the app that authorizes a derived key.\
-\
-This can be used to group and identify derived keys that have been issued by a given app. If you don’t set the appName, the domain name your app is running on will be used by default.
+appName 用于标识授权派生密钥的应用程序。
+
+这可以用于对由特定应用程序发出的派生密钥进行分组和识别。如果您不设置 appName，默认情况下将使用您的应用程序运行的域名。
 
 ```
 import { configure } from 'deso-protocol';
@@ -122,10 +117,10 @@ configure({
 });
 ```
 
-Soon, users will be able to easily see all the apps they’ve used, and what permissions they’ve granted them (this is why setting a good app name is helpful!).\
-\
-Users will also be able to disable permissions from one unified dashboard.
+就这样，用户将能够轻松查看他们使用过的所有应用程序以及授权给它们的权限（这就是为什么设置一个好的应用名称很有帮助！）。
 
-### Next steps
+用户还将能够从一个统一的仪表板中禁用权限。
 
-Next, we’ll look at some basic [examples of common scenarios.](https://github.com/deso-protocol/deso-examples-react)
+### 下一步
+
+接下来，我们将查看一些[常见场景的基本示例](https://github.com/deso-protocol/deso-examples-react)。

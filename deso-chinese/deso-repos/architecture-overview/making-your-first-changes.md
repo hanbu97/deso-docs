@@ -1,65 +1,50 @@
-# Making Your First Changes
+# 进行首次更改
 
-In this tutorial, we will show you how to make changes to the DeSo codebase, and see your changes reflected in a local dev environment.
+在本教程中，我们将向您展示如何对DeSo代码库进行更改，并在本地开发环境中查看更改的效果。
 
-## Prerequisites
+## 先决条件
 
-This guide assumes you have successfully made it through [**Setting Up Your Dev Environment**](broken-reference).\
-\
-In particular, it assumes you have a testnet node running with n0\_test showing a frontend UI that looks roughly like the following screenshot:
+本指南假定您已经成功完成了上一部分的内容——[**设置你的开发环境**](broken-reference/)**。**
 
-![](../../.gitbook/assets/desopage1.png)
+特别是，它假定您正在运行一个测试网络节点，用n0\_test显示一个前端用户界面，大致如下图所示：
 
-## Make Your First Frontend Change
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-If your frontend repo is loaded into Goland, the following steps should allow you to make your first frontend change, and see it update your local node in real time:\
+## 进行您的第一个前端更改
 
+如果您的前端仓库已加载到Goland中，以下步骤应该能让您进行第一次前端更改，并实时查看本地节点的更新：\\
 
-* Run your n0\_test. Create an account and make sure you can see the page shown in the prerequisites.\
+* 运行您的n0\_test。创建一个帐户，并确保您可以看到先决条件中显示的页面。\\
+* 假设您正在使用Goland，请导航到`feed.component.ts`。提示：您可以使用SHIFT+SHIFT轻松跳转到它。\\
+* 在文件中查找`GLOBAL_TAB`函数，并修改返回语句如下（您可以为您的信息流命名任何您喜欢的名称）：\\
+  * `static GLOBAL_TAB = "Satoshi's Feed";`\\
+* 保存您的更改。
 
-* Assuming you're using Goland, navigate to the `feed.component.ts`. Hint: You can use SHIFT+SHIFT to easily jump to it.\
+保存更改后，您的浏览器应该更新为为您的信息流标签显示新标题：
 
-* Look for the `GLOBAL_TAB` function in the file and modify the return statement as follows (you can name your feed whatever you want):\
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-  * `static GLOBAL_TAB = "Satoshi's Feed";`\
+## 进行您的第一个后端更改
 
-* Save your changes.
+后端仓库运行一个API，前端Angular应用程序查询该API以获取其显示的所有信息。按照以下步骤进行我们的第一次API更改：
 
-\
-After your changes are saved, your browser should update to show a new title for your feed tab:
-
-![](../../.gitbook/assets/desopage2.png)
-
-## Make Your First Backend Change
-
-The backend repo runs an API that the frontend Angular app queries to get all of the information it displays. Let's make our first change to this API by following the steps below:\
-
-
-* Before going into the code, go to the Admin panel, add a post to the global feed, and verify that it shows up by refreshing the page.\
-
-* With the backend repo loaded in Goland, find the `post.go` file, which defines one of the API endpoints queried by the frontend. Hint: You can use SHIFT+SHIFT to navigate to it.\
-
-* In that file, find a function called `GetPostsStateless`. Modify the response at the end of the function as follows to customize the content:\
-
+* 在深入代码之前，请转到管理员面板，将帖子添加到全局信息流，并通过刷新页面验证它是否显示。\\
+* 使用Goland加载后端仓库后，找到`post.go`文件，其中定义了前端查询的一个API接口。提示：您可以使用SHIFT+SHIFT导航到它。\\
+* 在该文件中，找到一个名为`GetPostsStateless`的函数。修改该函数末尾的响应，如下所示，以定制内容：\\
   * ```
         if len(postEntryResponses) > 0 {
             postEntryResponses[0].Body = "This is some content"
         }
 
-        // Return the posts found.
+        // 返回找到的帖子
         res := &GetPostsStatelessResponse{
             PostsFound: postEntryResponses,
         }
     ```
+* 保存文件并重新启动n0\_test。当您对后端或核心的任何内容进行更改时，您需要重新启动节点以使它们生效。\\
 
-
-
-* Save the file and restart n0\_test. When you make changes to anything in backend or core, you need to restart your node for them to take effect.\
-
-
-Now you should see some custom content in the post that you added to the feed. You can modify endpoints in backend like this one to customize how data is returned to the user.
+现在，您应该在添加到信息流中的帖子中看到一些自定义内容。您可以修改后端中的这个接口来自定义返回给用户的数据。
 
 ![](../../.gitbook/assets/desopage3.png)
 
 ##
-

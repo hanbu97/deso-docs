@@ -2,19 +2,19 @@
 description: Documentation on the Window Context API
 ---
 
-# 3⃣ Identity: Window API
+# 3⃣ 身份: Window API
 
-## Introduction
+## 简介
 
-This guide describes the Window API, which is an essential component of integrating with the DeSo Identity Service.
+本指南介绍了 Window API，这是与 DeSo 身份服务交互的重要组成部分。
 
-If you haven't yet read through the [identity](../identity/ "mention") and [concepts.md](../identity/concepts.md "mention") guides, it would be helpful to do so prior to reading this documentation.
+如果您尚未阅读过 [identity](../identity/ "mention") 和 [concepts.md](../identity/concepts.md "mention")指南，在阅读本文档之前阅读它们将会很有帮助。
 
-The Window API guide consists of two subpages, which should give you a comprehensive view of the API:
+Window API 指南包括两个子页面，应该可以让您全面了解 API：
 
-* [basics.md](basics.md "mention") guide outlines the fundamentals of integrating with the Window API
-* [endpoints.md](endpoints.md "mention") is an exhaustive list of all API endpoints.
+* [basics.md](basics.md "mention") 指南概述了与 Window API 交互的基本原理
+* [endpoints.md](endpoints.md "mention") 是所有 API 接口的详尽列表。
 
-Upon finishing reading about the Window API, we recommend taking a look at the [iframe-api](../iframe-api/ "mention"), especially if you're developing a web application.
+在了解完 Window API 之后，我们建议您查看[iframe-api](../iframe-api/ "mention")，尤其是如果您正在开发一个网络应用程序。&#x20;
 
-And if you're creating a mobile app, check out our [mobile-integration.md](../identity/mobile-integration.md "mention") guide next.
+如果您正在创建一个移动应用，请接着查看我们的[mobile-integration.md](../identity/mobile-integration.md "mention")指南。

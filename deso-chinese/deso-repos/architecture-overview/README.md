@@ -21,7 +21,7 @@ DeSo 基金会准备了一些示例代码供您查看，您可以运行它们快
 
 下面是一个简单的图示，展示了这些仓库是如何组合在一起的：
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 架构概述
 

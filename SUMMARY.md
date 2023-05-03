@@ -162,7 +162,7 @@
   * [终端](deso-chinese/deso-identity/iframe-api/endpoints.md)
 * [3⃣ 身份: Window API](deso-chinese/deso-identity/window-api/README.md)
   * [概述](deso-chinese/deso-identity/window-api/basics.md)
-  * [终端](deso-chinese/deso-identity/window-api/endpoints.md)
+  * [接口](deso-chinese/deso-identity/window-api/endpoints.md)
 
 ## DESO 前端
 
@@ -198,7 +198,7 @@
   * [访问组 API](deso-chinese/deso-backend/construct-transactions/access-groups-api.md)
 * [3⃣ 数据：API](deso-chinese/deso-backend/api/README.md)
   * [管理终端](deso-chinese/deso-backend/api/admin-endpoints.md)
-  * [关联终端](deso-chinese/deso-backend/api/associations-endpoints.md)
+  * [关联接口](deso-chinese/deso-backend/api/associations-endpoints.md)
   * [DeSo 代币终端](deso-chinese/deso-backend/api/dao-endpoints.md)
   * [媒体终端](deso-chinese/deso-backend/api/media-endpoints.md)
   * [矿工终端](deso-chinese/deso-backend/api/miner-endpoints.md)
